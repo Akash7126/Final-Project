@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Online_Exam_System.Models.Student>
+
+
+
+<form asp-controller="Student" asp-action="GetAllStudent">
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>DepartmentId</th>
+                <th>BatchId</th>
+                <th>StudentPassword</th>
+                <th>Contact</th>
+                <th>Sex</th>
+                <th>Email</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.StudentName</td>
+                <td>@item.Department.DepartmentName</td>
+                <td>@item.Batch.BatchName</td>
+                <td>@item.StudentPassword</td>
+                <td>@item.Contact</td>
+                <td>@item.Sex</td>
+                <td>@item.Email</td>
+                <td>@item.Address</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.StudentId">Edit</a> 
+                    <a asp-action="GetStudentDetails" asp-route-id="@item.StudentId">Details</a> 
+                    <a asp-action="Delete" asp-route-id="@item.StudentId">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+</form>
+
+
+

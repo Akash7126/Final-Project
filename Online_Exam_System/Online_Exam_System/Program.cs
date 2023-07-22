@@ -1,7 +1,13 @@
+global using Online_Exam_System.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+var provider=builder.Services.BuildServiceProvider();
+var config=provider.GetRequiredService<IConfiguration>();
+builder.Services.AddDbContext<OnlineExamSystemContext>(item => item.UseSqlServer(config.GetConnectionString("BloggingDatabase")));
 
 var app = builder.Build();
 
@@ -20,9 +26,9 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "areas",
-    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+//app.MapControllerRoute(
+//    name: "areas",
+//    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",

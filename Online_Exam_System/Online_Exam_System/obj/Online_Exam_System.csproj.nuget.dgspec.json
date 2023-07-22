@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Online Exam System Asp.Net Core\\Online_Exam_System\\Online_Exam_System\\Online_Exam_System.csproj": {}
+    "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\Online_Exam_System.csproj": {}
   },
   "projects": {
-    "H:\\Online Exam System Asp.Net Core\\Online_Exam_System\\Online_Exam_System\\Online_Exam_System.csproj": {
+    "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\Online_Exam_System.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Online Exam System Asp.Net Core\\Online_Exam_System\\Online_Exam_System\\Online_Exam_System.csproj",
+        "projectUniqueName": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\Online_Exam_System.csproj",
         "projectName": "Online_Exam_System",
-        "projectPath": "H:\\Online Exam System Asp.Net Core\\Online_Exam_System\\Online_Exam_System\\Online_Exam_System.csproj",
+        "projectPath": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\Online_Exam_System.csproj",
         "packagesPath": "C:\\Users\\akash\\.nuget\\packages\\",
-        "outputPath": "H:\\Online Exam System Asp.Net Core\\Online_Exam_System\\Online_Exam_System\\obj\\",
+        "outputPath": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\akash\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,16 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.20, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.15, )"
