@@ -8,39 +8,73 @@
 
 
 <form asp-controller="Student" asp-action="GetAllStudent">
+    <div class="card">
+        <div class="card-header border-transparent">
+            <h3 class="card-title">Student Details</h3>
 
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Student Name</th>
-                <th>DepartmentId</th>
-                <th>BatchId</th>
-                <th>StudentPassword</th>
-                <th>Contact</th>
-                <th>Sex</th>
-                <th>Email</th>
-                <th>Address</th>
-            </tr>
-        </thead>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.StudentName</td>
-                <td>@item.Department.DepartmentName</td>
-                <td>@item.Batch.BatchName</td>
-                <td>@item.StudentPassword</td>
-                <td>@item.Contact</td>
-                <td>@item.Sex</td>
-                <td>@item.Email</td>
-                <td>@item.Address</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.StudentId">Edit</a> 
-                    <a asp-action="GetStudentDetails" asp-route-id="@item.StudentId">Details</a> 
-                    <a asp-action="Delete" asp-route-id="@item.StudentId">Delete</a>
-                </td>
-            </tr>
-        }
-    </table>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table m-0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>BatchId</th>
+                            @*<th>Password</th>*@
+                            @*<th>Contact</th>*@
+                            @*<th>Sex</th>*@
+                            <th>Email</th>
+                            @*<th>Address</th>*@
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="tbl-student-row">
+                                <td class="tbl-student-col"><a href="pages/examples/invoice.html">@item.StudentId</a></td>
+                                <td class="tbl-student-col">@item.StudentName</td>
+                                <td class="tbl-student-col">@item.Department.DepartmentName</td>
+                                <td class="tbl-student-col">@item.Batch.BatchName</td>
+                                <td class="tbl-student-col">@item.StudentPassword</td>
+                                @*<td class="tbl-student-col">@item.Contact</td>*@
+                                @*<td class="tbl-student-col">@item.Sex</td>*@
+                                <td class="tbl-student-col">@item.Email</td>
+                                @*<td class="tbl-student-col">@item.Address</td>*@
+                                <td class="tbl-student-col">
+                                    <a asp-action="Edit" asp-route-id="@item.StudentId"><button type="button" class="btn btn-block btn-info btn-sm">Update</button></a>
+                                </td>
+                                <td class="tbl-student-col">
+                                    <a asp-action="GetStudentDetails" asp-route-id="@item.StudentId"><button type="button" class="btn btn-block btn-success btn-sm">Details</button></a>
+                                </td>
+                                <td class="tbl-student-col">
+                                    <a asp-action="Delete" asp-route-id="@item.StudentId"><button type="button" class="btn btn-block btn-danger btn-sm">Delete</button></a>
+                                </td>
+                            </tr> 
+                        }
+                        
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer clearfix">
+            <a asp-action="AddStudent" asp-route-id="@Model" class="btn btn-sm btn-info float-left">Create new Student</a>
+            <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
+        </div>
+        <!-- /.card-footer -->
+    </div>
 </form>
 
 

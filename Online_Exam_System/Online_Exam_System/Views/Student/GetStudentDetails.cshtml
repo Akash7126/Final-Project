@@ -6,32 +6,86 @@
 
 @model Online_Exam_System.Models.Student
 
+<head>
+    <style>
+        table.tbl-cutom {
+            border: 1px solid black;
+            width: 50%;
+            border-collapse: collapse;
+            background: #b6fbb6;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
+        th.td-std-name {
+            border: 1px solid black;
+            text-align: center;
+        }
 
-<form asp-controller="Student" asp-action="GetStudentDetails">
+        td.td-std-name {
+            border: 1px solid black;
+            text-align: center;
+        }
 
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Student Name</th>
-                <th>DepartmentId</th>
-                <th>BatchId</th>
-                <th>StudentPassword</th>
-                <th>Contact</th>
-                <th>Sex</th>
-                <th>Email</th>
-                <th>Address</th>
+        h4 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+@*<form asp-controller="Student" asp-action="GetStudentDetails">*@
+    <h4 >Student Details</h4>
+    <div class="container">
+        <table class="tbl-cutom">
+            @*      <thead>
+
+            <th>DepartmentId</th>
+            <th>BatchId</th>
+            <th>StudentPassword</th>
+            <th>Contact</th>
+            <th>Sex</th>
+            <th>Email</th>
+            <th>Address</th>
             </tr>
-        </thead>
-        <tr>
-            <td>@Model.StudentName</td>
-            <td>@Model.Department.DepartmentName</td>
+            </thead>
+            <tr>*@
+            <tr>
+                <th class="td-std-name">Student Name</th>
+                <td class="td-std-name">@Model.StudentName</td>
+            </tr>
+            <tr>
+                <th class="td-std-name">Department</th>
+                <td class="td-std-name">@Model.Department.DepartmentName</td>
+            </tr>
+            <tr>
+                <th class="td-std-name">Password</th>
+                <td class="td-std-name">@Model.StudentPassword</td>
+            </tr>
+            <tr>
+            <th class="td-std-name">Contact</th>
+            <td class="td-std-name">@Model.Contact</td>
+            </tr>
+            <tr>
+            <th class="td-std-name">Sex</th>
+            <td class="td-std-name">@Model.Sex</td>
+            </tr>
+            <tr>
+            <th class="td-std-name">Email</th>
+                <td class="td-std-name">@Model.Email</td>
+            </tr>
+            <tr>
+            <th class="td-std-name">Address</th>
+            <td class="td-std-name">@Model.Address</td>
+            </tr>
+            @*   <td>@Model.Department.DepartmentName</td>
             <td>@Model.Batch.BatchName</td>
             <td>@Model.StudentPassword</td>
             <td>@Model.Contact</td>
             <td>@Model.Sex</td>
             <td>@Model.Email</td>
-            <td>@Model.Address</td>
-        </tr>     
-    </table>
-</form>
+            <td>@Model.Address</td>*@
+            @* </tr>     *@
+        </table>
+    </div>
+  
+@*</form>*@

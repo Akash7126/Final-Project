@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Online_Exam_System.Models;
 
 namespace Online_Exam_System.Controllers
 {
@@ -35,6 +36,30 @@ namespace Online_Exam_System.Controllers
         {
             var studentById = context.Students.Include(x => x.Department).Include(x => x.Batch).FirstOrDefault(s => s.StudentId == id); ;
             return View(studentById);
+        }
+
+        public IActionResult AddStudent()
+        {
+            var departments = context.Departments.ToList(); // Replace this with the method that retrieves the departments from your data source.
+            var batches = context.Batches.ToList();
+
+            ViewBag.Departments = departments;
+            ViewBag.Batches = batches;  
+            return View();
+        }
+        //Create Student
+        [HttpPost]
+        public IActionResult AddStudent(Student student)
+        {
+            context.Students.Add(student);
+            context.SaveChanges();
+
+            var departments = context.Departments.ToList(); // Replace this with the method that retrieves the departments from your data source.
+            var batches = context.Batches.ToList();
+            ViewBag.Departments = departments;
+            ViewBag.Batches = batches;
+
+            return View();
         }
     }
 }
