@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="/Admin/plugins/summernote/summernote-bs4.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link href="~/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="~/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -223,6 +225,7 @@
     </div>
     <!-- ./wrapper -->
     <!-- jQuery -->
+    @RenderSection("Scripts", required: false)
     <script src="/Admin/plugins/jquery/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="/Admin/plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -232,6 +235,8 @@
     </script>
     <!-- Bootstrap 4 -->
     <script src="/Admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!--SweetAlert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- ChartJS -->
     <script src="/Admin/plugins/chart.js/Chart.min.js"></script>
     <!-- Sparkline -->

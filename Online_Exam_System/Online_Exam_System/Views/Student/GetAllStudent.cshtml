@@ -7,18 +7,16 @@
 
 
 
-<form asp-controller="Student" asp-action="GetAllStudent">
+<form asp-controller="Student" asp-action="GetAllStudent" id="myForm" onsubmit="sendForm(event)">
     <div class="card">
-        <div class="card-header border-transparent">
+        <div class="card-header clearfix">
             <h3 class="card-title">Student Details</h3>
 
             <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                </button>
+                
+              <a asp-action="AddStudent" asp-route-id="@Model" class="btn btn-sm btn-info float-right">
+                    <i class="fa-solid fa-user-plus fa-2xl" style="color: #f7fdf8;"></i>
+                </a>
             </div>
         </div>
         <!-- /.card-header -->
@@ -52,13 +50,13 @@
                                 <td class="tbl-student-col">@item.Email</td>
                                 @*<td class="tbl-student-col">@item.Address</td>*@
                                 <td class="tbl-student-col">
-                                    <a asp-action="Edit" asp-route-id="@item.StudentId"><button type="button" class="btn btn-block btn-info btn-sm">Update</button></a>
+                                    <a asp-action="UpdateStudentDetails" asp-route-id="@item.StudentId"><button type="button" class="btn btn-block btn-info btn-sm">Update</button></a>
                                 </td>
                                 <td class="tbl-student-col">
                                     <a asp-action="GetStudentDetails" asp-route-id="@item.StudentId"><button type="button" class="btn btn-block btn-success btn-sm">Details</button></a>
                                 </td>
                                 <td class="tbl-student-col">
-                                    <a asp-action="Delete" asp-route-id="@item.StudentId"><button type="button" class="btn btn-block btn-danger btn-sm">Delete</button></a>
+                                    <button type="button" class="btn btn-block btn-danger btn-sm btn-delete" data-student-id="@item.StudentId">Delete</button>
                                 </td>
                             </tr> 
                         }
@@ -70,12 +68,64 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer clearfix">
-            <a asp-action="AddStudent" asp-route-id="@Model" class="btn btn-sm btn-info float-left">Create new Student</a>
             <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
         </div>
         <!-- /.card-footer -->
     </div>
 </form>
+
+@section Scripts
+    {
+    <script>
+        // Wait for the document to be ready
+        document.addEventListener("DOMContentLoaded", function () {
+            // Find all delete buttons with the class "btn-delete"
+            const deleteButtons = document.querySelectorAll(".btn-delete");
+
+            // Add click event listeners to all delete buttons
+            deleteButtons.forEach((button) => {
+                button.addEventListener("click", function (e) {
+                    // Prevent the default form submission
+                    e.preventDefault();
+
+                    // Get the student ID from the data-student-id attribute
+                    const studentId = button.dataset.studentId;
+
+                    // Show SweetAlert2
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: "You won't be able to revert this!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#3085d6',
+                        confirmButtonText: 'Yes, delete it!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // If the user confirms, submit the form with the student ID
+                            const myForm = document.getElementById('myForm');
+                            myForm.action = '/Student/DeleteStudent'; // Set the appropriate action URL
+                            myForm.method = 'post'; // Set the form method
+                            const input = document.createElement('input');
+                            input.type = 'hidden';
+                            input.name = 'id';
+                            input.value = studentId;
+                            myForm.appendChild(input);
+                            myForm.submit();
+
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            );
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+}
+
 
 
 

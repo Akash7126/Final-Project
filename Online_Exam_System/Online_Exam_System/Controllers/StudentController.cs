@@ -59,7 +59,60 @@ namespace Online_Exam_System.Controllers
             ViewBag.Departments = departments;
             ViewBag.Batches = batches;
 
+            return RedirectToAction("GetAllStudent", "Student");
+        }
+
+
+        //Update or Edit Student
+        public IActionResult UpdateStudentDetails(int id)
+        {
+            Student Astudent=context.Students.FirstOrDefault(x=>x.StudentId == id);
+            var departments = context.Departments.ToList(); // Replace this with the method that retrieves the departments from your data source.
+            var batches = context.Batches.ToList();
+            ViewBag.Departments = departments;
+            ViewBag.Batches = batches;
+            return View(Astudent);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateStudentDetails(int id,Student student)
+        {
+            var aStudent = context.Students.Find(id);
+
+            aStudent.Sex = student.Sex;
+            //aStudent.StudentId=student.StudentId;
+            aStudent.StudentName=student.StudentName;
+            aStudent.DepartmentId=student.DepartmentId;
+            aStudent.BatchId=student.BatchId;
+            aStudent.StudentPassword=student.StudentPassword;
+            aStudent.Contact=student.Contact;
+            aStudent.Sex=student.Sex;
+            aStudent.Email=student.Email;
+            aStudent.Address=student.Address;
+            context.Students.Update(aStudent);
+            context.SaveChanges();
+
+            var departments = context.Departments.ToList(); // Replace this with the method that retrieves the departments from your data source.
+            var batches = context.Batches.ToList();
+            ViewBag.Departments = departments;
+            ViewBag.Batches = batches;
+            return RedirectToAction("GetAllStudent", "Student");
+        }
+
+        //Delete
+        public IActionResult DeleteStudent() 
+        { 
             return View();
         }
+
+        [HttpPost]
+        public IActionResult DeleteStudent(int id)
+        {
+            var aStudent = context.Students.Find(id);
+            context.Students.Remove(aStudent);
+            context.SaveChanges();
+            return RedirectToAction("GetAllStudent", "Student");
+        }
+
     }
 }
