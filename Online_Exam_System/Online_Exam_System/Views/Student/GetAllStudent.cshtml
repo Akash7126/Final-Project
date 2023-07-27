@@ -5,72 +5,87 @@
 }
 @model List<Online_Exam_System.Models.Student>
 
-
-
 <form asp-controller="Student" asp-action="GetAllStudent" id="myForm" onsubmit="sendForm(event)">
     <div class="card">
-        <div class="card-header clearfix">
-            <h3 class="card-title">Student Details</h3>
-
+        <div class="card-header">
+            <h3 class="card-title">Student List</h3>
             <div class="card-tools">
-                
-              <a asp-action="AddStudent" asp-route-id="@Model" class="btn btn-sm btn-info float-right">
+
+                <a asp-action="AddStudent" asp-route-id="@Model" class="btn btn-sm btn-info float-right">
                     <i class="fa-solid fa-user-plus fa-2xl" style="color: #f7fdf8;"></i>
                 </a>
             </div>
         </div>
         <!-- /.card-header -->
-        <div class="card-body p-0">
-            <div class="table-responsive">
-                <table class="table m-0">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Department</th>
-                            <th>BatchId</th>
-                            @*<th>Password</th>*@
-                            @*<th>Contact</th>*@
-                            @*<th>Sex</th>*@
-                            <th>Email</th>
-                            @*<th>Address</th>*@
+        <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Batch</th>
+                        @*<th>Password</th>
+                        <th>Contact</th>
+                        <th>Sex</th>*@
+                        <th>Email</th>
+                        @*<th>Address</th>*@
+                        <th colspan="3"  style="text-align:center">Action</th>
+                   @*     <th>Details</th>
+                        <th>Delete</th>*@
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="tbl-student-row">
+                            <td class="tbl-student-col"><a href="pages/examples/invoice.html">@item.StudentId</a></td>
+                            <td class="tbl-student-col">@item.StudentName</td>
+                            <td class="tbl-student-col">@item.Department.DepartmentName</td>
+                            <td class="tbl-student-col">@item.Batch.BatchName</td>
+                            @*<td class="tbl-student-col">@item.StudentPassword</td>*@
+                            @*<td class="tbl-student-col">@item.Contact</td>*@
+                            @*<td class="tbl-student-col">@item.Sex</td>*@
+                            <td class="tbl-student-col">@item.Email</td>
+                            @*<td class="tbl-student-col">@item.Address</td>*@
+                            @*<td class="tbl-student-col">
+                                <a asp-action="UpdateStudentDetails" asp-route-id="@item.StudentId"><button type="button" class="btn btn-block btn-info btn-sm">Update</button></a>
+                            </td>*@
+                            <td class="tbl-student-col">
+                                <a asp-action="UpdateStudentDetails" asp-route-id="@item.StudentId">
+                                    <button type="button" class="btn btn-warning btn-info btn-sm">
+                                        <i class="fas fa-edit" style="color: #f5f5f5;"></i>
+                                    </button>
+                                </a>
+                            </td>
+                           @* <td class="tbl-student-col">
+                                <a asp-action="GetStudentDetails" asp-route-id="@item.StudentId"><button type="button" class="btn btn-block btn-success btn-sm">Details</button></a>
+                            </td>*@
+                            <td class="tbl-student-col">
+                                <a asp-action="GetStudentDetails" asp-route-id="@item.StudentId">
+                                    <button type="button" class="btn btn-success btn-sm">
+                                        <i class="far fa-eye" style="color: #ffffff;"></i>
+                                    </button>
+                                </a>
+                            </td>
+
+                            @*<td class="tbl-student-col">
+                                <button type="button" class="btn btn-block btn-danger btn-sm btn-delete" data-student-id="@item.StudentId">Delete</button>
+                            </td>*@
+                            <td class="tbl-student-col">
+                                <button type="button" class="btn btn-info btn-danger btn-sm btn-delete">
+                                    <i class="fas fa-trash" style="color: #ffffff;"></i>
+                                </button>
+                            </td>
+
                         </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr class="tbl-student-row">
-                                <td class="tbl-student-col"><a href="pages/examples/invoice.html">@item.StudentId</a></td>
-                                <td class="tbl-student-col">@item.StudentName</td>
-                                <td class="tbl-student-col">@item.Department.DepartmentName</td>
-                                <td class="tbl-student-col">@item.Batch.BatchName</td>
-                                <td class="tbl-student-col">@item.StudentPassword</td>
-                                @*<td class="tbl-student-col">@item.Contact</td>*@
-                                @*<td class="tbl-student-col">@item.Sex</td>*@
-                                <td class="tbl-student-col">@item.Email</td>
-                                @*<td class="tbl-student-col">@item.Address</td>*@
-                                <td class="tbl-student-col">
-                                    <a asp-action="UpdateStudentDetails" asp-route-id="@item.StudentId"><button type="button" class="btn btn-block btn-info btn-sm">Update</button></a>
-                                </td>
-                                <td class="tbl-student-col">
-                                    <a asp-action="GetStudentDetails" asp-route-id="@item.StudentId"><button type="button" class="btn btn-block btn-success btn-sm">Details</button></a>
-                                </td>
-                                <td class="tbl-student-col">
-                                    <button type="button" class="btn btn-block btn-danger btn-sm btn-delete" data-student-id="@item.StudentId">Delete</button>
-                                </td>
-                            </tr> 
-                        }
-                        
-                    </tbody>
-                </table>
-            </div>
-            <!-- /.table-responsive -->
+                    }
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
         </div>
         <!-- /.card-body -->
-        <div class="card-footer clearfix">
-            <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
-        </div>
-        <!-- /.card-footer -->
     </div>
 </form>
 
