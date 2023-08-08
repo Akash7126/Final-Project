@@ -1,0 +1,74 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Online_Exam_System.Models.Teacher
+
+<head>
+    <style>
+        table.tbl-cutom {
+            border: 1px solid black;
+            width: 50%;
+            border-collapse: collapse;
+            background: #b6fbb6;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        th.td-std-name {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        td.td-std-name {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        h4 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<h4>Teacher Details</h4>
+<div class="container">
+    <table class="tbl-cutom">
+        <tr>
+            <th class="td-std-name">Teacher Name</th>
+            <td class="td-std-name">@Model.TeacherName</td>
+        </tr>
+        <tr>
+            <th class="td-std-name">Department</th>
+            <td class="td-std-name">@Model.Department.DepartmentName</td>
+        </tr>
+        <tr>
+            <th class="td-std-name">Password</th>
+            <td class="td-std-name">@Model.TeacherPassword</td>
+        </tr>
+        <tr>
+            <th class="td-std-name">Job Tittle</th>
+            <td class="td-std-name">@Model.JobTitle</td>
+        </tr>
+        <tr>
+            <th class="td-std-name">Contact</th>
+            <td class="td-std-name">@Model.Contact</td>
+        </tr>
+        <tr>
+            <th class="td-std-name">Sex</th>
+            <td class="td-std-name">@Model.Sex</td>
+        </tr>
+        <tr>
+            <th class="td-std-name">Email</th>
+            <td class="td-std-name">@Model.Email</td>
+        </tr>
+        <tr>
+            <th class="td-std-name">Address</th>
+            <td class="td-std-name">@Model.Address</td>
+        </tr>
+    </table>
+</div>
+
+

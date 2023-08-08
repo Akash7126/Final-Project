@@ -18,7 +18,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <table id="example1" class="table table-bordered table-striped">
+            <table class="table table-bordered table-striped" id="DataTableData">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -72,10 +72,17 @@
                             @*<td class="tbl-student-col">
                                 <button type="button" class="btn btn-block btn-danger btn-sm btn-delete" data-student-id="@item.StudentId">Delete</button>
                             </td>*@
-                            <td class="tbl-student-col">
+                            @*<td class="tbl-student-col">
                                 <button type="button" class="btn btn-info btn-danger btn-sm btn-delete">
                                     <i class="fas fa-trash" style="color: #ffffff;"></i>
                                 </button>
+                            </td>*@
+                            <td class="tbl-student-col">
+                                <a asp-action="GetStudentDetails" asp-route-id="@item.StudentId">
+                                    <button type="button" class="btn btn-info btn-danger btn-sm btn-delete">
+                                        <i class="fas fa-trash" style="color: #ffffff;"></i>
+                                    </button>
+                                </a>
                             </td>
 
                         </tr>
@@ -139,6 +146,7 @@
             });
         });
     </script>
+
 }
 
 

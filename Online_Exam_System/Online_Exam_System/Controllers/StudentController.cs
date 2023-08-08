@@ -100,7 +100,7 @@ namespace Online_Exam_System.Controllers
         }
 
         //Delete
-        public IActionResult DeleteStudent() 
+        public IActionResult DeleteStudent()
         { 
             return View();
         }
