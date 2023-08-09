@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System
 build_property._RazorSourceGeneratorDebug = 
 
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Department/AddDepartment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxBZGREZXBhcnRtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Department/GetAllDepartment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxHZXRBbGxEZXBhcnRtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

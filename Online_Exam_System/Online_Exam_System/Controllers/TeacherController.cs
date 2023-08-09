@@ -78,5 +78,20 @@ namespace Online_Exam_System.Controllers
             ViewBag.Departments = departments;
             return RedirectToAction("GetAllTeacher", "Teacher");
         }
+
+        //Delete
+        public IActionResult DeleteTeacher()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult DeleteTeacher(int newId)
+        {
+            var aTeacher = context.Teachers.Find(newId);
+            context.Teachers.Remove(aTeacher);
+            context.SaveChanges();
+            return RedirectToAction("GetAllTeacher", "Teacher");
+        }
     }
 }

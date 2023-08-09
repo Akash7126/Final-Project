@@ -52,7 +52,7 @@
                                 </a>
                             </td>
                             <td class="tbl-student-col">
-                                <a asp-action="GetStudentDetails" asp-route-id="@item.TeacherId">
+                                <a asp-action="DeleteTeacher" asp-route-id="@item.TeacherId">
                                     <button type="button" class="btn btn-info btn-danger btn-sm btn-delete">
                                         <i class="fas fa-trash" style="color: #ffffff;"></i>
                                     </button>
@@ -84,8 +84,13 @@
                     // Prevent the default form submission
                     e.preventDefault();
 
+                    //var row = this.closest('tr');
+                    //var idCell = row.cells[0]; // Assuming ID is in the first column
+
+                    //var newId = idCell.textContent.trim();
+
                     // Get the student ID from the data-student-id attribute
-                    const studentId = button.dataset.studentId;
+                    const teacherId = button.dataset.teacherId;
 
                     // Show SweetAlert2
                     Swal.fire({
@@ -99,13 +104,18 @@
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // If the user confirms, submit the form with the student ID
+
+                            var row = this.closest('tr');
+                            var idCell = row.cells[0]; // Assuming ID is in the first column
+                            var newId = idCell.textContent.trim();
+                            console.log(newId + "--")
                             const myForm = document.getElementById('myForm');
-                            myForm.action = '/Student/DeleteStudent'; // Set the appropriate action URL
+                            myForm.action = '/Teacher/DeleteTeacher?' + newId; // Set the appropriate action URL 
                             myForm.method = 'post'; // Set the form method
                             const input = document.createElement('input');
                             input.type = 'hidden';
-                            input.name = 'id';
-                            input.value = studentId;
+                            input.name = 'newId';
+                            input.value = newId;
                             myForm.appendChild(input);
                             myForm.submit();
 

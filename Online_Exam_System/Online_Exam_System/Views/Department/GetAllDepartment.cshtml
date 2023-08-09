@@ -1,0 +1,113 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<Online_Exam_System.Models.Department>
+
+<form asp-controller="Department" asp-action="GetAllDepartment" id="myForm" onsubmit="sendForm(event)">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Department List</h3>
+            <div class="card-tools">
+
+                <a asp-action="AddDepartment" asp-route-id="@Model" class="btn btn-sm btn-info float-right">
+                    <i class="fad fa-plus" style="--fa-primary-color: #24d627; --fa-secondary-color: #24d627;">ADD NEW</i>
+                </a>
+            </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table class="table table-bordered table-striped" id="DataTableData">
+                <thead>
+                    <tr>
+                       
+                        <th>Department</th>
+                        <th colspan="3" style="text-align:center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="tbl-student-row">
+                            <td class="tbl-student-col">@item.DepartmentId</td>
+                            <td class="tbl-student-col">@item.DepartmentName</td>
+                            <td class="tbl-student-col">
+                                <a asp-action="DeleteDepartment" asp-route-id="@item.DepartmentId">
+                                    <button type="button" class="btn btn-info btn-danger btn-sm btn-delete">
+                                        <i class="fas fa-trash" style="color: #ffffff;"></i>
+                                    </button>
+                                </a>
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+</form>
+
+@section Scripts
+    {
+    <script>
+        // Wait for the document to be ready
+        document.addEventListener("DOMContentLoaded", function () {
+            // Find all delete buttons with the class "btn-delete"
+            const deleteButtons = document.querySelectorAll(".btn-delete");
+
+            deleteButtons.forEach((button) => {
+                button.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const departmentId = button.dataset.departmentId;
+
+                    // Show SweetAlert2
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: "You won't be able to revert this!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#3085d6',
+                        confirmButtonText: 'Yes, delete it!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // If the user confirms, submit the form with the student ID
+
+                            var row = this.closest('tr');
+                            var idCell = row.cells[0]; // Assuming ID is in the first column
+                            var newId = idCell.textContent.trim();
+                            console.log(newId + "--")
+                            const myForm = document.getElementById('myForm');
+                            myForm.action = '/Department/DeleteDepartment?' + newId; // Set the appropriate action URL
+                            myForm.method = 'post'; // Set the form method
+                            const input = document.createElement('input');
+                            input.type = 'hidden';
+                            input.name = 'newId';
+                            input.value = newId;
+                            myForm.appendChild(input);
+                            myForm.submit();
+
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            );
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+}
+

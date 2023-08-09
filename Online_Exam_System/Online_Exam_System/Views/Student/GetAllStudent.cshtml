@@ -78,7 +78,7 @@
                                 </button>
                             </td>*@
                             <td class="tbl-student-col">
-                                <a asp-action="GetStudentDetails" asp-route-id="@item.StudentId">
+                                <a asp-action="DeleteStudent" asp-route-id="@item.StudentId">
                                     <button type="button" class="btn btn-info btn-danger btn-sm btn-delete">
                                         <i class="fas fa-trash" style="color: #ffffff;"></i>
                                     </button>
@@ -110,9 +110,14 @@
                     // Prevent the default form submission
                     e.preventDefault();
 
+                      //var row = this.closest('tr');
+                      //var idCell = row.cells[0]; // Assuming ID is in the first column
+
+                      //var newId = idCell.textContent.trim();
+
                     // Get the student ID from the data-student-id attribute
                     const studentId = button.dataset.studentId;
-
+                 
                     // Show SweetAlert2
                     Swal.fire({
                         title: 'Are you sure?',
@@ -125,13 +130,18 @@
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // If the user confirms, submit the form with the student ID
+
+                              var row = this.closest('tr');
+                              var idCell = row.cells[0]; // Assuming ID is in the first column
+                              var newId = idCell.textContent.trim();
+                              console.log(newId +"--")
                             const myForm = document.getElementById('myForm');
-                            myForm.action = '/Student/DeleteStudent'; // Set the appropriate action URL
+                            myForm.action = '/Student/DeleteStudent?' + newId; // Set the appropriate action URL
                             myForm.method = 'post'; // Set the form method
                             const input = document.createElement('input');
                             input.type = 'hidden';
-                            input.name = 'id';
-                            input.value = studentId;
+                            input.name = 'newId';
+                            input.value = newId;
                             myForm.appendChild(input);
                             myForm.submit();
 
@@ -145,6 +155,56 @@
                 });
             });
         });
+        //$(document).ready(function () {
+        //    // Find all delete buttons with the class "btn-delete"
+        //    const deleteButtons = $(".btn-delete");
+
+        //    // Add click event listeners to all delete buttons
+        //    deleteButtons.click(function (e) {
+        //        e.preventDefault();
+
+        //        // Get the student ID from the data-student-id attribute
+        //        const studentId = $(this).data("studentId");
+
+        //        // Show SweetAlert2
+        //        Swal.fire({
+        //            title: 'Are you sure?',
+        //            text: "You won't be able to revert this!",
+        //            icon: 'warning',
+        //            showCancelButton: true,
+        //            confirmButtonColor: '#d33',
+        //            cancelButtonColor: '#3085d6',
+        //            confirmButtonText: 'Yes, delete it!'
+        //        }).then((result) => {
+        //            if (result.isConfirmed) {
+        //                // If the user confirms, submit the form with the student ID
+        //                var row = $(this).closest('tr');
+        //                var idCell = row.find('td:first');
+        //                var newId = idCell.text().trim();
+        //                console.log(newId + "--");
+
+        //                const myForm = $('#myForm');
+        //                myForm.attr('action', '/Student/DeleteStudent?' + newId);
+        //                myForm.attr('method', 'post');
+
+        //                const input = $('<input>')
+        //                    .attr('type', 'hidden')
+        //                    .attr('name', 'newId')
+        //                    .val(newId);
+
+        //                myForm.append(input);
+        //                myForm.submit();
+
+        //                Swal.fire(
+        //                    'Deleted!',
+        //                    'Your file has been deleted.',
+        //                    'success'
+        //                );
+        //            }
+        //        });
+        //    });
+        //});
+
     </script>
 
 }

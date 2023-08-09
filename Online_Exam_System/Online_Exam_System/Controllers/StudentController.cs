@@ -106,9 +106,9 @@ namespace Online_Exam_System.Controllers
         }
 
         [HttpPost]
-        public IActionResult DeleteStudent(int id)
+        public IActionResult DeleteStudent(int newId)
         {
-            var aStudent = context.Students.Find(id);
+            var aStudent = context.Students.Find(newId);
             context.Students.Remove(aStudent);
             context.SaveChanges();
             return RedirectToAction("GetAllStudent", "Student");
