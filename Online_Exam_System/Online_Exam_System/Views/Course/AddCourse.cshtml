@@ -1,0 +1,55 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Online_Exam_System.Models.Course
+<div class="col-md-12">
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Course Entry</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form asp-controller="Course" asp-action="AddCourse" role="form">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="DepartmentId">Department</label>
+                            <select class="form-control" asp-for="DepartmentId" asp-items="@(new SelectList(ViewBag.Departments,"DepartmentId","DepartmentName"))">
+                                <option>Please select one</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                                <label asp-for="CourseCode">Course Code</label>
+                            <input asp-for="CourseCode" type="text" class="form-control" placeholder="Enter Course Code">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="CourseTittle">Course Tittle</label>
+                            <input asp-for="CourseTittle" type="text" class="form-control" placeholder="Enter Course Tittle">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="CourseCredit">Course Credit</label>
+                            <input asp-for="CourseCredit" type="text" class="form-control" placeholder="Enter Course Credit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a asp-action="AddCourse" asp-route-id="@Model"><button type="submit" class="btn btn-primary">Submit</button></a>
+
+            </div>
+        </form>
+    </div>
+    <!-- /.card -->
+</div>

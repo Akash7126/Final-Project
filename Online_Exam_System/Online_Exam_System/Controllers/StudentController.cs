@@ -66,12 +66,12 @@ namespace Online_Exam_System.Controllers
         //Update or Edit Student
         public IActionResult UpdateStudentDetails(int id)
         {
-            Student Astudent=context.Students.FirstOrDefault(x=>x.StudentId == id);
+            Student aStudent=context.Students.FirstOrDefault(x=>x.StudentId == id);
             var departments = context.Departments.ToList(); // Replace this with the method that retrieves the departments from your data source.
-            var batches = context.Batches.ToList();
+            var batches = context.Batches.Where(x => x.DepartmentId == aStudent.DepartmentId).ToList();
             ViewBag.Departments = departments;
             ViewBag.Batches = batches;
-            return View(Astudent);
+            return View(aStudent);
         }
 
         [HttpPost]
@@ -112,6 +112,17 @@ namespace Online_Exam_System.Controllers
             context.Students.Remove(aStudent);
             context.SaveChanges();
             return RedirectToAction("GetAllStudent", "Student");
+        }
+
+        public JsonResult GetDepartment()
+        {
+            var cnt = context.Departments.ToList();
+            return new JsonResult(cnt);
+        }
+        public JsonResult GetBatch(int departmentId)
+        {
+            var data = context.Batches.Where(x => x.DepartmentId == departmentId).ToList();
+            return new JsonResult(data);
         }
 
     }

@@ -84,3 +84,31 @@
     </div>
     <!-- /.card -->
 </div>
+
+@section Scripts
+    {
+    <script>
+        $(document).ready(function () {
+            $('#DepartmentId').change(function () {
+                var departmentId = $(this).val();
+                console.log(departmentId);
+                $('#BatchId').empty();
+                $('#BatchId').append('<Option >--Select Batch--</Option>');
+                $.ajax({
+                    url: '/Student/GetBatch?departmentId=' + departmentId, // Update this URL to the correct endpoint
+                    type: 'GET',
+                    success: function (result) {
+                        $.each(result, function (i, data) {
+                            console.log(data);
+                            $('#BatchId').append('<option value=' + data.batchId + '>' + data.batchName + '</option>');
+                        }); // <-- Closing parentheses and semicolon were missing here
+                    },
+                    error: function () {
+                        console.log("Error occurred"); // Log the error
+                    }
+                });
+            });
+        });
+    </script>
+
+}

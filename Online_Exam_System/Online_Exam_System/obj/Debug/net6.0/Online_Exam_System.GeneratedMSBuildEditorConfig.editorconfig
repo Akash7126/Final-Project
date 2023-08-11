@@ -16,6 +16,30 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System
 build_property._RazorSourceGeneratorDebug = 
 
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Batch/AddBatch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmF0Y2hcQWRkQmF0Y2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Batch/GetAllBatch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmF0Y2hcR2V0QWxsQmF0Y2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Batch/UpdateBatchDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmF0Y2hcVXBkYXRlQmF0Y2hEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Course/AddCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEFkZENvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Course/GetAllCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEdldEFsbENvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Course/UpdateCourseDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFVwZGF0ZUNvdXJzZURldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Department/AddDepartment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxBZGREZXBhcnRtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

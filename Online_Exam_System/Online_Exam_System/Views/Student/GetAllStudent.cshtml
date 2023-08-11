@@ -155,56 +155,6 @@
                 });
             });
         });
-        //$(document).ready(function () {
-        //    // Find all delete buttons with the class "btn-delete"
-        //    const deleteButtons = $(".btn-delete");
-
-        //    // Add click event listeners to all delete buttons
-        //    deleteButtons.click(function (e) {
-        //        e.preventDefault();
-
-        //        // Get the student ID from the data-student-id attribute
-        //        const studentId = $(this).data("studentId");
-
-        //        // Show SweetAlert2
-        //        Swal.fire({
-        //            title: 'Are you sure?',
-        //            text: "You won't be able to revert this!",
-        //            icon: 'warning',
-        //            showCancelButton: true,
-        //            confirmButtonColor: '#d33',
-        //            cancelButtonColor: '#3085d6',
-        //            confirmButtonText: 'Yes, delete it!'
-        //        }).then((result) => {
-        //            if (result.isConfirmed) {
-        //                // If the user confirms, submit the form with the student ID
-        //                var row = $(this).closest('tr');
-        //                var idCell = row.find('td:first');
-        //                var newId = idCell.text().trim();
-        //                console.log(newId + "--");
-
-        //                const myForm = $('#myForm');
-        //                myForm.attr('action', '/Student/DeleteStudent?' + newId);
-        //                myForm.attr('method', 'post');
-
-        //                const input = $('<input>')
-        //                    .attr('type', 'hidden')
-        //                    .attr('name', 'newId')
-        //                    .val(newId);
-
-        //                myForm.append(input);
-        //                myForm.submit();
-
-        //                Swal.fire(
-        //                    'Deleted!',
-        //                    'Your file has been deleted.',
-        //                    'success'
-        //                );
-        //            }
-        //        });
-        //    });
-        //});
-
     </script>
 
 }

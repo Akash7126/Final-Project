@@ -4,13 +4,6 @@
 @{
 }
 @model Online_Exam_System.Models.Student
-
-@*@{
-   // var departments = ViewBag.Departments as List<Department>; // Assuming you pass the departments list to ViewBag
-}
-@{
-    var batches = ViewBag.Batches as List<Batch>; // Assuming you pass the departments list to ViewBag
-}*@
 <div class="col-md-12">
             <!-- general form elements -->
             <div class="card card-primary">
@@ -31,12 +24,6 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label asp-for="DepartmentId">Department</label>
-                                    @*<select asp-for="DepartmentId" class="custom-select">
-                                    @foreach (var department in departments)
-                                    {
-                                        <option>@department.DepartmentName</option>
-                                    }
-                                </select>*@
                             <select class="form-control" asp-for="DepartmentId" asp-items="@(new SelectList(ViewBag.Departments,"DepartmentId","DepartmentName"))">
                                 <option>Please select one</option>
                             </select>
@@ -46,13 +33,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label asp-for="BatchId">Batch</label>
-                                   @* <select asp-for="BatchId" class="form-control">
-                                        @foreach (var batch in batches)
-                                        {
-                                            <option>@batch.BatchName</option>
-                                        }
-                                    </select>*@
-                            <select class="form-control" asp-for="BatchId" asp-items="@(new SelectList(ViewBag.Batches,"BatchId","BatchName"))">
+                            <select class="form-control" asp-for="BatchId">
                                 <option>Please select one</option>
                             </select>
                             </div>
@@ -111,3 +92,32 @@
             </div>
             <!-- /.card -->
 </div>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#DepartmentId').change(function () {
+                var departmentId = $(this).val();
+                console.log(departmentId);
+                $('#BatchId').empty();
+                $('#BatchId').append('<Option >--Select Batch--</Option>');
+                $.ajax({
+                    url: '/Student/GetBatch?departmentId=' + departmentId, // Update this URL to the correct endpoint
+                    type: 'GET',
+                    success: function (result) {
+                        $.each(result, function (i, data) {
+                            console.log(data);
+                            $('#BatchId').append('<option value=' + data.batchId + '>' + data.batchName + '</option>');
+                        }); // <-- Closing parentheses and semicolon were missing here
+                    },
+                    error: function () {
+                        console.log("Error occurred"); // Log the error
+                    }
+                });
+            });
+        });
+    </script>
+
+}
+

@@ -1,0 +1,139 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Online_Exam_System.Models.Course>
+
+<form asp-controller="Course" asp-action="GetAllCourse" id="myForm" onsubmit="sendForm(event)">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Course List</h3>
+            <div class="card-tools">
+
+                <a asp-action="AddCourse" asp-route-id="@Model" class="btn btn-sm btn-info float-right">
+                    <i class="fa-solid fa-user-plus fa-2xl" style="color: #f7fdf8;"></i>
+                </a>
+            </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table class="table table-bordered table-striped" id="DataTableData">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Course Code</th>
+                        <th>Course Tittle</th>
+                        <th>Course Credit</th>
+                        <th>Department</th>
+                        @*<th>Address</th>*@
+                        <th colspan="3" style="text-align:center">Action</th>
+                        @*     <th>Details</th>
+                        <th>Delete</th>*@
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="tbl-student-row">
+                            <td class="tbl-student-col"><a href="pages/examples/invoice.html">@item.CourseId</a></td>
+                            <td class="tbl-student-col">@item.CourseCode</td>
+                            <td class="tbl-student-col">@item.CourseTittle</td>
+                            <td class="tbl-student-col">@item.CourseCredit</td>
+                            <td class="tbl-student-col">@item.Department.DepartmentName</td>
+                            @*<td class="tbl-student-col">@item.Address</td>*@
+                            @*<td class="tbl-student-col">
+                        <a asp-action="UpdateStudentDetails" asp-route-id="@item.StudentId"><button type="button" class="btn btn-block btn-info btn-sm">Update</button></a>
+                        </td>*@
+                            <td class="tbl-student-col">
+                                <a asp-action="UpdateCourseDetails" asp-route-id="@item.CourseId">
+                                    <button type="button" class="btn btn-warning btn-info btn-sm">
+                                        <i class="fas fa-edit" style="color: #f5f5f5;"></i>
+                                    </button>
+                                </a>
+                            </td>
+                            <td class="tbl-student-col">
+                                <a asp-action="DeleteStudent" asp-route-id="@item.CourseId">
+                                    <button type="button" class="btn btn-info btn-danger btn-sm btn-delete">
+                                        <i class="fas fa-trash" style="color: #ffffff;"></i>
+                                    </button>
+                                </a>
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+</form>
+
+@section Scripts
+    {
+    <script>
+        // Wait for the document to be ready
+        document.addEventListener("DOMContentLoaded", function () {
+            // Find all delete buttons with the class "btn-delete"
+            const deleteButtons = document.querySelectorAll(".btn-delete");
+
+            // Add click event listeners to all delete buttons
+            deleteButtons.forEach((button) => {
+                button.addEventListener("click", function (e) {
+                    // Prevent the default form submission
+                    e.preventDefault();
+
+                    //var row = this.closest('tr');
+                    //var idCell = row.cells[0]; // Assuming ID is in the first column
+
+                    //var newId = idCell.textContent.trim();
+
+                    // Get the student ID from the data-student-id attribute
+                    const studentId = button.dataset.studentId;
+
+                    // Show SweetAlert2
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: "You won't be able to revert this!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#3085d6',
+                        confirmButtonText: 'Yes, delete it!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // If the user confirms, submit the form with the student ID
+
+                            var row = this.closest('tr');
+                            var idCell = row.cells[0]; // Assuming ID is in the first column
+                            var newId = idCell.textContent.trim();
+                            console.log(newId + "--")
+                            const myForm = document.getElementById('myForm');
+                            myForm.action = '/Course/DeleteCourse?' + newId; // Set the appropriate action URL
+                            myForm.method = 'post'; // Set the form method
+                            const input = document.createElement('input');
+                            input.type = 'hidden';
+                            input.name = 'newId';
+                            input.value = newId;
+                            myForm.appendChild(input);
+                            myForm.submit();
+
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            );
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+}
+
+
+
+
