@@ -18,16 +18,6 @@ namespace Online_Exam_System.Controllers
         public IActionResult GetAllStudent()
         {
             var data = context.Students.Include(x=>x.Department).Include(x =>x.Batch).ToList(); ///lambda expression
-
-            //var x = (from s in context.Students //LINQ
-            //         select new { s.Batch, s.StudentPassword });
-            //where s.FirstName == "Rohit"
-            //select s).FirstOrDefault();
-            //context.Students.Add(sti);
-            //context.SaveChanges();
-
-            //context.Students.Remove();
-            //context.SaveChanges();
             return View(data);
         }
 
