@@ -78,13 +78,11 @@ namespace Online_Exam_System.Models
             {
                 entity.ToTable("CourseAssign");
 
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
-
-                entity.HasOne(d => d.IdNavigation)
-                    .WithOne(p => p.CourseAssign)
-                    .HasForeignKey<CourseAssign>(d => d.Id)
+                entity.HasOne(d => d.Department)
+                    .WithMany(p => p.CourseAssigns)
+                    .HasForeignKey(d => d.DepartmentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_CourseAssign_CourseAssign");
+                    .HasConstraintName("FK_CourseAssign_Department");
             });
 
             modelBuilder.Entity<Department>(entity =>

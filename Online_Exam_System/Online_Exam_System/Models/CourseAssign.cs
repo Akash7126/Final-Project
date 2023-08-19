@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Online_Exam_System.Models
 {
@@ -13,8 +12,6 @@ namespace Online_Exam_System.Models
         public int BatchId { get; set; }
         public int StudentId { get; set; }
 
-        [NotMapped]
-        public List<int> StudentList { get; set; }
-        public virtual Department IdNavigation { get; set; } = null!;
+        public virtual Department Department { get; set; } = null!;
     }
 }
