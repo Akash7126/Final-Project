@@ -1,0 +1,249 @@
+﻿@model Online_Exam_System.ViewModel.CourseAssignViewModel
+
+
+<div class="col-md-12">
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Course Assign Into Student</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form role="form" name="myForm" id="courseAssignForm">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="DepartmentId">Department</label>
+                            <select class="form-control" asp-for="DepartmentId" asp-items="@(new SelectList(ViewBag.Departments,"DepartmentId","DepartmentName"))">
+                                <option>Please select one</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="CourseId">Course</label>
+                            <select class="form-control" asp-for="CourseId">
+                                <option>Please select one</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="TeacherId">Teacher</label>
+                            <select class="form-control" asp-for="TeacherId">
+                                <option>Please select one</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="BatchId">Batch</label>
+                            <select class="form-control" asp-for="BatchId">
+                                <option>Please select one</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="studentList">
+                    <!-- Student list will be populated here -->
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <a  asp-route-id="@Model"><button id="submitStudentSelection" class="btn btn-success">Submit Selection</button></a>
+
+            </div>
+        </form>
+    </div>
+    <!-- /.card -->
+</div>
+
+
+@section Scripts
+    {
+    <script>
+        $(document).ready(function () {
+            $('#DepartmentId').change(function () {
+                var departmentId = $(this).val();
+                console.log("Selected Department ID: " + departmentId);
+
+                $('#CourseId').empty();
+                $('#CourseId').append('<option>--Select Course--</option>');
+
+                $.ajax({
+                    url: '/CourseAssign/GetCourses?departmentId=' + departmentId,
+                    type: 'GET',
+                    success: function (result) {
+                        console.log("AJAX Response:", result);
+
+                        $.each(result, function (i, data) {
+                            console.log("Course Data:", data);
+                            $('#CourseId').append('<option value=' + data.courseId + '>' + data.courseCode + '</option>');
+                        });
+                    },
+                    error: function () {
+                        console.log("Error occurred");
+                    }
+                });
+            });
+
+
+            $('#DepartmentId').change(function () {
+                var departmentId = $(this).val();
+                console.log("Selected Department ID: " + departmentId);
+
+                $('#TeacherId').empty();
+                $('#TeacherId').append('<option>--Select Teacher--</option>');
+
+                $.ajax({
+                    url: '/CourseAssign/GetTeachers?departmentId=' + departmentId,
+                    type: 'GET',
+                    success: function (result) {
+                        console.log("AJAX Response:", result);
+
+                        $.each(result, function (i, data) {
+                            console.log("Course Data:", data);
+                            $('#TeacherId').append('<option value=' + data.teacherId + '>' + data.teacherName + '</option>');
+                        });
+                    },
+                    error: function () {
+                        console.log("Error occurred");
+                    }
+                });
+            });
+
+
+            $(document).ready(function () {
+                $('#DepartmentId').change(function () {
+                    var departmentId = $(this).val();
+                    console.log(departmentId);
+                    $('#BatchId').empty();
+                    $('#BatchId').append('<Option >--Select Batch--</Option>');
+                    $.ajax({
+                        url: '/Student/GetBatch?departmentId=' + departmentId, // Update this URL to the correct endpoint
+                        type: 'GET',
+                        success: function (result) {
+                            $.each(result, function (i, data) {
+                                console.log(data);
+                                $('#BatchId').append('<option value=' + data.batchId + '>' + data.batchName + '</option>');
+                            }); // <-- Closing parentheses and semicolon were missing here
+                        },
+                        error: function () {
+                            console.log("Error occurred"); // Log the error
+                        }
+                    });
+                });
+            });
+
+            $('#BatchId').change(function () {
+                var batchId = $(this).val();
+                console.log(batchId);
+                getStudentsByBatch(batchId);
+            });
+
+            function getStudentsByBatch(batchId) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/CourseAssign/GetStudentsByBatch?selectedBatch=' + batchId,
+                    data: { batch: batchId },
+                    success: function (data) {
+                        var studentList = $('#studentList');
+                        studentList.empty();
+                        console.log(data);
+
+                        var cardHtml = `
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="ion ion-clipboard mr-1"></i>
+                                    Student List
+                                </h3>
+                            </div>
+                            <div class="row">
+                                <div class="card-body">
+                                    <div class="col-md-6">
+                                        <ul class="todo-list" data-widget="todo-list">
+                                            ${data.map(student => `
+                                                <li>
+                                                    <span class="handle">
+                                                        <i class="fas fa-ellipsis-v"></i>
+                                                        <i class="fas fa-ellipsis-v"></i>
+                                                    </span>
+                                                    <div class="icheck-primary d-inline ml-2">
+                                                        <input type="checkbox" value="${student.studentId}" id="${student.studentName.replace(/\s/g, '_')}" checked>
+                                                        <label for="${student.studentName.replace(/\s/g, '_')}">${student.studentName} (ID: ${student.studentId})</label>
+                                                    </div>
+                                                </li>
+                                            `).join('')}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                        studentList.append(cardHtml);
+                    },
+                    error: function () {
+                        console.log("Error occurred");
+                    }
+                });
+            }
+
+            $('#submitStudentSelection').click(function () {
+
+                var myForm = document.forms['myForm'];
+                var formData = new FormData(myForm);
+
+                //e.preventDefault(); // Prevent default form submissionname="myForm"
+                var formData = $('#courseAssignForm').serializeArray();
+
+                var selectedStudentIds = [];
+                console.log(selectedStudentIds);
+
+               // formData.push({ name: 'DepartmentId', value: $('#DepartmentId').val() });
+
+                $('.icheck-primary input:checked').each(function () {
+                    //var departmentId = $('#DepartmentId').val();
+
+                    formData.push({ name: 'studentList', value: $(this).val() });
+                    //selectedStudentIds.push(departmentId);
+
+                    console.log("------------" + formData  )
+                });
+
+                //if (selectedStudentIds.length > 0) {
+                    console.log("Success");
+                    console.log(selectedStudentIds);
+                    $.ajax({
+                        type: 'POST', // You can use POST or GET based on your requirement
+                        url: '/CourseAssign/CourseAssignToStudent', // Update with the correct controller and action
+                        data: formData, // Pass the selected student IDs
+                        success: function (result) {
+                            console.log("Success");
+                            console.log(selectedStudentIds);
+                            // Handle success response if needed
+                        },
+                        error: function () {
+                            console.log("Error occurred");
+                        }
+                    });
+              //  } 
+                
+                //else {
+                //    console.log("No students selected.");
+                //}
+            });
+
+        });
+
+    </script>
+
+}

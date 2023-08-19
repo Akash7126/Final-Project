@@ -15,7 +15,6 @@ namespace Online_Exam_System.Models
         public int DepartmentId { get; set; }
 
         public virtual Department Department { get; set; } = null!;
-
         public virtual ICollection<Student> Students { get; set; }
     }
 }
