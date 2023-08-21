@@ -40,14 +40,15 @@ namespace Online_Exam_System.Controllers
                         CourseId = courseAssign.CourseId,
                         TeacherId = courseAssign.TeacherId,
                         BatchId = courseAssign.BatchId,
-                        StudentId= studentId
-                        // Set other properties as needed
+                        StudentId = studentId
                     };
                     context.CourseAssigns.Add(courseAssignEntity);
 
                 }
                 
                 context.SaveChanges();
+
+
                 return RedirectToAction("CourseAssign", "CourseAssignToStudent");
             }
             var departments = context.Departments.ToList();
@@ -77,11 +78,16 @@ namespace Online_Exam_System.Controllers
             return new JsonResult(data);
         }
 
-        [HttpGet]
-        public IActionResult GetStudentsByBatch(int batch)
+        public IActionResult GetStudentsByBatch(int batch, int selectedCourseId)
         {
             var students = context.Students.Where(s => s.BatchId == batch).ToList();
-            return Json(students); // Return students as JSON
+            var courseAssign = context.CourseAssigns.Where(s => s.BatchId == batch && s.CourseId == selectedCourseId).ToList();
+            var assignedStudentIds = courseAssign.Select(ca => ca.StudentId).ToList();
+
+            // Find the students who are not assigned to the selected course
+            var unassignedStudents = students.Where(s => !assignedStudentIds.Contains(s.StudentId)).ToList();
+
+            return Json(unassignedStudents); // Return students as JSON
         }
     }
 }

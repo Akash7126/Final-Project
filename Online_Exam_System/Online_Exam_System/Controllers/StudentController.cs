@@ -41,9 +41,6 @@ namespace Online_Exam_System.Controllers
         [HttpPost]
         public IActionResult AddStudent(Student student)
         {
-            context.Students.Add(student);
-            context.SaveChanges();
-
             var departments = context.Departments.ToList(); // Replace this with the method that retrieves the departments from your data source.
             var batches = context.Batches.ToList();
             ViewBag.Departments = departments;

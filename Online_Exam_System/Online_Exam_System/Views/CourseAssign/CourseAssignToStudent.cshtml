@@ -69,7 +69,9 @@
 @section Scripts
     {
     <script>
+
         $(document).ready(function () {
+            var selectedCourseId;
             $('#DepartmentId').change(function () {
                 var departmentId = $(this).val();
                 console.log("Selected Department ID: " + departmentId);
@@ -87,6 +89,9 @@
                             console.log("Course Data:", data);
                             $('#CourseId').append('<option value=' + data.courseId + '>' + data.courseCode + '</option>');
                         });
+                       // selectedCourseId = result[0].courseId;
+                        //var selectedValue = $(this).val();
+                        //console.log('Selected value: ' + selectedValue);
                     },
                     error: function () {
                         console.log("Error occurred");
@@ -142,17 +147,33 @@
                 });
             });
 
+             $('#CourseId').change(function () {
+                selectedCourseId = $(this).val();
+                console.log('Selected value: ' + selectedCourseId);
+            });
+
             $('#BatchId').change(function () {
                 var batchId = $(this).val();
                 console.log(batchId);
+
                 getStudentsByBatch(batchId);
             });
+            //$('#CourseId').change(function () {
+            //    var courseId = $(this).val();
+            //    console.log(courseId);
+            //    getStudentsByBatch(courseId);
+            //});
 
+            
             function getStudentsByBatch(batchId) {
+                console.log("++++++++++++++++++++++++++++++" + selectedCourseId)
                 $.ajax({
                     type: 'GET',
-                    url: '/CourseAssign/GetStudentsByBatch?selectedBatch=' + batchId,
-                    data: { batch: batchId },
+                    url: '/CourseAssign/GetStudentsByBatch',
+                    data: {
+                        selectedCourseId: selectedCourseId, // Pass the selected course ID
+                        batch: batchId // Pass the batch ID
+                    },
                     success: function (data) {
                         var studentList = $('#studentList');
                         studentList.empty();
@@ -196,6 +217,8 @@
                     }
                 });
             }
+
+            
 
             $('#submitStudentSelection').click(function () {
 
