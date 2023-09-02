@@ -1,0 +1,261 @@
+@font-face {
+  font-family: 'sumoeditor';
+  src:  url('fonts/sumoeditor.eot?fcu26t');
+  src:  url('fonts/sumoeditor.eot?fcu26t#iefix') format('embedded-opentype'),
+    url('fonts/sumoeditor.ttf?fcu26t') format('truetype'),
+    url('fonts/sumoeditor.woff?fcu26t') format('woff'),
+    url('fonts/sumoeditor.svg?fcu26t#sumoeditor') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="sico-"], [class*=" sico-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'sumoeditor' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sico-strike:before {
+  content: "\61";
+}
+.sico-quote:before {
+  content: "\62";
+}
+.sico-code:before {
+  content: "\63";
+}
+.sico-align-center:before {
+  content: "\64";
+}
+.sico-align-justify:before {
+  content: "\65";
+}
+.sico-align-left:before {
+  content: "\66";
+}
+.sico-align-right:before {
+  content: "\67";
+}
+.sico-bold:before {
+  content: "\68";
+}
+.sico-clean:before {
+  content: "\69";
+}
+.sico-background:before {
+  content: "\6a";
+}
+.sico-color-text:before {
+  content: "\6b";
+}
+.sico-indent:before {
+  content: "\6c";
+}
+.sico-unindent:before {
+  content: "\6d";
+}
+.sico-italic:before {
+  content: "\6e";
+}
+.sico-line-style:before {
+  content: "\6f";
+}
+.sico-ul:before {
+  content: "\70";
+}
+.sico-ol:before {
+  content: "\71";
+}
+.sico-sub:before {
+  content: "\72";
+}
+.sico-sup:before {
+  content: "\73";
+}
+.sico-underline:before {
+  content: "\74";
+}
+.sico-fullscreen:before {
+  content: "\75";
+}
+.sico-equation:before {
+  content: "\76";
+}
+.sico-image:before {
+  content: "\77";
+}
+.sico-link:before {
+  content: "\78";
+}
+.sico-down-arrow:before {
+  content: "\79";
+}
+.sico-omega:before {
+  content: "\7a";
+}
+.sico-redo:before {
+  content: "\41";
+}
+.sico-undo:before {
+  content: "\42";
+}
+.sico-video:before {
+  content: "\43";
+}
+
+/* ====== SUMOEDITOR STYLES ====== */
+.sumoeditor{position: relative;}
+.sumoeditor *{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+.sumoeditor .toolbar{
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+.sumoeditor .toolbar .grp{}
+.sumoeditor .toolbar button{
+    background: transparent;
+    border: none;
+    padding: 0px 4px;
+    font-size: 20px;
+    vertical-align: middle;
+    color: #444;
+}
+
+.sumoeditor .editor{
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 10px 20px;
+    min-height: 66px;
+    height: 100%;
+}
+
+.sumoeditor .editor.blank::before{
+    color: rgba(0,0,0,.6);
+    content: attr(placeholder);
+    font-style: italic;
+    pointer-events: none;
+    position: absolute;
+}
+
+/* modals */
+.sumo-modal{
+    position: absolute;
+    top: 80px;
+    left: 23px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid;
+    box-shadow: 0 1px 8px rgba(0,0,0,.2);
+    border-color: #ccc #ccc #cacaca;
+    font-size: 13px;
+    color: #444;
+}
+
+.sumo-modal p {position: relative;padding-left: 35px;margin-bottom: 6px;height: 25px;}
+
+.sumo-modal p > label{
+    position: absolute;
+    left: 0;
+    line-height: 25px;
+}
+.sumo-modal p span{
+    display: block;
+}
+.sumo-modal p ._lst{
+    padding-top: 4px;
+}
+.sumo-modal p span input[type="text"]{width: 100%;box-sizing: border-box;border-radius: 1px;border: 1px solid #d9d9d9;border-top: 1px solid #c0c0c0;font-size: 13px;height: 27px;padding: 1px 8px;}
+.sumo-modal p span input[type="text"]:focus{
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+    border: 1px solid #4d90fe;
+    outline: none;
+}
+
+.sumo-chbox{
+    position: relative;
+    line-height: 13px;
+    padding: 5px 0 0 22px;
+    display: block;
+    white-space: nowrap;
+}
+.sumo-chbox input{
+    display: none;
+}
+.sumo-chbox span {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    border-radius: 2px;
+    border: 1px solid #aaa;
+    width: 13px;
+    height: 13px;
+    display: block;
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.15);
+}
+.sumo-chbox input:checked + span{
+    background-color: #4d90fe;
+    border-color: #2175ff;
+    box-shadow: none;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAYAAAD+Bd/7AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAABMSURBVAiZfc0xDkAAFIPhd2Kr1WRjcAExuIgzGUTIZ/AkImjSofnbNBAfHvzAHjOKNzhiQ42IDFXCDivaaxAJd0xYshT3QqBxqnxeHvhunpu23xnmAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.sumo-modal input[type="submit"]{
+    position: absolute;
+    right: 0;
+    top: 2px;
+    padding: 5px 15px;
+    color: #fff;
+    background-color: #4d90fe;
+    border: 1px solid #3480ff;
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.sumo-modal .sumo_lnk{
+    color: #3480ff;
+    display: inline-block;
+    text-overflow: ellipsis;
+    max-width: 248px;
+    overflow: hidden;
+    text-decoration: none;
+}
+.sumo-modal .sumo_edit{display:inline;cursor: pointer;color: #3480ff;}
+.sumo-modal .sumo_remove{display:inline;color: #3480ff;cursor: pointer;}
+
+
+
+/* Content styling */
+.editor p {
+    margin-bottom: 10px;
+}
+.editor blockquote {
+    border-left: 4px solid #ccc;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-left: 15px;
+}
+.editor ol {
+    list-style-type: decimal;
+    margin: 1em 0;
+    padding-left: 40px;
+}
+.editor ul {
+    list-style-type: disc;
+    margin: 1em 0;
+    padding-left: 40px;
+}

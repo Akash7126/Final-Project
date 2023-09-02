@@ -7129,6 +7129,90 @@
       "PackagePath": "staticwebassets\\Admin\\plugins\\toastr\\toastr.min.js"
     },
     {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\.eslintrc",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\.eslintrc"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\.gitignore",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\.gitignore"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\README.md",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\README.md"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\demo\\editor_dev.html",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\demo\\editor_dev.html"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\demo\\icons.html",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\demo\\icons.html"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\demo\\index.html",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\demo\\index.html"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\demo\\jquery-1.10.2.min.js",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\demo\\jquery-1.10.2.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\demo\\jquery-3.2.1.slim.min.js",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\demo\\jquery-3.2.1.slim.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\demo\\style.css",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\demo\\style.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\dist\\easyeditor.css",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\dist\\easyeditor.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\dist\\jquery.sumoeditor.js",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\dist\\jquery.sumoeditor.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\dist\\jquery.sumoeditor.min.js",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\dist\\jquery.sumoeditor.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\package.json",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\package.json"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\src\\easyeditor.css",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\src\\easyeditor.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\src\\fonts\\icomoon.json",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\src\\fonts\\icomoon.json"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\src\\fonts\\sumoeditor.eot",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\src\\fonts\\sumoeditor.eot"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\src\\fonts\\sumoeditor.svg",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\src\\fonts\\sumoeditor.svg"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\src\\fonts\\sumoeditor.ttf",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\src\\fonts\\sumoeditor.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\src\\fonts\\sumoeditor.woff",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\src\\fonts\\sumoeditor.woff"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\src\\jquery.sumoeditor.js",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\src\\jquery.sumoeditor.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\src\\jquery.sumoeditor__.js",
+      "PackagePath": "staticwebassets\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\src\\jquery.sumoeditor__.js"
+    },
+    {
       "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -7539,6 +7623,650 @@
     {
       "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\font\\summernote.eot",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\font\\summernote.eot"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\font\\summernote.ttf",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\font\\summernote.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\font\\summernote.woff",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\font\\summernote.woff"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\font\\summernote.woff2",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\font\\summernote.woff2"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ar-AR.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ar-AR.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ar-AR.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ar-AR.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ar-AR.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ar-AR.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-az-AZ.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-az-AZ.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-az-AZ.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-az-AZ.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-az-AZ.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-az-AZ.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-bg-BG.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-bg-BG.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-bg-BG.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-bg-BG.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-bg-BG.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-bg-BG.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ca-ES.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ca-ES.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ca-ES.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ca-ES.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ca-ES.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ca-ES.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-cs-CZ.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-cs-CZ.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-cs-CZ.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-cs-CZ.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-cs-CZ.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-cs-CZ.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-da-DK.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-da-DK.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-da-DK.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-da-DK.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-da-DK.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-da-DK.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-de-DE.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-de-DE.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-de-DE.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-de-DE.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-de-DE.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-de-DE.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-el-GR.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-el-GR.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-el-GR.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-el-GR.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-el-GR.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-el-GR.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-es-ES.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-es-ES.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-es-ES.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-es-ES.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-es-ES.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-es-ES.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-es-EU.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-es-EU.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-es-EU.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-es-EU.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-es-EU.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-es-EU.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-fa-IR.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-fa-IR.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-fa-IR.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-fa-IR.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-fa-IR.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-fa-IR.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-fi-FI.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-fi-FI.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-fi-FI.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-fi-FI.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-fi-FI.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-fi-FI.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-fr-FR.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-fr-FR.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-fr-FR.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-fr-FR.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-fr-FR.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-fr-FR.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-gl-ES.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-gl-ES.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-gl-ES.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-gl-ES.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-gl-ES.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-gl-ES.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-he-IL.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-he-IL.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-he-IL.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-he-IL.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-he-IL.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-he-IL.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-hr-HR.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-hr-HR.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-hr-HR.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-hr-HR.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-hr-HR.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-hr-HR.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-hu-HU.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-hu-HU.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-hu-HU.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-hu-HU.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-hu-HU.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-hu-HU.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-id-ID.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-id-ID.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-id-ID.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-id-ID.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-id-ID.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-id-ID.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-it-IT.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-it-IT.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-it-IT.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-it-IT.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-it-IT.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-it-IT.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ja-JP.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ja-JP.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ja-JP.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ja-JP.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ja-JP.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ja-JP.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ko-KR.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ko-KR.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ko-KR.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ko-KR.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ko-KR.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ko-KR.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-lt-LT.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-lt-LT.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-lt-LT.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-lt-LT.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-lt-LT.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-lt-LT.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-lt-LV.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-lt-LV.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-lt-LV.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-lt-LV.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-lt-LV.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-lt-LV.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-mn-MN.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-mn-MN.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-mn-MN.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-mn-MN.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-mn-MN.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-mn-MN.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-nb-NO.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-nb-NO.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-nb-NO.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-nb-NO.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-nb-NO.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-nb-NO.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-nl-NL.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-nl-NL.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-nl-NL.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-nl-NL.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-nl-NL.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-nl-NL.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-pl-PL.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-pl-PL.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-pl-PL.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-pl-PL.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-pl-PL.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-pl-PL.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-pt-BR.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-pt-BR.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-pt-BR.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-pt-BR.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-pt-BR.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-pt-BR.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-pt-PT.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-pt-PT.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-pt-PT.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-pt-PT.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-pt-PT.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-pt-PT.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ro-RO.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ro-RO.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ro-RO.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ro-RO.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ro-RO.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ro-RO.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ru-RU.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ru-RU.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ru-RU.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ru-RU.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ru-RU.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ru-RU.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-sk-SK.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-sk-SK.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-sk-SK.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-sk-SK.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-sk-SK.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-sk-SK.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-sl-SI.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-sl-SI.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-sl-SI.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-sl-SI.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-sl-SI.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-sl-SI.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-sr-RS-Latin.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-sr-RS-Latin.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-sr-RS-Latin.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-sr-RS-Latin.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-sr-RS-Latin.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-sr-RS-Latin.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-sr-RS.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-sr-RS.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-sr-RS.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-sr-RS.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-sr-RS.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-sr-RS.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-sv-SE.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-sv-SE.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-sv-SE.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-sv-SE.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-sv-SE.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-sv-SE.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ta-IN.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ta-IN.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ta-IN.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ta-IN.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-ta-IN.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-ta-IN.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-th-TH.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-th-TH.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-th-TH.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-th-TH.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-th-TH.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-th-TH.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-tr-TR.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-tr-TR.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-tr-TR.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-tr-TR.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-tr-TR.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-tr-TR.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-uk-UA.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-uk-UA.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-uk-UA.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-uk-UA.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-uk-UA.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-uk-UA.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-uz-UZ.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-uz-UZ.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-uz-UZ.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-uz-UZ.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-uz-UZ.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-uz-UZ.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-vi-VN.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-vi-VN.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-vi-VN.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-vi-VN.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-vi-VN.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-vi-VN.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-zh-CN.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-zh-CN.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-zh-CN.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-zh-CN.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-zh-CN.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-zh-CN.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-zh-TW.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-zh-TW.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-zh-TW.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-zh-TW.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\lang\\summernote-zh-TW.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\lang\\summernote-zh-TW.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\plugin\\databasic\\summernote-ext-databasic.css",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\plugin\\databasic\\summernote-ext-databasic.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\plugin\\databasic\\summernote-ext-databasic.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\plugin\\databasic\\summernote-ext-databasic.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\plugin\\hello\\summernote-ext-hello.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\plugin\\hello\\summernote-ext-hello.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\plugin\\specialchars\\summernote-ext-specialchars.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\plugin\\specialchars\\summernote-ext-specialchars.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote-bs4.css",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote-bs4.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote-bs4.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote-bs4.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote-bs4.js.map",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote-bs4.js.map"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote-bs4.min.css",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote-bs4.min.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote-bs4.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote-bs4.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote-bs4.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote-bs4.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote-bs4.min.js.map",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote-bs4.min.js.map"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote-lite.css",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote-lite.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote-lite.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote-lite.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote-lite.js.map",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote-lite.js.map"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote-lite.min.css",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote-lite.min.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote-lite.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote-lite.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote-lite.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote-lite.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote-lite.min.js.map",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote-lite.min.js.map"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote.css",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote.js.map",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote.js.map"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote.min.css",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote.min.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote.min.js",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote.min.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote.min.js.LICENSE.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\summernote-0.8.18-dist\\summernote.min.js.map",
+      "PackagePath": "staticwebassets\\summernote-0.8.18-dist\\summernote.min.js.map"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Online_Exam_System.Microsoft.AspNetCore.StaticWebAssets.props",
