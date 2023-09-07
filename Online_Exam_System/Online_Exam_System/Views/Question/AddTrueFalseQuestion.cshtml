@@ -1,0 +1,123 @@
+﻿@{
+    ViewData["Title"] = "without bootstrap";
+    Layout = "_Layout"; // Specify the layout to use
+}
+<style>
+    .row.custom-dsn {
+        margin-left: 72px;
+    }
+
+    .custom-dsn2 {
+        margin-left: 155px;
+    }
+
+    input.correct-answer {
+        margin-left: 5px;
+    }
+
+    .custom-dsn3 {
+        margin-left: 565px;
+        padding-bottom: 20px;
+    }
+
+</style>
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Set True or False Answer Question</h3>
+    </div>
+    <form role="form">
+        <div class="card-body">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <textarea id="summernote" name="editordata"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <textarea id="summernote1" name="editordata"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <textarea id="summernote7" name="editordata"></textarea>
+                    </div>
+                </div>
+
+            </div>
+
+        <div class="col-md-3 justify-content-center custom-dsn3">
+            <button type="button" class="btn btn-block bg-gradient-success btn-lg">Save</button>
+        </div>
+    </form>
+
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#summernote').summernote({
+                placeholder: 'Hello stand alone ui',
+                tabsize: 2,
+                height: 120,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+            });
+        });
+
+        // Initialize the first Summernote editor
+        $(document).ready(function () {
+            $('#summernote1').summernote({
+                placeholder: 'Hello stand alone ui',
+                tabsize: 2,
+                height: 60,
+                toolbar: [['font', ['bold', 'underline', 'clear']]],
+                callbacks: {
+                    onInit: function () {
+                        // Add your custom footer content here
+                        var initialContent = '<p><b><input type="radio" class="correct-answer" name="answer"> True</b></p>';
+                        var $editor = $('#summernote1').next(); // Get the Summernote editor container
+                        $editor.append(initialContent);
+                    }
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $('#summernote7').summernote({
+                placeholder: 'Hello stand alone ui',
+                tabsize: 2,
+                height: 60,
+                toolbar: [
+                    ['font', ['bold', 'underline', 'clear']]
+
+                ],
+                //HTMLDivElement:'ddd'
+                callbacks: {
+                    onInit: function () {
+                        // Add your custom footer content here
+                        var initialContent1 = '<p><b><input type="radio" class="correct-answer" name="answer"> False</b></p>';
+                        var $editor = $('#summernote7').next(); // Get the Summernote editor container
+                        $editor.append(initialContent1);
+                    }
+                }
+            });
+
+        });
+        //Add event delegation to handle radio button selection
+        $(document).on('change', '.correct-answer', function () {
+            // Unselect all other radio buttons in all editors
+            $('.correct-answer').not(this).prop('checked', false);
+        });
+
+
+    </script>
+}
+

@@ -8,5 +8,15 @@ namespace Online_Exam_System.Controllers
         {
             return View();
         }
+
+        public IActionResult AddMultipleSelectQuestion()
+        {
+            return View();
+        }
+
+        public IActionResult AddTrueFalseQuestion()
+        {
+            return View();
+        }
     }
 }

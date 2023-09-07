@@ -1,6 +1,5 @@
 ﻿@model Online_Exam_System.ViewModel.CourseAssignViewModel
 
-
 <div class="col-md-12">
     <!-- general form elements -->
     <div class="card card-primary">
@@ -66,6 +65,7 @@
 </div>
 
 
+
 @section Scripts
     {
     <script>
@@ -75,6 +75,7 @@
             $('#DepartmentId').change(function () {
                 var departmentId = $(this).val();
                 console.log("Selected Department ID: " + departmentId);
+                console.log("eeeeee");
 
                 $('#CourseId').empty();
                 $('#CourseId').append('<option>--Select Course--</option>');
@@ -128,6 +129,7 @@
             $(document).ready(function () {
                 $('#DepartmentId').change(function () {
                     var departmentId = $(this).val();
+
                     console.log(departmentId);
                     $('#BatchId').empty();
                     $('#BatchId').append('<Option >--Select Batch--</Option>');
