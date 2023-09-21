@@ -20,12 +20,42 @@
         padding-bottom: 20px;
     }
 
+    button.btn.btn-block.btn-outline-info.btn-flat.button1 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+    }
 
+    .row1 {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -7.5px;
+        margin-left: -7.5px;
+        background-color: #cccfcf;
+    }
 </style>
 <div class="card card-primary">
     <div class="card-header">
         <h3 class="card-title">Set Multiple Answer Question</h3>
     </div>
+    <form role="form">
+        <div class="container">
+            <div class="row1">
+                <div class="col-md-2">
+                    <a asp-action="AddQestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Single Answer</button></a>
+                </div>
+                <div class="col-md-2">
+                    <a asp-action="AddMultipleSelectQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Multiple Answer</button></a>
+                </div>
+                <div class="col-md-2">
+                    <a asp-action="AddTrueFalseQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">True/False</button></a>
+                </div>
+            </div>
+        </div>
+
+    </form>
     <form role="form">
         <div class="card-body">
             <div class="row justify-content-center">
@@ -170,4 +200,5 @@
         });
 
     </script>
+ 
 }
