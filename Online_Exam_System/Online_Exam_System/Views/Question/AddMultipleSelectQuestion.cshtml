@@ -31,28 +31,29 @@
             <div class="row justify-content-center">
                 <div class="col-md-10">
                     <div class="form-group">
-                        <textarea id="summernote" name="editordata"></textarea>
+                        <textarea id="summernote100" name="editordata1"></textarea>
                     </div>
                 </div>
                 <div class="col-md-8">
                     <div class="form-group">
-                        <textarea id="summernote1" name="editordata"></textarea>
+                        <textarea id="summernote101" name="editordata1"></textarea>
                     </div>
                 </div>
                 <div class="col-md-8">
                     <div class="form-group">
-                        <textarea id="summernote7" name="editordata"></textarea>
+                        <textarea id="summernote700" name="editordata1"></textarea>
                     </div>
                 </div>
                
             </div>
             <div class="col-md-8 justify-content-center custom-dsn2">
-                <button type="button" id="addMoreSummernote" class="btn btn-block btn-outline-secondary">Add More</button>
+                <button type="button" id="addMoreSummernote1" class="btn btn-block btn-outline-secondary">Add More</button>
             </div>
         </div>
 
         <div class="col-md-3 justify-content-center custom-dsn3">
-            <button type="button" class="btn btn-block bg-gradient-success btn-lg">Save</button>
+            <a asp-action="QuestionBank" asp-controller="Question"><button type="button" class="btn btn-block bg-gradient-success btn-lg">Save</button></a>
+            
         </div>
     </form>
 
@@ -61,7 +62,7 @@
 @section Scripts {
     <script>
         $(document).ready(function () {
-            $('#summernote').summernote({
+            $('#summernote100').summernote({
                 placeholder: 'Hello stand alone ui',
                 tabsize: 2,
                 height: 120,
@@ -79,7 +80,7 @@
 
         // Initialize the first Summernote editor
         $(document).ready(function () {
-            $('#summernote1').summernote({
+            $('#summernote101').summernote({
                 placeholder: 'Hello stand alone ui',
                 tabsize: 2,
                 height: 60,
@@ -87,16 +88,16 @@
                 callbacks: {
                     onInit: function () {
                         // Add your custom footer content here
-                        var initialContent = '<p><b><input type="checkbox" class="correct-answer" name="answer"> Correct Answer</b></p>';
-                        var $editor = $('#summernote1').next(); // Get the Summernote editor container
-                        $editor.append(initialContent);
+                        var initialContent2 = '<p><b><input type="checkbox" class="correct-answer" name="answer"> Correct Answer</b></p>';
+                        var $editor1 = $('#summernote101').next(); // Get the Summernote editor container
+                        $editor1.append(initialContent2);
                     }
                 }
             });
         });
 
         $(document).ready(function () {
-            $('#summernote7').summernote({
+            $('#summernote700').summernote({
                 placeholder: 'Hello stand alone ui',
                 tabsize: 2,
                 height: 60,
@@ -108,21 +109,21 @@
                 callbacks: {
                     onInit: function () {
                         // Add your custom footer content here
-                        var initialContent1 = '<p><b><input type="checkbox" class="correct-answer" name="answer"> Correct Answer</b></p>';
-                        var $editor = $('#summernote7').next(); // Get the Summernote editor container
-                        $editor.append(initialContent1);
+                        var initialContent3 = '<p><b><input type="checkbox" class="correct-answer" name="answer"> Correct Answer</b></p>';
+                        var $editor1 = $('#summernote700').next(); // Get the Summernote editor container
+                        $editor1.append(initialContent3);
                     }
                 }
             });
 
         });
 
-        var summernoteCount = 1; // Initial count for Summernote editors
+        var summernoteCount1 = 1; // Initial count for Summernote editors
 
         // Function to add more Summernote editors
-        function addMoreSummernote() {
-            summernoteCount++; // Increment the count
-            if (summernoteCount > 4) {
+        function addMoreSummernote1() {
+            summernoteCount1++; // Increment the count
+            if (summernoteCount1 > 4) {
                 Swal.fire({
                     icon: 'error',
                     title: 'SORRY',
@@ -130,20 +131,20 @@
                 })
             }
             else {
-                console.log("-----------" + summernoteCount);
-                var newSummernoteId = "summernote" + summernoteCount; // Generate a unique ID for the new Summernote editor
+                console.log("-----------" + summernoteCount1);
+                var newSummernoteId1 = "summernote101" + summernoteCount1; // Generate a unique ID for the new Summernote editor
 
                 // Create a new Summernote textarea and append it to the container
-                var newSummernoteTextarea = '<div class="col-md-8">' +
+                var newSummernoteTextarea1 = '<div class="col-md-8">' +
                     '<div class="form-group">' +
-                    '<textarea id="' + newSummernoteId + '" name="editordata"></textarea>' +
+                    '<textarea id="' + newSummernoteId1 + '" name="editordata1"></textarea>' +
                     '</div>' +
                     '</div>';
 
-                $('.row.justify-content-center').append(newSummernoteTextarea);
+                $('.row.justify-content-center').append(newSummernoteTextarea1);
 
                 // Initialize the new Summernote editor
-                $('#' + newSummernoteId).summernote({
+                $('#' + newSummernoteId1).summernote({
                     placeholder: 'Hello stand alone ui',
                     tabsize: 2,
                     height: 60,
@@ -151,9 +152,9 @@
                     callbacks: {
                         onInit: function () {
                             // Add your custom footer content here
-                            var initialContent = '<p><b><input type="checkbox" class="correct-answer" name="answer"> Correct Answer</b></p>';
-                            var $editor = $('#' + newSummernoteId).next(); // Get the Summernote editor container
-                            $editor.append(initialContent);
+                            var initialContent2 = '<p><b><input type="checkbox" class="correct-answer" name="answer"> Correct Answer</b></p>';
+                            var $editor1 = $('#' + newSummernoteId1).next(); // Get the Summernote editor container
+                            $editor1.append(initialContent2);
                         }
                     }
                 });
@@ -163,14 +164,10 @@
         }
 
         // Add an event listener to the "Add More" button
-        $(document).on('click', '#addMoreSummernote', function () {
-            addMoreSummernote();
+        $(document).on('click', '#addMoreSummernote1', function () {
+            addMoreSummernote1();
 
         });
-        // Add event delegation to handle radio button selection
-        //$(document).on('change', '.correct-answer', function () {
-        //    // Unselect all other radio buttons in all editors
-        //    $('.correct-answer').not(this).prop('checked', false);
-        //});
+
     </script>
 }
