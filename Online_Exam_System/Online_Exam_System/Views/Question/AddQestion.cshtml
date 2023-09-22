@@ -1,7 +1,9 @@
-﻿@{
+﻿@model Online_Exam_System.Models.CourseAssign
+@{
     ViewData["Title"] = "without bootstrap";
     Layout = "_Layout"; // Specify the layout to use
 }
+
 <style>
     .row.custom-dsn {
         margin-left: 72px;
@@ -36,59 +38,80 @@
         background-color: #cccfcf;
     }
 
+    .card-primary1:not(.card-outline) > .card-header {
+        background-color: #5e7e75;
+    }
+
 </style>
-<div class="card card-primary">
+
+<div class="card card-primary1">
     <div class="card-header">
-        <h3 class="card-title">Set a Answer of a Question</h3>
+        <h3 class="card-title">Select Course</h3>
     </div>
-    <form role="form">
-        <div class="container">
-            <div class="row1">
-                <div class="col-md-2">
-                    <a asp-action="AddQestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Single Answer</button></a>
-                </div>
-                <div class="col-md-2">
-                    <a id="multipleAnswerButton" asp-action="AddMultipleSelectQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Multiple Answer</button></a>
-                </div>
-                <div class="col-md-2">
-                    <a asp-action="AddTrueFalseQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">True/False</button></a>
-                </div>
+    <div class="card-body">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="CourseId">Course</label>
+                <select class="form-control" asp-for="CourseId" asp-items="@(new SelectList(ViewBag.CourseAssigns,"CourseId","CourseCode"))">
+                    <option>Please select one</option>
+                </select>
             </div>
         </div>
-
-    </form>
-    <form role="form">
-        <div class="card-body">
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <div class="form-group">
-                        <textarea id="summernote" name="editordata"></textarea>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="form-group">
-                        <textarea id="summernote1" name="editordata"></textarea>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="form-group">
-                        <textarea id="summernote7" name="editordata"></textarea>
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Set a Answer of a Question</h3>
+            </div>
+            <form role="form">
+                <div class="container">
+                    <div class="row1">
+                        <div class="col-md-2">
+                            <a asp-action="AddQestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Single Answer</button></a>
+                        </div>
+                        <div class="col-md-2">
+                            <a id="multipleAnswerButton" asp-action="AddMultipleSelectQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Multiple Answer</button></a>
+                        </div>
+                        <div class="col-md-2">
+                            <a asp-action="AddTrueFalseQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">True/False</button></a>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-            <div class="col-md-8 justify-content-center custom-dsn2">
-                <button type="button" id="addMoreSummernote" class="btn btn-block btn-outline-secondary">Add More</button>
-            </div>
-        </div>
+            </form>
+            <form role="form">
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <textarea id="summernote" name="editordata"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <textarea id="summernote1" name="editordata"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <textarea id="summernote7" name="editordata"></textarea>
+                            </div>
+                        </div>
 
-        <div class="col-md-3 justify-content-center custom-dsn3">
-            <a asp-action="QuestionBank" asp-controller="Question"><button type="button" class="btn btn-block bg-gradient-success btn-lg">Save</button></a>
-            
-        </div>
-    </form>
+                    </div>
+                    <div class="col-md-8 justify-content-center custom-dsn2">
+                        <button type="button" id="addMoreSummernote" class="btn btn-block btn-outline-secondary">Add More</button>
+                    </div>
+                </div>
 
+                <div class="col-md-3 justify-content-center custom-dsn3">
+                    <a asp-action="QuestionBank" asp-controller="Question"><button type="button" class="btn btn-block bg-gradient-success btn-lg">Save</button></a>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
 </div>
+
 
 @section Scripts {
     <script>

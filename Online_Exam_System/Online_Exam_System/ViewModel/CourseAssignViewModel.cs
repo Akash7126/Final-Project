@@ -11,7 +11,6 @@ namespace Online_Exam_System.ViewModel
         public int TeacherId { get; set; }
         public int BatchId { get; set; }
         public List<int> StudentList { get; set; }
-        public List<int> CourseList { get; set; }
-        public List<int> BatchList { get; set; }
+       
     }
 }
