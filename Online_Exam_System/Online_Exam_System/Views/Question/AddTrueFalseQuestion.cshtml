@@ -41,42 +41,57 @@
         background-color: #5e7e75;
     }
 
+    .col-md-4.cutomize-data {
+        margin-left: 84px;
+    }
+
+    .form-group.group-1 {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        background-color: #cbd3db;
+        height: 40px;
+    }
+
+    .form-group.group-2 {
+        margin-top: 5px;
+        margin-bottom: 30px;
+        background-color: #cbd3db;
+        height: 40px;
+    }
+
 </style>
 
 <div class="card card-primary1">
-    <div class="card-header">
-        <h3 class="card-title">Select Course</h3>
-    </div>
-    <div class="card-body">
-        <div class="col-md-4">
-            <div class="form-group">
-                <label asp-for="CourseId">Course</label>
-                <select class="form-control" asp-for="CourseId" asp-items="@(new SelectList(ViewBag.CourseAssigns2,"CourseId","CourseCode"))">
-                    <option>Please select one</option>
-                </select>
-            </div>
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Set True or False Answer Question</h3>
         </div>
-        <div class="card card-primary">
-            <div class="card-header">
-                <h3 class="card-title">Set True or False Answer Question</h3>
-            </div>
-            <form role="form">
-                <div class="container">
-                    <div class="row1">
-                        <div class="col-md-2">
-                            <a asp-action="AddQestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Single Answer</button></a>
-                        </div>
-                        <div class="col-md-2">
-                            <a asp-action="AddMultipleSelectQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Multiple Answer</button></a>
-                        </div>
-                        <div class="col-md-2">
-                            <a asp-action="AddTrueFalseQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">True/False</button></a>
-                        </div>
+        <form role="form">
+            <div class="container">
+                <div class="row1">
+                    <div class="col-md-2">
+                        <a asp-action="AddQestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Single Answer</button></a>
+                    </div>
+                    <div class="col-md-2">
+                        <a asp-action="AddMultipleSelectQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Multiple Answer</button></a>
+                    </div>
+                    <div class="col-md-2">
+                        <a asp-action="AddTrueFalseQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">True/False</button></a>
                     </div>
                 </div>
+            </div>
 
-            </form>
-            <form role="form">
+        </form>
+        <form role="form">
+            <div class="card-body">
+                <div class="col-md-4 cutomize-data">
+                    <div class="form-group">
+                        <label asp-for="CourseId">Course</label>
+                        <select class="form-control" asp-for="CourseId" asp-items="@(new SelectList(ViewBag.CourseAssigns2,"CourseId","CourseCode"))">
+                            <option>Please select one</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="card-body">
                     <div class="row justify-content-center">
                         <div class="col-md-10">
@@ -85,26 +100,26 @@
                             </div>
                         </div>
                         <div class="col-md-8">
-                            <div class="form-group">
-                                <textarea id="summernote1" name="editordata"></textarea>
+                            <div class="form-group group-1">
+                                <input type="radio" class="correct-answer" name="answer"><b>True</b>
                             </div>
                         </div>
                         <div class="col-md-8">
-                            <div class="form-group">
-                                <textarea id="summernote7" name="editordata"></textarea>
+                            <div class="form-group group-2">
+                                <input type="radio" class="correct-answer" name="answer"><b>False</b>
                             </div>
                         </div>
 
                     </div>
 
                     <div class="col-md-3 justify-content-center custom-dsn3">
-                        <a asp-action="QuestionBank" asp-controller="Question"><button type="button" class="btn btn-block bg-gradient-success btn-lg">Save</button></a>
+                        <a asp-action="AddTrueFalseQuestion" asp-controller="Question"><button type="button" class="btn btn-block bg-gradient-success btn-lg">Save</button></a>
 
 
                     </div>
-            </form>
+                </div>
+        </form>
 
-        </div>
     </div>
 </div>
 
@@ -129,44 +144,44 @@
         });
 
         // Initialize the first Summernote editor
-        $(document).ready(function () {
-            $('#summernote1').summernote({
-                placeholder: 'Hello stand alone ui',
-                tabsize: 2,
-                height: 60,
-                toolbar: [['font', ['bold', 'underline', 'clear']]],
-                callbacks: {
-                    onInit: function () {
-                        // Add your custom footer content here
-                        var initialContent = '<p><b><input type="radio" class="correct-answer" name="answer"> True</b></p>';
-                        var $editor = $('#summernote1').next(); // Get the Summernote editor container
-                        $editor.append(initialContent);
-                    }
-                }
-            });
-        });
+        //$(document).ready(function () {
+        //    $('#summernote1').summernote({
+        //        placeholder: 'Hello stand alone ui',
+        //        tabsize: 2,
+        //        height: 60,
+        //        toolbar: [['font', ['bold', 'underline', 'clear']]],
+        //        callbacks: {
+        //            onInit: function () {
+        //                // Add your custom footer content here
+        //                var initialContent = '<p><b><input type="radio" class="correct-answer" name="answer"> True</b></p>';
+        //                var $editor = $('#summernote1').next(); // Get the Summernote editor container
+        //                $editor.append(initialContent);
+        //            }
+        //        }
+        //    });
+        //});
 
-        $(document).ready(function () {
-            $('#summernote7').summernote({
-                placeholder: 'Hello stand alone ui',
-                tabsize: 2,
-                height: 60,
-                toolbar: [
-                    ['font', ['bold', 'underline', 'clear']]
+        //$(document).ready(function () {
+        //    $('#summernote7').summernote({
+        //        placeholder: 'Hello stand alone ui',
+        //        tabsize: 2,
+        //        height: 60,
+        //        toolbar: [
+        //            ['font', ['bold', 'underline', 'clear']]
 
-                ],
-                //HTMLDivElement:'ddd'
-                callbacks: {
-                    onInit: function () {
-                        // Add your custom footer content here
-                        var initialContent1 = '<p><b><input type="radio" class="correct-answer" name="answer"> False</b></p>';
-                        var $editor = $('#summernote7').next(); // Get the Summernote editor container
-                        $editor.append(initialContent1);
-                    }
-                }
-            });
+        //        ],
+        //        //HTMLDivElement:'ddd'
+        //        callbacks: {
+        //            onInit: function () {
+        //                // Add your custom footer content here
+        //                var initialContent1 = '<p><b><input type="radio" class="correct-answer" name="answer"> False</b></p>';
+        //                var $editor = $('#summernote7').next(); // Get the Summernote editor container
+        //                $editor.append(initialContent1);
+        //            }
+        //        }
+        //    });
 
-        });
+        //});
         //Add event delegation to handle radio button selection
         $(document).on('change', '.correct-answer', function () {
             // Unselect all other radio buttons in all editors

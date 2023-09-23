@@ -1,4 +1,4 @@
-﻿@model Online_Exam_System.Models.CourseAssign
+﻿@model Online_Exam_System.ViewModel.QuestionAnsweViewModel
 @{
     ViewData["Title"] = "without bootstrap";
     Layout = "_Layout"; // Specify the layout to use
@@ -40,75 +40,113 @@
     .card-primary1:not(.card-outline) > .card-header {
         background-color: #5e7e75;
     }
+
+    .col-md-4.cutomize-data {
+        margin-left: 84px;
+    }
+
+    .form-group1 {
+        margin-bottom: 1rem;
+        background-color: #cbd3db;
+        margin-top: -17px;
+    }
 </style>
 
 
 
 <div class="card card-primary1">
-    <div class="card-header">
-        <h3 class="card-title">Select Course</h3>
-    </div>
-    <div class="card-body">
-        <div class="col-md-4">
-            <div class="form-group">
-                <label asp-for="CourseId">Course</label>
-                <select class="form-control" asp-for="CourseId" asp-items="@(new SelectList(ViewBag.CourseAssigns1,"CourseId","CourseCode"))">
-                    <option>Please select one</option>
-                </select>
-            </div>
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Set Multiple Answer Question</h3>
         </div>
-        <div class="card card-primary">
-            <div class="card-header">
-                <h3 class="card-title">Set Multiple Answer Question</h3>
-            </div>
-            <form role="form">
-                <div class="container">
-                    <div class="row1">
-                        <div class="col-md-2">
-                            <a asp-action="AddQestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Single Answer</button></a>
-                        </div>
-                        <div class="col-md-2">
-                            <a asp-action="AddMultipleSelectQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Multiple Answer</button></a>
-                        </div>
-                        <div class="col-md-2">
-                            <a asp-action="AddTrueFalseQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">True/False</button></a>
-                        </div>
+        <form role="form">
+            <div class="container">
+                <div class="row1">
+                    <div class="col-md-2">
+                        <a asp-action="AddQestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Single Answer</button></a>
+                    </div>
+                    <div class="col-md-2">
+                        <a asp-action="AddMultipleSelectQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Multiple Answer</button></a>
+                    </div>
+                    <div class="col-md-2">
+                        <a asp-action="AddTrueFalseQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">True/False</button></a>
                     </div>
                 </div>
+            </div>
 
-            </form>
-            <form role="form">
+        </form>
+        <form asp-controller="Question" asp-action="AddMultipleSelectQuestion" role="form" method="post" role="form">
+            <div class="card-body">
+                <div class="col-md-4 cutomize-data">
+                    <div class="form-group ">
+                        <label asp-for="CourseId">Course</label>
+                        <select class="form-control" asp-for="CourseId" asp-items="@(new SelectList(ViewBag.CourseAssigns1,"CourseId","CourseCode"))">
+                            <option>Please select one</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="card-body">
                     <div class="row justify-content-center">
                         <div class="col-md-10">
                             <div class="form-group">
-                                <textarea id="summernote100" name="editordata1"></textarea>
+                                <textarea asp-for="QuestionDescription" id="summernote100" name="QuestionDescription"></textarea>
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <textarea id="summernote101" name="editordata1"></textarea>
+                                <textarea asp-for="Question1" id="summernote101" name="Question1"></textarea>
+                            </div>
+                            <div class="form-group1">
+                                <input type="checkbox" asp-for="Question1Answer" class="correct-answer background" name="Question1Answer" value="true"><b> Correct Answer</b>
+@*                                <input type="checkbox" class="correct-answer" name="answer"><b> Correct Answer</b>
+*@                            </div>
+                            
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <textarea asp-for="Question7" id="summernote700" name="Question7"></textarea>
+                               @* <textarea id="summernote700" name="editordata1"></textarea>*@
+                            </div>
+                            <div class="form-group1">
+                                <input type="checkbox" asp-for="Question7Answer" class="correct-answer background" name="Question7Answer" value="true"><b> Correct Answer</b>
+                               @* <input type="checkbox" class="correct-answer" name="answer"><b> Correct Answer</b>*@
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <textarea id="summernote700" name="editordata1"></textarea>
+                                <textarea asp-for="Question2" id="summernote300" name="Question2"></textarea>
+                                @*<textarea id="summernote300" name="editordata1"></textarea>*@
+                            </div>
+                            <div class="form-group1">
+                                <input type="checkbox" asp-for="Question2Answer" class="correct-answer background" name="Question2Answer" value="true"><b> Correct Answer</b>
+                               @* <input type="checkbox" class="correct-answer" name="answer"><b> Correct Answer</b>*@
                             </div>
                         </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <textarea asp-for="Question3" id="summernote400" name="Question3"></textarea>
+                                @*<textarea id="summernote400" name="editordata1"></textarea>*@
+                            </div>
+                            <div class="form-group1">
+                                <input type="checkbox" asp-for="Question3Answer" class="correct-answer background" name="Question3Answer" value="true"><b> Correct Answer</b>
+                                @*<input type="checkbox" class="correct-answer" name="answer"><b> Correct Answer</b>*@
+                            </div>
+                        </div>
+                        <input type="hidden" asp-for="Question1Answer" name="Question1Answer" />
+                        <input type="hidden" asp-for="Question7Answer" name="Question7Answer" />
+                        <input type="hidden" asp-for="Question2Answer" name="Question2Answer" />
+                        <input type="hidden" asp-for="Question3Answer" name="Question3Answer" />
 
-                    </div>
-                    <div class="col-md-8 justify-content-center custom-dsn2">
-                        <button type="button" id="addMoreSummernote1" class="btn btn-block btn-outline-secondary">Add More</button>
                     </div>
                 </div>
 
                 <div class="col-md-3 justify-content-center custom-dsn3">
-                    <a asp-action="QuestionBank" asp-controller="Question"><button type="button" class="btn btn-block bg-gradient-success btn-lg">Save</button></a>
+                    <a ><button type="submit" class="btn btn-block bg-gradient-success btn-lg">Save</button></a>
 
                 </div>
-            </form>
+            </div>
+        </form>
 
-        </div>
     </div>
 </div>
 
@@ -142,7 +180,7 @@
                 callbacks: {
                     onInit: function () {
                         // Add your custom footer content here
-                        var initialContent2 = '<p><b><input type="checkbox" class="correct-answer" name="answer"> Correct Answer</b></p>';
+                        //var initialContent2 = '<p><b><input type="checkbox" class="correct-answer" name="answer"> Correct Answer</b></p>';
                         var $editor1 = $('#summernote101').next(); // Get the Summernote editor container
                         $editor1.append(initialContent2);
                     }
@@ -163,7 +201,7 @@
                 callbacks: {
                     onInit: function () {
                         // Add your custom footer content here
-                        var initialContent3 = '<p><b><input type="checkbox" class="correct-answer" name="answer"> Correct Answer</b></p>';
+                        //var initialContent3 = '<p><b><input type="checkbox" class="correct-answer" name="answer"> Correct Answer</b></p>';
                         var $editor1 = $('#summernote700').next(); // Get the Summernote editor container
                         $editor1.append(initialContent3);
                     }
@@ -172,50 +210,83 @@
 
         });
 
+        $(document).ready(function () {
+            $('#summernote300').summernote({
+                placeholder: 'Hello stand alone ui',
+                tabsize: 2,
+                height: 60,
+                toolbar: [['font', ['bold', 'underline', 'clear']]],
+                callbacks: {
+                    onInit: function () {
+                        // Add your custom footer content here
+                        //var initialContent2 = '<p><b><input type="checkbox" class="correct-answer" name="answer"> Correct Answer</b></p>';
+                        var $editor1 = $('#summernote300').next(); // Get the Summernote editor container
+                        $editor1.append(initialContent2);
+                    }
+                }
+            });
+        });
+        $(document).ready(function () {
+            $('#summernote400').summernote({
+                placeholder: 'Hello stand alone ui',
+                tabsize: 2,
+                height: 60,
+                toolbar: [['font', ['bold', 'underline', 'clear']]],
+                callbacks: {
+                    onInit: function () {
+                        // Add your custom footer content here
+                        //var initialContent2 = '<p><b><input type="checkbox" class="correct-answer" name="answer"> Correct Answer</b></p>';
+                        var $editor1 = $('#summernote400').next(); // Get the Summernote editor container
+                        $editor1.append(initialContent2);
+                    }
+                }
+            });
+        });
+
         var summernoteCount1 = 1; // Initial count for Summernote editors
 
         // Function to add more Summernote editors
-        function addMoreSummernote1() {
-            summernoteCount1++; // Increment the count
-            if (summernoteCount1 > 4) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'SORRY',
-                    text: 'You Can not Add more!',
-                })
-            }
-            else {
-                console.log("-----------" + summernoteCount1);
-                var newSummernoteId1 = "summernote101" + summernoteCount1; // Generate a unique ID for the new Summernote editor
+        //function addMoreSummernote1() {
+        //    summernoteCount1++; // Increment the count
+        //    if (summernoteCount1 > 4) {
+        //        Swal.fire({
+        //            icon: 'error',
+        //            title: 'SORRY',
+        //            text: 'You Can not Add more!',
+        //        })
+        //    }
+        //    else {
+        //        console.log("-----------" + summernoteCount1);
+        //        var newSummernoteId1 = "summernote101" + summernoteCount1; // Generate a unique ID for the new Summernote editor
 
-                // Create a new Summernote textarea and append it to the container
-                var newSummernoteTextarea1 = '<div class="col-md-8">' +
-                    '<div class="form-group">' +
-                    '<textarea id="' + newSummernoteId1 + '" name="editordata1"></textarea>' +
-                    '</div>' +
-                    '</div>';
+        //        // Create a new Summernote textarea and append it to the container
+        //        var newSummernoteTextarea1 = '<div class="col-md-8">' +
+        //            '<div class="form-group">' +
+        //            '<textarea id="' + newSummernoteId1 + '" name="editordata1"></textarea>' +
+        //            '</div>' +
+        //            '</div>';
 
-                $('.row.justify-content-center').append(newSummernoteTextarea1);
+        //        $('.row.justify-content-center').append(newSummernoteTextarea1);
 
-                // Initialize the new Summernote editor
-                $('#' + newSummernoteId1).summernote({
-                    placeholder: 'Hello stand alone ui',
-                    tabsize: 2,
-                    height: 60,
-                    toolbar: [['font', ['bold', 'underline', 'clear']]],
-                    callbacks: {
-                        onInit: function () {
-                            // Add your custom footer content here
-                            var initialContent2 = '<p><b><input type="checkbox" class="correct-answer" name="answer"> Correct Answer</b></p>';
-                            var $editor1 = $('#' + newSummernoteId1).next(); // Get the Summernote editor container
-                            $editor1.append(initialContent2);
-                        }
-                    }
-                });
-            }
+        //        // Initialize the new Summernote editor
+        //        $('#' + newSummernoteId1).summernote({
+        //            placeholder: 'Hello stand alone ui',
+        //            tabsize: 2,
+        //            height: 60,
+        //            toolbar: [['font', ['bold', 'underline', 'clear']]],
+        //            callbacks: {
+        //                onInit: function () {
+        //                    // Add your custom footer content here
+        //                    var initialContent2 = '<p><b><input type="checkbox" class="correct-answer" name="answer"> Correct Answer</b></p>';
+        //                    var $editor1 = $('#' + newSummernoteId1).next(); // Get the Summernote editor container
+        //                    $editor1.append(initialContent2);
+        //                }
+        //            }
+        //        });
+        //    }
 
 
-        }
+        //}
 
         // Add an event listener to the "Add More" button
         $(document).on('click', '#addMoreSummernote1', function () {
