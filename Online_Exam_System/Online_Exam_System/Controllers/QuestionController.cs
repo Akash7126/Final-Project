@@ -41,13 +41,15 @@ namespace Online_Exam_System.Controllers
         [HttpPost]
         public IActionResult AddQestion(QuestionAnsweViewModel question)
         {
-           
-           // answerList.Add(question.editordata1);
+            var courseAssingCourseid = _context.CourseAssigns.FirstOrDefault(s => s.CourseId == question.CourseId);
+            var  teacherId = courseAssingCourseid.TeacherId;
 
+           // answerList.Add(question.editordata1);
             var questionEntity = new Question();
             questionEntity.QuestionDescription = question.QuestionDescription;
 
-
+            questionEntity.CourseId= courseAssingCourseid.CourseId;
+            questionEntity.TeacherId= teacherId;
 
             var courseAssigns = (from courseAssign in _context.CourseAssigns
                                  join course in _context.Courses
@@ -60,9 +62,9 @@ namespace Online_Exam_System.Controllers
             var answerList = new List<Answer>();
 
             var answer1 = new Answer();
-            answer1.AnswerText = question.editordata1;
+            answer1.AnswerText = question.Question1;
 
-            if (question.editordata1Answer != null)
+            if (question.Question1Answer != null)
             {
                 answer1.IsCorrect = true;
             }
@@ -73,9 +75,9 @@ namespace Online_Exam_System.Controllers
             answer1.QuestionId = questionEntity.QuestionId;
 
             var answer7 = new Answer();
-            answer7.AnswerText = question.editordata7;
+            answer7.AnswerText = question.Question7;
 
-            if (question.editordata7Answer != null)
+            if (question.Question7Answer != null)
             {
                 answer7.IsCorrect = true;
             }
@@ -86,9 +88,9 @@ namespace Online_Exam_System.Controllers
             answer7.QuestionId = questionEntity.QuestionId;
 
             var answer2 = new Answer();
-            answer2.AnswerText = question.editordata2;
+            answer2.AnswerText = question.Question2;
 
-            if (question.editordata2Answer != null)
+            if (question.Question2Answer != null)
             {
                 answer2.IsCorrect = true;
             }
@@ -100,8 +102,8 @@ namespace Online_Exam_System.Controllers
             answer2.QuestionId = questionEntity.QuestionId;
 
             var answer3 = new Answer();
-            answer3.AnswerText = question.editordata3;
-            if (question.editordata3Answer != null)
+            answer3.AnswerText = question.Question3;
+            if (question.Question3Answer != null)
             {
                 answer3.IsCorrect = true;
             }

@@ -95,49 +95,49 @@
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <textarea asp-for="editordata1" id="summernote1" name="editordata1"></textarea>
+                                <textarea asp-for="Question1" id="summernote1" name="Question1"></textarea>
                             </div>
                             <div class="form-group1">
-                                <input type="radio" asp-for="editordata1Answer" class="correct-answer background" name="editordata1Answer" value="editordata1Answer"><b> Correct Answer</b>
+                                <input type="radio" asp-for="Question1Answer" class="correct-answer background" name="Question1Answer" value="Question1Answer"><b> Correct Answer</b>
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <textarea asp-for="editordata7" id="summernote7" name="editordata7"></textarea>
+                                <textarea asp-for="Question7" id="summernote7" name="Question7"></textarea>
                             </div>
                             <div class="form-group1">
-                                <input type="radio" asp-for="editordata7Answer" class="correct-answer" name="editordata7Answer" value="editordata7Answer"><b> Correct Answer</b>
+                                <input type="radio" asp-for="Question7Answer" class="correct-answer" name="Question7Answer" value="Question7Answer"><b> Correct Answer</b>
 
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <textarea asp-for="editordata2" id="summernote2" name="editordata2"></textarea>
+                                <textarea asp-for="Question2" id="summernote2" name="Question2"></textarea>
                             </div>
                             <div class="form-group1">
-                                <input type="radio" asp-for="editordata2Answer" class="correct-answer" name="editordata2Answer" value="editordata2Answer"><b> Correct Answer</b>
+                                <input type="radio" asp-for="Question2Answer" class="correct-answer" name="Question2Answer" value="Question2Answer"><b> Correct Answer</b>
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <textarea asp-for="editordata3" id="summernote3" name="editordata3"></textarea>
+                                <textarea asp-for="Question3" id="summernote3" name="Question3"></textarea>
                             </div>
                             <div class="form-group1">
-                                <input type="radio" asp-for="editordata3Answer" class="correct-answer" name="editordata3Answer" value="editordata3Answer"><b> Correct Answer</b>
+                                <input type="radio" asp-for="Question3Answer" class="correct-answer" name="Question3Answer" value="Question3Answer"><b> Correct Answer</b>
                             </div>
 
                         </div>
-                        <input type="hidden" asp-for="editordata1Answer" name="editordata1Answer" />
-                        <input type="hidden" asp-for="editordata7Answer" name="editordata7Answer" />
-                        <input type="hidden" asp-for="editordata2Answer" name="editordata2Answer" />
-                        <input type="hidden" asp-for="editordata3Answer" name="editordata3Answer" />
+                        <input type="hidden" asp-for="Question1Answer" name="Question1Answer" />
+                        <input type="hidden" asp-for="Question7Answer" name="Question7Answer" />
+                        <input type="hidden" asp-for="Question2Answer" name="Question2Answer" />
+                        <input type="hidden" asp-for="Question3Answer" name="Question3Answer" />
 
                     </div>
                     
                 </div>
 
                 <div class="col-md-3 justify-content-center custom-dsn3">
-                    <a><button  type="submit" class="btn btn-block bg-gradient-success btn-lg">Save</button></a>
+                    <a><button id="getDataButton" type="submit" class="btn btn-block bg-gradient-success btn-lg">Save</button></a>
                 </div>
             </div>
             </form>
@@ -299,8 +299,6 @@
         //        console.log('Checked Value: ' + checkedValue);
         //    }
         //});
-
-
     </script>
 
     
