@@ -17,11 +17,13 @@ namespace Online_Exam_System.Models
         }
 
         public virtual DbSet<Addministrator> Addministrators { get; set; } = null!;
+        public virtual DbSet<Answer> Answers { get; set; } = null!;
         public virtual DbSet<Batch> Batches { get; set; } = null!;
         public virtual DbSet<Course> Courses { get; set; } = null!;
         public virtual DbSet<CourseAssign> CourseAssigns { get; set; } = null!;
         public virtual DbSet<Department> Departments { get; set; } = null!;
         public virtual DbSet<DepartmentBatch> DepartmentBatches { get; set; } = null!;
+        public virtual DbSet<Question> Questions { get; set; } = null!;
         public virtual DbSet<Student> Students { get; set; } = null!;
         public virtual DbSet<StudentRegistration> StudentRegistrations { get; set; } = null!;
         public virtual DbSet<Teacher> Teachers { get; set; } = null!;
@@ -30,7 +32,7 @@ namespace Online_Exam_System.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Server=DESKTOP-6HNPJJ7\\SQLEXPRESS;Database=OnlineExamSystem;Trusted_Connection=True;");
             }
         }
@@ -44,6 +46,16 @@ namespace Online_Exam_System.Models
                 entity.ToTable("addministrator");
 
                 entity.Property(e => e.Password).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<Answer>(entity =>
+            {
+                entity.ToTable("Answer");
+
+                entity.HasOne(d => d.Question)
+                    .WithMany(p => p.Answers)
+                    .HasForeignKey(d => d.QuestionId)
+                    .HasConstraintName("FK_Answer_Question");
             });
 
             modelBuilder.Entity<Batch>(entity =>
@@ -109,6 +121,13 @@ namespace Online_Exam_System.Models
                     .HasForeignKey(d => d.DepartmentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_DepartmentBatch_Department");
+            });
+
+            modelBuilder.Entity<Question>(entity =>
+            {
+                entity.ToTable("Question");
+
+                entity.Property(e => e.Mark).HasColumnType("decimal(18, 0)");
             });
 
             modelBuilder.Entity<Student>(entity =>
