@@ -9,6 +9,8 @@ namespace Online_Exam_System.Controllers
     public class QuestionController : Controller
     {
         private readonly OnlineExamSystemContext _context;
+        private int masterCourseId;
+        //   private int courseId;
         public QuestionController(OnlineExamSystemContext context)
         {
             _context = context;
@@ -27,20 +29,27 @@ namespace Online_Exam_System.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult AddQestion()
-        {
+        public IActionResult AddQestion(int courseId)
+         {
+
             var courseAssigns = (from courseAssign in _context.CourseAssigns
                                  join course in _context.Courses
                                  on courseAssign.CourseId equals course.CourseId
                                  select new { course.CourseId, course.CourseCode }).Distinct().ToList();
-            
+            //if(courseAssigns.C)
             ViewBag.CourseAssigns = courseAssigns;
-            return View();
+           
+            
+            var model = new QuestionAnsweViewModel();
+            
+            return View(model);
         }
 
         [HttpPost]
         public IActionResult AddQestion(QuestionAnsweViewModel question)
         {
+          //  courseId = question.CourseId;
+
             var courseAssingCourseid = _context.CourseAssigns.FirstOrDefault(s => s.CourseId == question.CourseId);
             var  teacherId = courseAssingCourseid.TeacherId;
 
@@ -48,8 +57,10 @@ namespace Online_Exam_System.Controllers
             var questionEntity = new Question();
             questionEntity.QuestionDescription = question.QuestionDescription;
 
-            questionEntity.CourseId= courseAssingCourseid.CourseId;
+            questionEntity.CourseId= question.CourseId;
             questionEntity.TeacherId= teacherId;
+            questionEntity.Mark=question.Mark;
+            questionEntity.QuestionTypeId = 1;
 
             var courseAssigns = (from courseAssign in _context.CourseAssigns
                                  join course in _context.Courses
@@ -120,20 +131,29 @@ namespace Online_Exam_System.Controllers
 
             _context.Answers.AddRange(answerList);
             _context.SaveChanges();
-            return View();
+
+            string currentUrl = HttpContext.Request.Path.ToString() + "?courseId=" + question.CourseId;
+
+            masterCourseId = question.CourseId;
+
+            return Redirect(currentUrl);
+            
         }
 
-
-        public IActionResult AddMultipleSelectQuestion()
+     
+        [HttpGet]
+        public IActionResult AddMultipleSelectQuestion(int courseId)
         {
             var courseAssigns1 = (from courseAssign in _context.CourseAssigns
                                  join course in _context.Courses
                                  on courseAssign.CourseId equals course.CourseId
                                  select new { course.CourseId, course.CourseCode }).Distinct().ToList();
             ViewBag.CourseAssigns1 = courseAssigns1;
-            return View();
+            var model = new QuestionAnsweViewModel();
+            return View(model);
             
         }
+       
         [HttpPost]
         public IActionResult AddMultipleSelectQuestion(QuestionAnsweViewModel question)
         {
@@ -146,6 +166,8 @@ namespace Online_Exam_System.Controllers
 
             questionEntity1.CourseId = courseAssingCourseid1.CourseId;
             questionEntity1.TeacherId = teacherId;
+            questionEntity1.Mark = question.Mark;
+            questionEntity1.QuestionTypeId = 2;
 
             var courseAssigns1 = (from courseAssign in _context.CourseAssigns
                                   join course in _context.Courses
@@ -216,17 +238,98 @@ namespace Online_Exam_System.Controllers
 
             _context.Answers.AddRange(answerList);
             _context.SaveChanges();
-            return View();
+            string currentUrl = HttpContext.Request.Path.ToString() + "?courseId=" + question.CourseId;
+
+            masterCourseId = question.CourseId;
+            return Redirect(currentUrl);
         }
 
-        public IActionResult AddTrueFalseQuestion()
+        public IActionResult AddTrueFalseQuestion(int courseId)
         {
             var courseAssigns2 = (from courseAssign in _context.CourseAssigns
                                  join course in _context.Courses
                                  on courseAssign.CourseId equals course.CourseId
                                  select new { course.CourseId, course.CourseCode }).Distinct().ToList();
             ViewBag.CourseAssigns2 = courseAssigns2;
-            return View();
+            var model = new QuestionAnsweViewModel();
+            return View(model);
         }
+
+        [HttpPost]
+        public IActionResult AddTrueFalseQuestion(QuestionAnsweViewModel question)
+        {
+            var courseAssingCourseid1 = _context.CourseAssigns.FirstOrDefault(s => s.CourseId == question.CourseId);
+            var teacherId = courseAssingCourseid1.TeacherId;
+
+            // answerList.Add(question.editordata1);
+            var questionEntity1 = new Question();
+            questionEntity1.QuestionDescription = question.QuestionDescription;
+
+            questionEntity1.CourseId = courseAssingCourseid1.CourseId;
+            questionEntity1.TeacherId = teacherId;
+            questionEntity1.Mark = question.Mark;
+            questionEntity1.QuestionTypeId = 3;
+
+            var courseAssigns2 = (from courseAssign in _context.CourseAssigns
+                                  join course in _context.Courses
+                                  on courseAssign.CourseId equals course.CourseId
+                                  select new { course.CourseId, course.CourseCode }).Distinct().ToList();
+            ViewBag.CourseAssigns2 = courseAssigns2;
+            _context.Questions.Add(questionEntity1);
+            _context.SaveChanges();
+
+
+            var answerList = new List<Answer>();
+            var answer1 = new Answer();
+            answer1.AnswerText = question.Question1;
+            ////////////////////////////////////////////////////////
+            if (question.Question1Answer != null)
+            {
+                answer1.IsCorrect = true;
+            }
+            else
+            {
+                answer1.IsCorrect = false;
+            }
+            answer1.QuestionId = questionEntity1.QuestionId;
+
+            var answer2 = new Answer();
+            answer2.AnswerText = question.Question2;
+
+            if (question.Question2Answer != null)
+            {
+                answer2.IsCorrect = true;
+            }
+            else
+            {
+                answer2.IsCorrect = false;
+            }
+            answer2.QuestionId = questionEntity1.QuestionId;
+
+            answerList.Add(answer1);
+            answerList.Add(answer2);
+            _context.Answers.AddRange(answerList);
+            _context.SaveChanges();
+
+            string currentUrl = HttpContext.Request.Path.ToString() + "?courseId=" + question.CourseId;
+
+            masterCourseId = question.CourseId;
+            return Redirect(currentUrl);
+        }
+
+        //public IActionResult DisplayQuestionWithAnswers(int questionId)
+        //{
+        //    var question = _context.Questions.FirstOrDefault(q => q.QuestionId == questionId);
+        //    var answers = _context.Answers.Where(a => a.QuestionId == questionId).ToList();
+
+        //    var viewModel = new QuestionAnsweViewModel
+        //    {
+        //        Question = question,
+        //        Answers = answers
+        //    };
+
+            
+        //}
+
     }
 }

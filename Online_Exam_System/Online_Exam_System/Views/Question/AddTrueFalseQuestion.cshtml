@@ -1,4 +1,4 @@
-﻿@model Online_Exam_System.Models.CourseAssign
+﻿@model Online_Exam_System.ViewModel.QuestionAnsweViewModel
 @{
     ViewData["Title"] = "without bootstrap";
     Layout = "_Layout"; // Specify the layout to use
@@ -47,16 +47,19 @@
 
     .form-group.group-1 {
         margin-top: 20px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         background-color: #cbd3db;
-        height: 40px;
     }
 
     .form-group.group-2 {
         margin-top: 5px;
         margin-bottom: 30px;
         background-color: #cbd3db;
-        height: 40px;
+    }
+
+    .col-md-4.cutomize-data {
+        margin-left: 84px;
+        margin-right: 372px;
     }
 
 </style>
@@ -66,58 +69,74 @@
         <div class="card-header">
             <h3 class="card-title">Set True or False Answer Question</h3>
         </div>
-        <form role="form">
+       
+        <form asp-controller="Question" asp-action="AddTrueFalseQuestion" role="form" method="post">
             <div class="container">
                 <div class="row1">
                     <div class="col-md-2">
-                        <a asp-action="AddQestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Single Answer</button></a>
+                        <a id="SingleAnswerButton" asp-action="AddQestion" asp-route-id="@Model.CourseId">
+                            <button type="button" class="btn btn-block btn-outline-info btn-flat button1">Single Answer</button>
+                        </a>
                     </div>
                     <div class="col-md-2">
-                        <a asp-action="AddMultipleSelectQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Multiple Answer</button></a>
+                        <a id="multipleAnswerButton" asp-action="AddMultipleSelectQuestion" asp-route-id="@Model.CourseId">
+                            <button type="button" class="btn btn-block btn-outline-info btn-flat button1">Multiple Answer</button>
+                        </a>
                     </div>
                     <div class="col-md-2">
-                        <a asp-action="AddTrueFalseQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">True/False</button></a>
+                        <a id="trueFalseAnswerButton" asp-action="AddTrueFalseQuestion" asp-route-id="@Model.CourseId">
+                            <button type="button" class="btn btn-block btn-outline-info btn-flat button1">True/False</button>
+                        </a>
                     </div>
                 </div>
             </div>
-
-        </form>
-        <form role="form">
             <div class="card-body">
-                <div class="col-md-4 cutomize-data">
-                    <div class="form-group">
-                        <label asp-for="CourseId">Course</label>
-                        <select class="form-control" asp-for="CourseId" asp-items="@(new SelectList(ViewBag.CourseAssigns2,"CourseId","CourseCode"))">
-                            <option>Please select one</option>
-                        </select>
+                <div class="row">
+                    <div class="col-md-4 cutomize-data">
+                        <div class="form-group">
+                            <label asp-for="CourseId">Course</label>
+                            <select id="courseDropdown" class="form-control" asp-for="CourseId" asp-items="@(new SelectList(ViewBag.CourseAssigns2,"CourseId","CourseCode"))">
+                                    <option>Please select one</option>
+                                </select>
+                        </div>
                     </div>
+                    <div class="col-md-1 customize-data1">
+                        <div class="form-group">
+                            <label asp-for="Mark">Mark</label>
+                            <input asp-for="Mark" type="text" class="form-control" placeholder="mark">
+                        </div>
+
+                    </div>
+
                 </div>
+
+                
                 <div class="card-body">
                     <div class="row justify-content-center">
                         <div class="col-md-10">
                             <div class="form-group">
-                                <textarea id="summernote" name="editordata"></textarea>
+                                <textarea asp-for="QuestionDescription" id="summernote" name="QuestionDescription"></textarea>
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="form-group group-1">
-                                <input type="radio" class="correct-answer" name="answer"><b>True</b>
+                                <input type="radio" asp-for="Question1Answer" class="correct-answer background" name="Question1Answer" value="true"><b> True</b>
+                                @*<input type="radio" class="correct-answer" name="answer"><b>True</b>*@
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="form-group group-2">
-                                <input type="radio" class="correct-answer" name="answer"><b>False</b>
+                                <input type="radio" asp-for="Question2Answer" class="correct-answer background" name="Question2Answer" value="true"><b> False</b>
                             </div>
                         </div>
 
                     </div>
 
                     <div class="col-md-3 justify-content-center custom-dsn3">
-                        <a asp-action="AddTrueFalseQuestion" asp-controller="Question"><button type="button" class="btn btn-block bg-gradient-success btn-lg">Save</button></a>
-
-
+                        <a><button type="submit" class="btn btn-block bg-gradient-success btn-lg">Save</button></a>
                     </div>
                 </div>
+            </div>
         </form>
 
     </div>
@@ -143,52 +162,49 @@
             });
         });
 
-        // Initialize the first Summernote editor
-        //$(document).ready(function () {
-        //    $('#summernote1').summernote({
-        //        placeholder: 'Hello stand alone ui',
-        //        tabsize: 2,
-        //        height: 60,
-        //        toolbar: [['font', ['bold', 'underline', 'clear']]],
-        //        callbacks: {
-        //            onInit: function () {
-        //                // Add your custom footer content here
-        //                var initialContent = '<p><b><input type="radio" class="correct-answer" name="answer"> True</b></p>';
-        //                var $editor = $('#summernote1').next(); // Get the Summernote editor container
-        //                $editor.append(initialContent);
-        //            }
-        //        }
-        //    });
-        //});
-
-        //$(document).ready(function () {
-        //    $('#summernote7').summernote({
-        //        placeholder: 'Hello stand alone ui',
-        //        tabsize: 2,
-        //        height: 60,
-        //        toolbar: [
-        //            ['font', ['bold', 'underline', 'clear']]
-
-        //        ],
-        //        //HTMLDivElement:'ddd'
-        //        callbacks: {
-        //            onInit: function () {
-        //                // Add your custom footer content here
-        //                var initialContent1 = '<p><b><input type="radio" class="correct-answer" name="answer"> False</b></p>';
-        //                var $editor = $('#summernote7').next(); // Get the Summernote editor container
-        //                $editor.append(initialContent1);
-        //            }
-        //        }
-        //    });
-
-        //});
-        //Add event delegation to handle radio button selection
+        
         $(document).on('change', '.correct-answer', function () {
             // Unselect all other radio buttons in all editors
             $('.correct-answer').not(this).prop('checked', false);
         });
 
 
+    </script>
+
+    <script>
+        // Add click event handlers for the buttons
+        $('#SingleAnswerButton').click(function (e) {
+            var courseId = $('#courseDropdown').val(); // Get the selected Course ID
+            if (!courseId) {
+                e.preventDefault();
+                alert('Please select a Course');
+            } else {
+                // Update the href attribute of the button with the selected Course ID
+                $(this).attr('href', $(this).attr('href') + '?courseId=' + courseId);
+            }
+        });
+
+        $('#multipleAnswerButton').click(function (e) {
+            var courseId = $('#courseDropdown').val(); // Get the selected Course ID
+            if (!courseId) {
+                e.preventDefault();
+                alert('Please select a Course');
+            } else {
+                // Update the href attribute of the button with the selected Course ID
+                $(this).attr('href', $(this).attr('href') + '?courseId=' + courseId);
+            }
+        });
+
+        $('#trueFalseAnswerButton').click(function (e) {
+            var courseId = $('#courseDropdown').val(); // Get the selected Course ID
+            if (!courseId) {
+                e.preventDefault();
+                alert('Please select a Course');
+            } else {
+                // Update the href attribute of the button with the selected Course ID
+                $(this).attr('href', $(this).attr('href') + '?courseId=' + courseId);
+            }
+        });
     </script>
 }
 

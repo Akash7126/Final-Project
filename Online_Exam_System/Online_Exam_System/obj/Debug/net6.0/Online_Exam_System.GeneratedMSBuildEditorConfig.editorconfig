@@ -72,6 +72,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cQWRkVHJ1ZUZhbHNlUXVlc3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Question/DisplayQuestionWithAnswers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cRGlzcGxheVF1ZXN0aW9uV2l0aEFuc3dlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Question/QuestionBank.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cUXVlc3Rpb25CYW5rLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

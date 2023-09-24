@@ -43,6 +43,7 @@
 
     .col-md-4.cutomize-data {
         margin-left: 84px;
+        margin-right: 372px;
     }
 
     .form-group1 {
@@ -59,30 +60,66 @@
         <div class="card-header">
             <h3 class="card-title">Set Multiple Answer Question</h3>
         </div>
-        <form role="form">
+        <form asp-controller="Question" asp-action="AddMultipleSelectQuestion" role="form">
             <div class="container">
                 <div class="row1">
                     <div class="col-md-2">
-                        <a asp-action="AddQestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Single Answer</button></a>
+                        <a id="SingleAnswerButton" asp-action="AddQestion" asp-route-id="@Model.CourseId">
+                            <button type="button" class="btn btn-block btn-outline-info btn-flat button1">Single Answer</button>
+                        </a>
+                        @*<a asp-action="AddQestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Single Answer</button></a>*@
                     </div>
                     <div class="col-md-2">
-                        <a asp-action="AddMultipleSelectQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Multiple Answer</button></a>
+                        <a id="multipleAnswerButton" asp-action="AddMultipleSelectQuestion" asp-route-id="@Model.CourseId">
+                            <button type="button" class="btn btn-block btn-outline-info btn-flat button1">Multiple Answer</button>
+                        </a>
                     </div>
                     <div class="col-md-2">
-                        <a asp-action="AddTrueFalseQuestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">True/False</button></a>
+                        <a id="trueFalseAnswerButton" asp-action="AddTrueFalseQuestion" asp-route-id="@Model.CourseId">
+                            <button type="button" class="btn btn-block btn-outline-info btn-flat button1">True/False</button>
+                        </a>
                     </div>
                 </div>
             </div>
-
         </form>
+     
         <form asp-controller="Question" asp-action="AddMultipleSelectQuestion" role="form" method="post" role="form">
+            @*<div class="container">
+                <div class="row1">
+                    <div class="col-md-2">
+                        <a id="SingleAnswerButton" asp-action="AddQestion" asp-route-id="@Model.CourseId">
+                            <button type="button" class="btn btn-block btn-outline-info btn-flat button1">Single Answer</button>
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a id="multipleAnswerButton" asp-action="AddMultipleSelectQuestion" asp-route-id="@Model.CourseId">
+                            <button type="button" class="btn btn-block btn-outline-info btn-flat button1">Multiple Answer</button>
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a id="trueFalseAnswerButton" asp-action="AddTrueFalseQuestion" asp-route-id="@Model.CourseId">
+                            <button type="button" class="btn btn-block btn-outline-info btn-flat button1">True/False</button>
+                        </a>
+                    </div>
+                </div>
+            </div>*@
             <div class="card-body">
-                <div class="col-md-4 cutomize-data">
-                    <div class="form-group ">
-                        <label asp-for="CourseId">Course</label>
-                        <select class="form-control" asp-for="CourseId" asp-items="@(new SelectList(ViewBag.CourseAssigns1,"CourseId","CourseCode"))">
-                            <option>Please select one</option>
-                        </select>
+                <div class="row">
+                    <div class="col-md-4 cutomize-data">
+                        <div class="form-group ">
+                            <label asp-for="CourseId">Course</label>
+                            <select id="courseDropdown" class="form-control" asp-for="CourseId" asp-items="@(new SelectList(ViewBag.CourseAssigns1,"CourseId","CourseCode"))">
+                                <option>Please select one</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-1 customize-data1">
+                        <div class="form-group">
+                            <label asp-for="Mark">Mark</label>
+                            <input asp-for="Mark" type="text" class="form-control" placeholder="mark">
+                        </div>
+
                     </div>
                 </div>
                 <div class="card-body">
@@ -152,6 +189,7 @@
 
 
 @section Scripts {
+ 
     <script>
         $(document).ready(function () {
             $('#summernote100').summernote({
@@ -295,5 +333,47 @@
         });
 
     </script>
+
+
+
+    <script>
+        // Add click event handlers for the buttons
+        $('#SingleAnswerButton').click(function (e) {
+            var courseId = $('#courseDropdown').val();
+            console.log("single ans==========" + courseId)// Get the selected Course ID
+            if (!courseId) {
+                e.preventDefault();
+                alert('Please select a Course');
+            } else {
+                // Update the href attribute of the button with the selected Course ID
+                $(this).attr('href', $(this).attr('href') + '?courseId=' + courseId);
+            }
+        });
+
+        $('#multipleAnswerButton').click(function (e) {
+            var courseId = $('#courseDropdown').val(); // Get the selected Course ID
+            console.log("multiple ans==========" +courseId)
+            if (!courseId) {
+                e.preventDefault();
+                alert('Please select a Course');
+            } else {
+                // Update the href attribute of the button with the selected Course ID
+                $(this).attr('href', $(this).attr('href') + '?courseId=' + courseId);
+            }
+        });
+
+        $('#trueFalseAnswerButton').click(function (e) {
+            var courseId = $('#courseDropdown').val(); // Get the selected Course ID
+            if (!courseId) {
+                e.preventDefault();
+                alert('Please select a Course');
+            } else {
+                // Update the href attribute of the button with the selected Course ID
+                $(this).attr('href', $(this).attr('href') + '?courseId=' + courseId);
+            }
+        });
+    </script>
+
+
  
 }
