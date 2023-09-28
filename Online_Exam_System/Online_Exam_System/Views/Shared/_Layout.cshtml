@@ -266,8 +266,121 @@
 
 
                         </li>
+
+                        <!--C# code here-->
+                       @* @{
+                            var _context = new OnlineExamSystemContext();
+                            
+                        }*@
+                        <li class="nav-item has-treeview menu-open">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="./index.html" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Dashboard v1</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
+
+                <!-- Sidebar Menu -->
+     @*           <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+                             with font-awesome or any other icon font library -->
+                        <li class="nav-item has-treeview menu-open">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="./index.html" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Dashboard v1</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="@Url.Action("GetAllStudent", "Student")" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Students</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="@Url.Action("GetallTeacher", "Teacher")" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Teachers</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="@Url.Action("GetAllDepartment", "Department")" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Departments</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="@Url.Action("GetAllBatch", "Batch")" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Batches</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="@Url.Action("GetAllCourse", "Course")" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Courses</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="@Url.Action("CourseAssignToStudent", "CourseAssign")" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>CourseAssign</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="@Url.Action("AddQestion", "Question")" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Set Question</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+
+                        </li>
+                    </ul>
+                </nav>*@
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->

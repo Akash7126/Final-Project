@@ -53,6 +53,8 @@
         margin-right: 372px;
     }
 
+    
+
 </style>
 
 <div class="card card-primary1">
@@ -72,7 +74,7 @@
                     </div>
                     <div class="col-md-2">
                         <a id="multipleAnswerButton" asp-action="AddMultipleSelectQuestion" asp-route-id="@Model.CourseId">
-                            <button type="button" class="btn btn-block btn-outline-info btn-flat button1">Multiple Answer</button>
+                            <button type="button" class="btn btn-block btn-outline-info btn-flat button1 clicked-button">Multiple Answer</button>
                         </a>
                     </div>
                     <div class="col-md-2">
@@ -318,6 +320,14 @@
         //   var courseId = $(this).val(); // Store the selected Course ID
         //});
 
+        $('button.btn.btn-block.btn-outline-info.btn-flat.button1').click(function () {
+            // Remove the 'clicked-button' class from all buttons
+           // $('button.btn.btn-block.btn-outline-info.btn-flat.button1').removeClass('clicked-button');
+
+            // Add the 'clicked-button' class to the clicked button
+           // $(this).addClass('clicked-button');
+        });
+
         $('#SingleAnswerButton').click(function (e) {
             var courseId = $('#courseDropdown').val(); // Get the selected Course ID
             if (!courseId) {
@@ -329,12 +339,17 @@
             }
         });
 
-       
 
+        //$('#multipleAnswerButton').click(function (e) {
+        //    $(this).css('background-color', 'blue');
+
+        //});
         // Add an event listener to update the "Multiple Answer" button's URL
         $('#multipleAnswerButton').click(function (e) {
+
+
             var courseId = $('#courseDropdown').val(); // Get the selected Course ID
-            console.log("multiple ans==========" + courseId)
+            console.log("multiple ans==========+++++++++++++++++" + courseId)
             if (!courseId) {
                 e.preventDefault();
                 alert('Please select a Course');
