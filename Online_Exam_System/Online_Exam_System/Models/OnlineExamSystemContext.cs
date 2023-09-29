@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Online_Exam_System.Model;
 
 namespace Online_Exam_System.Models
 {
@@ -27,6 +28,11 @@ namespace Online_Exam_System.Models
         public virtual DbSet<Student> Students { get; set; } = null!;
         public virtual DbSet<StudentRegistration> StudentRegistrations { get; set; } = null!;
         public virtual DbSet<Teacher> Teachers { get; set; } = null!;
+        public virtual DbSet<SubMenu> SubMenus { get; set; } = null!;
+        public virtual DbSet<Menu> Menus { get; set; } = null!;
+        public virtual DbSet<User> Users { get; set; } = null!;
+        public virtual DbSet<Role> Roles { get; set; } = null!;
+        public virtual DbSet<RoleWiseMenuPermission> RoleWiseMenuPermissions { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -174,6 +180,59 @@ namespace Online_Exam_System.Models
                     .HasForeignKey(d => d.StudentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_StudentRegistration_Student");
+            });
+
+            modelBuilder.Entity<SubMenu>(entity =>
+            {
+                entity.ToTable("SubMenu");
+
+                entity.Property(e => e.Icon).HasMaxLength(450);
+
+                entity.Property(e => e.Name).HasMaxLength(450);
+                entity.Property(e => e.Url).HasMaxLength(450);
+
+                entity.HasOne(d => d.Menu)
+                    .WithMany(p => p.SubMenus)
+                    .HasForeignKey(d => d.MenuId)
+                    .HasConstraintName("FK_SubMenu_Menu");
+            });
+            modelBuilder.Entity<Menu>(entity =>
+            {
+                entity.ToTable("Menu");
+
+                entity.Property(e => e.Icon).HasMaxLength(450);
+
+                entity.Property(e => e.Name).HasMaxLength(450);
+            });
+
+            modelBuilder.Entity<Role>(entity =>
+            {
+                entity.ToTable("Role");
+
+                entity.Property(e => e.RoleName).HasMaxLength(450);
+            });
+
+            modelBuilder.Entity<RoleWiseMenuPermission>(entity =>
+            {
+                entity.ToTable("RoleWiseMenuPermission");
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.ToTable("User");
+
+                entity.Property(e => e.ContactNo).HasMaxLength(450);
+
+                entity.Property(e => e.Email).HasMaxLength(450);
+
+                entity.Property(e => e.Password).HasMaxLength(450);
+
+                entity.Property(e => e.UserId).HasMaxLength(450);
+
+                entity.HasOne(d => d.Role)
+                    .WithMany(p => p.Users)
+                    .HasForeignKey(d => d.RoleId)
+                    .HasConstraintName("FK_User_Role");
             });
 
             modelBuilder.Entity<Teacher>(entity =>

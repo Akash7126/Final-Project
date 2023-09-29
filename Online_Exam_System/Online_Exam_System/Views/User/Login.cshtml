@@ -1,0 +1,30 @@
+﻿@model Online_Exam_System.ViewModel.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+@ViewBag.Role
+<form asp-controller="User" asp-action="Login" role="form" method="post">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                  @*  <label asp-for="TeacherName">Name</label>
+                    <input asp-for="TeacherName" type="text" class="form-control" placeholder="Enter Name">*@
+                    <label asp-for="UserId">User Id</label>
+                    <input asp-for="UserId" type="text" class="form-control" placeholder="Enter User Id">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="Password">Password</label>
+                    <input asp-for="Password" type="text" class="form-control" placeholder="Enter Password">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Login"><button type="submit" class="btn btn-primary">Submit</button></a>
+    </div>
+</form>
+

@@ -1,13 +1,24 @@
 global using Online_Exam_System.Models;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//builder.Services.Configure<RazorViewEngineOptions>(x =>
+//{
+//    x.ViewLocationFormats.Clear();
+//    x.ViewLocationFormats.Add("/Home/Index");
+//});
+
+
 var provider=builder.Services.BuildServiceProvider();
 var config=provider.GetRequiredService<IConfiguration>();
 builder.Services.AddDbContext<OnlineExamSystemContext>(item => item.UseSqlServer(config.GetConnectionString("BloggingDatabase")));
+
+
+
 
 var app = builder.Build();
 
@@ -30,8 +41,14 @@ app.UseAuthorization();
 //    name: "areas",
 //    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
+
+//app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{controller=Home}/{action=Index}/{id?}");
+
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=User}/{action=AppStartView}/{id?}");
+
 
 app.Run();
