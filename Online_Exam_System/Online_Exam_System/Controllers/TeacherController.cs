@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Online_Exam_System.Model;
 using Online_Exam_System.Models;
 
 namespace Online_Exam_System.Controllers
@@ -39,8 +40,24 @@ namespace Online_Exam_System.Controllers
         [HttpPost]
         public IActionResult AddTeacher(Teacher teacher)
         {
+            //new code for create userId
+            Guid guid = Guid.NewGuid();
+            string userId = teacher.TeacherName+guid.ToString("N").Substring(0, 6);
+            teacher.UserId = userId;
+
             context.Teachers.Add(teacher);
             context.SaveChanges();
+
+            //add into usertable
+            User user = new User();
+            user.ContactNo = teacher.Contact;
+            user.Email = teacher.Email;
+            user.RoleId = 2;
+            user.Password = teacher.UserId;
+            user.UserId = teacher.UserId;
+            context.Users.Add(user);
+            context.SaveChanges();
+
 
             var departments = context.Departments.ToList(); // Replace this with the method that retrieves the departments from your data source.
             ViewBag.Departments = departments;

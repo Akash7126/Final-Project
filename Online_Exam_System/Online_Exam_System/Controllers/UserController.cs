@@ -19,40 +19,49 @@ namespace Online_Exam_System.Controllers
             return View();
         }
          
-        [HttpGet]
-        public IActionResult Login()
-        {
-            return View();
-        }
+        //[HttpGet]
+        //public IActionResult Login()
+        //{
+        //    return View();
+        //}
 
         [HttpPost]
         public IActionResult Login(LoginViewModel model)
         {
             if (model.UserId != null && model.Password != null)
             {
-                //get role name from user
-                var userId = model.UserId;
-                var roleName = _context.Users.Include(x => x.Role).Where(x => x.UserId == userId).Select(x => x.Role.RoleName).FirstOrDefault();
-                var roleId = _context.Users.Include(x => x.Role).Where(x => x.UserId == userId).Select(x => x.Role.Id).FirstOrDefault();
-                //set RoleName into session
-                HttpContext.Response.Cookies.Append("RoleName", roleName);
-                HttpContext.Response.Cookies.Append("RoleId", roleId.ToString());
+                var user = _context.Users.Where(x=>x.UserId == model.UserId && x.Password == model.Password).ToList();
+                if( user.Count > 0)
+                {
+                    //get role name from user
+                    var userId = model.UserId;
+                    var roleName = _context.Users.Include(x => x.Role).Where(x => x.UserId == userId).Select(x => x.Role.RoleName).FirstOrDefault();
+                    var roleId = _context.Users.Include(x => x.Role).Where(x => x.UserId == userId).Select(x => x.Role.Id).FirstOrDefault();
+                    //set RoleName into session
+                    HttpContext.Response.Cookies.Append("RoleName", roleName);
+                    HttpContext.Response.Cookies.Append("RoleId", roleId.ToString());
 
-                if (roleName == "Admin")
-                {
-                  //  ViewBag.Role = "Admin";
-                    return RedirectToAction("Index", "Home");
+                    if (roleName == "Admin")
+                    {
+                        //  ViewBag.Role = "Admin";
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else if (roleName == "Teacher")
+                    {
+                        // ViewBag.Role = "Teacher";
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else if (roleName == "Student")
+                    {
+                        // ViewBag.Role = "Student";
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
-                else if (roleName == "Teacher")
+                else
                 {
-                    // ViewBag.Role = "Teacher";
-                    return RedirectToAction("Index", "Home");
+                    return View();
                 }
-                else if (roleName == "Student")
-                {
-                    // ViewBag.Role = "Student";
-                    return RedirectToAction("Index", "Home");
-                }
+              
             }
                 //Get Role Name from Use Table
                 return View();

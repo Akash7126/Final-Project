@@ -151,6 +151,7 @@ namespace Online_Exam_System.Models
                 entity.Property(e => e.StudentName).HasMaxLength(50);
 
                 entity.Property(e => e.StudentPassword).HasMaxLength(50);
+                entity.Property(e => e.UserId).HasMaxLength(450);
 
                 entity.HasOne(d => d.Batch)
                     .WithMany(p => p.Students)
@@ -252,6 +253,8 @@ namespace Online_Exam_System.Models
                 entity.Property(e => e.TeacherName).HasMaxLength(50);
 
                 entity.Property(e => e.TeacherPassword).HasMaxLength(50);
+
+                entity.Property(e => e.UserId).HasMaxLength(450);
 
                 entity.HasOne(d => d.Department)
                     .WithMany(p => p.Teachers)

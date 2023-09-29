@@ -16,9 +16,10 @@ namespace Online_Exam_System.Models
         public int BatchId { get; set; }
         public string? StudentPassword { get; set; }
         public string? Contact { get; set; }
-        public string? Sex { get; set; }
+        public string? Sex { get; set; } 
         public string? Email { get; set; }
         public string? Address { get; set; }
+        public string? UserId { get; set; }
 
         public virtual Batch Batch { get; set; } = null!;
         public virtual Department Department { get; set; } = null!;
