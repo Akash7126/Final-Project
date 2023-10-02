@@ -43,10 +43,16 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-4">
+                    @*<div class="col-md-4">
                         <div class="form-group">
                             <label asp-for="TeacherPassword">Password</label>
                             <input asp-for="TeacherPassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                    </div>*@
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="Email">Email</label>
+                            <input asp-for="Email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -64,12 +70,7 @@
                    
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label asp-for="Email">Email</label>
-                            <input asp-for="Email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                        </div>
-                    </div>
+                   
                     <div class="col-md-4">
                         <div class="form-group">
                             <label asp-for="Address">Address</label>

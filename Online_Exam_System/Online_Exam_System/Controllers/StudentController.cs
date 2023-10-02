@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NuGet.DependencyResolver;
+using Online_Exam_System.Model;
 using Online_Exam_System.Models;
 
 namespace Online_Exam_System.Controllers
@@ -41,10 +43,27 @@ namespace Online_Exam_System.Controllers
         [HttpPost]
         public IActionResult AddStudent(Student student)
         {
+            Guid guid = Guid.NewGuid();
+            string userId = student.StudentName + guid.ToString("N").Substring(0, 6);
+            student.UserId = userId;
+            context.Students.Add(student);
+            context.SaveChanges();
+
+            User user = new User();
+            user.ContactNo = student.Contact;
+            user.Email = student.Email;
+            user.RoleId = 3;
+            user.Password = student.UserId;
+            user.UserId = student.UserId;
+            context.Users.Add(user);
+            context.SaveChanges();
+
             var departments = context.Departments.ToList(); // Replace this with the method that retrieves the departments from your data source.
             var batches = context.Batches.ToList();
             ViewBag.Departments = departments;
             ViewBag.Batches = batches;
+
+            
 
             return RedirectToAction("GetAllStudent", "Student");
         }
@@ -71,7 +90,7 @@ namespace Online_Exam_System.Controllers
             aStudent.StudentName=student.StudentName;
             aStudent.DepartmentId=student.DepartmentId;
             aStudent.BatchId=student.BatchId;
-            aStudent.StudentPassword=student.StudentPassword;
+            //aStudent.StudentPassword=student.StudentPassword;
             aStudent.Contact=student.Contact;
             aStudent.Sex=student.Sex;
             aStudent.Email=student.Email;
