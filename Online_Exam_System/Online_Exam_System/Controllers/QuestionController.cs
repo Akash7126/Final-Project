@@ -317,6 +317,15 @@ namespace Online_Exam_System.Controllers
             return Redirect(currentUrl);
         }
 
+        public IActionResult DisplayAllQuestions()
+        {
+            // Retrieve all questions from the database
+            var questions = _context.Questions.Include(q => q.Answers).ToList();
+
+            // You can pass the list of questions to the view
+            return View(questions);
+        }
+
         //public IActionResult DisplayQuestionWithAnswers(int questionId)
         //{
         //    var question = _context.Questions.FirstOrDefault(q => q.QuestionId == questionId);
@@ -328,7 +337,7 @@ namespace Online_Exam_System.Controllers
         //        Answers = answers
         //    };
 
-            
+
         //}
 
     }

@@ -40,6 +40,7 @@ namespace Online_Exam_System.Controllers
                     //set RoleName into session
                     HttpContext.Response.Cookies.Append("RoleName", roleName);
                     HttpContext.Response.Cookies.Append("RoleId", roleId.ToString());
+                    HttpContext.Response.Cookies.Append("UserId", userId.ToString());
 
                     if (roleName == "Admin")
                     {
@@ -66,5 +67,38 @@ namespace Online_Exam_System.Controllers
                 //Get Role Name from Use Table
                 return View();
         }
+
+        [HttpGet]
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ChangePassword(ChangePasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Get the user based on the logged-in user's ID or any other identifier.
+                var userId = HttpContext.Request.Cookies["UserId"];
+                // Implement this method to get the user ID.
+                var user = _context.Users.FirstOrDefault(x => x.UserId == userId);
+
+                if (user != null && user.Password == model.CurrentPassword)
+                {
+                    // Update the user's password with the new password.
+                    user.Password = model.NewPassword;
+                    _context.SaveChanges();
+                    ViewBag.Message = "Password changed successfully!";
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Invalid current password");
+                }
+            }
+
+            return View(model);
+        }
+
     }
 }

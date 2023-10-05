@@ -1,0 +1,28 @@
+﻿@model List<Online_Exam_System.Models.Question>
+
+<h1>All Questions</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Question Description</th>
+            <th>Answers</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var question in Model)
+        {
+            <tr>
+                <td>@question.QuestionDescription</td>
+                <td>
+                    <ul>
+                        @foreach (var answer in question.Answers)
+                        {
+                            <li>@answer.AnswerText</li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

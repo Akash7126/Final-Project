@@ -205,6 +205,10 @@
       "PackagePath": "staticwebassets\\Admin\\img\\prod-5.jpg"
     },
     {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Admin\\img\\university.png",
+      "PackagePath": "staticwebassets\\Admin\\img\\university.png"
+    },
+    {
       "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Admin\\img\\user1-128x128.jpg",
       "PackagePath": "staticwebassets\\Admin\\img\\user1-128x128.jpg"
     },
@@ -7127,6 +7131,842 @@
     {
       "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Admin\\plugins\\toastr\\toastr.min.js",
       "PackagePath": "staticwebassets\\Admin\\plugins\\toastr\\toastr.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\Login\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\Login\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\css\\bootstrap\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\Login\\css\\bootstrap\\bootstrap-grid.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\css\\bootstrap\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\Login\\css\\bootstrap\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\Login\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\css\\style.css",
+      "PackagePath": "staticwebassets\\Login\\css\\style.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\images\\exam1.jpg",
+      "PackagePath": "staticwebassets\\Login\\images\\exam1.jpg"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\index.html",
+      "PackagePath": "staticwebassets\\Login\\index.html"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\Login\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\js\\jquery-3.3.1.min.js",
+      "PackagePath": "staticwebassets\\Login\\js\\jquery-3.3.1.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\js\\main.js",
+      "PackagePath": "staticwebassets\\Login\\js\\main.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\Login\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\Login\\js\\popper.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\.DS_Store",
+      "PackagePath": "staticwebassets\\Login\\scss\\.DS_Store"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_alert.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_alert.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_badge.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_badge.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_breadcrumb.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_button-group.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_button-group.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_buttons.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_buttons.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_card.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_card.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_carousel.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_carousel.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_close.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_close.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_code.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_code.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_custom-forms.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_custom-forms.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_dropdown.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_forms.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_forms.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_functions.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_functions.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_grid.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_grid.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_images.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_images.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_input-group.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_input-group.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_jumbotron.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_jumbotron.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_list-group.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_list-group.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_media.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_media.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_mixins.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_mixins.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_modal.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_modal.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_nav.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_nav.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_navbar.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_navbar.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_pagination.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_pagination.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_popover.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_popover.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_print.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_print.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_progress.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_progress.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_reboot.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_reboot.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_root.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_root.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_spinners.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_spinners.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_tables.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_tables.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_toasts.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_toasts.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_tooltip.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_transitions.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_transitions.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_type.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_type.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_utilities.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_utilities.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\_variables.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_variables.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\bootstrap.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_background-variant.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_background-variant.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_badge.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_badge.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_deprecate.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_deprecate.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_float.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_float.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_grid-framework.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_grid-framework.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_hover.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_hover.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_image.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_nav-divider.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_nav-divider.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_screen-reader.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_screen-reader.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_size.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_size.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_table-row.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_table-row.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_text-emphasis.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_text-emphasis.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_text-hide.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_text-hide.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_visibility.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_visibility.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_align.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_align.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_background.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_background.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_borders.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_borders.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_clearfix.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_display.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_display.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_embed.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_embed.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_flex.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_flex.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_float.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_float.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_overflow.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_overflow.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_position.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_position.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_screenreaders.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_screenreaders.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_shadows.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_shadows.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_sizing.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_sizing.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_spacing.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_spacing.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_stretched-link.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_stretched-link.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_text.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_text.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_visibility.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_visibility.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\bootstrap\\vendor\\_rfs.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\vendor\\_rfs.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\scss\\style.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\style.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\css\\main.css",
+      "PackagePath": "staticwebassets\\Login_v1\\css\\main.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\css\\util.css",
+      "PackagePath": "staticwebassets\\Login_v1\\css\\util.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\HELP-US-OUT.txt",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\HELP-US-OUT.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\css\\font-awesome.css",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\css\\font-awesome.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\animated.less",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\animated.less"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\bordered-pulled.less",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\bordered-pulled.less"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\core.less",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\core.less"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\fixed-width.less",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\fixed-width.less"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\font-awesome.less",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\font-awesome.less"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\icons.less",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\icons.less"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\larger.less",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\larger.less"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\list.less",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\list.less"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\mixins.less",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\mixins.less"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\path.less",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\path.less"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\rotated-flipped.less",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\rotated-flipped.less"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\screen-reader.less",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\screen-reader.less"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\stacked.less",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\stacked.less"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\variables.less",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\less\\variables.less"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_animated.scss",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_animated.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_bordered-pulled.scss",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_bordered-pulled.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_core.scss",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_core.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_fixed-width.scss",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_fixed-width.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_icons.scss",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_icons.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_larger.scss",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_larger.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_list.scss",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_list.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_path.scss",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_path.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_rotated-flipped.scss",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_rotated-flipped.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_screen-reader.scss",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_screen-reader.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_stacked.scss",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_stacked.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\_variables.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\font-awesome.scss",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\font-awesome-4.7.0\\scss\\font-awesome.scss"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-Black.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-Black.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-BlackItalic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-BlackItalic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-Bold.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-Bold.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-BoldItalic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-BoldItalic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-ExtraBold.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-ExtraBold.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-ExtraBoldItalic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-ExtraBoldItalic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-ExtraLight.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-ExtraLight.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-ExtraLightItalic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-ExtraLightItalic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-Italic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-Italic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-Light.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-Light.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-LightItalic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-LightItalic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-Medium.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-Medium.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-MediumItalic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-MediumItalic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-Regular.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-Regular.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-SemiBold.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-SemiBold.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-SemiBoldItalic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-SemiBoldItalic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-Thin.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-Thin.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\Montserrat-ThinItalic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\Montserrat-ThinItalic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\montserrat\\OFL.txt",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\montserrat\\OFL.txt"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-Black.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-Black.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-BlackItalic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-BlackItalic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-Bold.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-Bold.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-BoldItalic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-BoldItalic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-ExtraBold.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-ExtraBold.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-ExtraBoldItalic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-ExtraBoldItalic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-ExtraLight.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-ExtraLight.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-ExtraLightItalic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-ExtraLightItalic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-Italic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-Italic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-Light.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-Light.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-LightItalic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-LightItalic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-Medium.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-Medium.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-MediumItalic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-MediumItalic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-Regular.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-Regular.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-SemiBold.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-SemiBold.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-SemiBoldItalic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-SemiBoldItalic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-Thin.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-Thin.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\fonts\\poppins\\Poppins-ThinItalic.ttf",
+      "PackagePath": "staticwebassets\\Login_v1\\fonts\\poppins\\Poppins-ThinItalic.ttf"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\images\\icons\\favicon.ico",
+      "PackagePath": "staticwebassets\\Login_v1\\images\\icons\\favicon.ico"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\images\\img-01.png",
+      "PackagePath": "staticwebassets\\Login_v1\\images\\img-01.png"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\js\\main.js",
+      "PackagePath": "staticwebassets\\Login_v1\\js\\main.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\animate\\animate.css",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\animate\\animate.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\bootstrap\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\bootstrap\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\bootstrap\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\bootstrap\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\bootstrap\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\bootstrap\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\bootstrap\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\bootstrap\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\bootstrap\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\bootstrap\\css\\bootstrap.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\bootstrap\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\bootstrap\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\bootstrap\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\bootstrap\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\bootstrap\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\bootstrap\\js\\bootstrap.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\bootstrap\\js\\popper.js",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\bootstrap\\js\\popper.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\bootstrap\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\bootstrap\\js\\popper.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\bootstrap\\js\\tooltip.js",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\bootstrap\\js\\tooltip.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\css-hamburgers\\hamburgers.css",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\css-hamburgers\\hamburgers.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\css-hamburgers\\hamburgers.min.css",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\css-hamburgers\\hamburgers.min.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\jquery\\jquery-3.2.1.min.js",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\jquery\\jquery-3.2.1.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\select2\\select2.css",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\select2\\select2.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\select2\\select2.js",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\select2\\select2.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\select2\\select2.min.css",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\select2\\select2.min.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\select2\\select2.min.js",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\select2\\select2.min.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login_v1\\vendor\\tilt\\tilt.jquery.min.js",
+      "PackagePath": "staticwebassets\\Login_v1\\vendor\\tilt\\tilt.jquery.min.js"
     },
     {
       "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\WYSIWYG-Editor-jQuery-sumoeditor\\WYSIWYG-Editor-jQuery-sumoeditor\\.eslintrc",
