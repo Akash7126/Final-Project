@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Online_Exam_System.Models;
 using Online_Exam_System.ViewModel;
 using System.Web;
-
+//////+++++++++++++++++++++++++++++
 namespace Online_Exam_System.Controllers
 {
     public class QuestionController : Controller
@@ -15,15 +15,7 @@ namespace Online_Exam_System.Controllers
         {
             _context = context;
         }
-        //public IActionResult GetCourseCourseAssign()
-        //{
-        //    var courseAssigns = (from courseAssign in _context.CourseAssigns
-        //                         join course in _context.Courses
-        //                         on courseAssign.CourseId equals course.CourseId
-        //                         select new { course.CourseId, course.CourseCode }).Distinct().ToList();
-        //    ViewBag.CourseAssigns = courseAssigns;
-        //    return View();  
-        //}
+      
         public IActionResult QuestionBank()
         {
             return View();
@@ -31,13 +23,26 @@ namespace Online_Exam_System.Controllers
         [HttpGet]
         public IActionResult AddQestion(int courseId)
          {
+            //var userId = HttpContext.Request.Cookies["UserId"];
+            //var courseAssigns = (from courseAssign in _context.CourseAssigns
+            //                     join course in _context.Courses
+            //                     on courseAssign.CourseId equals course.CourseId
+            //                     select new { course.CourseId, course.CourseCode }).Distinct().ToList();
+            //if(courseAssigns.C)
+            var userId = HttpContext.Request.Cookies["UserId"];
 
+            var teacherId = _context.Teachers
+                .Where(t => t.UserId == userId)
+                .Select(t => t.TeacherId)
+                .FirstOrDefault();
             var courseAssigns = (from courseAssign in _context.CourseAssigns
                                  join course in _context.Courses
                                  on courseAssign.CourseId equals course.CourseId
+                                 where courseAssign.TeacherId == teacherId
                                  select new { course.CourseId, course.CourseCode }).Distinct().ToList();
-            //if(courseAssigns.C)
+
             ViewBag.CourseAssigns = courseAssigns;
+            
            
             
             var model = new QuestionAnsweViewModel();
@@ -61,11 +66,12 @@ namespace Online_Exam_System.Controllers
             questionEntity.TeacherId= teacherId;
             questionEntity.Mark=question.Mark;
             questionEntity.QuestionTypeId = 1;
-
             var courseAssigns = (from courseAssign in _context.CourseAssigns
                                  join course in _context.Courses
                                  on courseAssign.CourseId equals course.CourseId
+                                 where courseAssign.TeacherId == teacherId
                                  select new { course.CourseId, course.CourseCode }).Distinct().ToList();
+
             ViewBag.CourseAssigns = courseAssigns;
             _context.Questions.Add(questionEntity);
             _context.SaveChanges();
@@ -144,10 +150,23 @@ namespace Online_Exam_System.Controllers
         [HttpGet]
         public IActionResult AddMultipleSelectQuestion(int courseId)
         {
+            //var courseAssigns1 = (from courseAssign in _context.CourseAssigns
+            //                     join course in _context.Courses
+            //                     on courseAssign.CourseId equals course.CourseId
+            //                     select new { course.CourseId, course.CourseCode }).Distinct().ToList();
+            //ViewBag.CourseAssigns1 = courseAssigns1;
+            var userId = HttpContext.Request.Cookies["UserId"];
+
+            var teacherId = _context.Teachers
+                .Where(t => t.UserId == userId)
+                .Select(t => t.TeacherId)
+                .FirstOrDefault();
             var courseAssigns1 = (from courseAssign in _context.CourseAssigns
                                  join course in _context.Courses
                                  on courseAssign.CourseId equals course.CourseId
+                                 where courseAssign.TeacherId == teacherId
                                  select new { course.CourseId, course.CourseCode }).Distinct().ToList();
+
             ViewBag.CourseAssigns1 = courseAssigns1;
             var model = new QuestionAnsweViewModel();
             return View(model);
@@ -172,7 +191,9 @@ namespace Online_Exam_System.Controllers
             var courseAssigns1 = (from courseAssign in _context.CourseAssigns
                                   join course in _context.Courses
                                   on courseAssign.CourseId equals course.CourseId
+                                  where courseAssign.TeacherId == teacherId
                                   select new { course.CourseId, course.CourseCode }).Distinct().ToList();
+
             ViewBag.CourseAssigns1 = courseAssigns1;
             _context.Questions.Add(questionEntity1);
             _context.SaveChanges();
@@ -246,11 +267,25 @@ namespace Online_Exam_System.Controllers
 
         public IActionResult AddTrueFalseQuestion(int courseId)
         {
+            //var courseAssigns2 = (from courseAssign in _context.CourseAssigns
+            //                     join course in _context.Courses
+            //                     on courseAssign.CourseId equals course.CourseId
+            //                     select new { course.CourseId, course.CourseCode }).Distinct().ToList();
+            //ViewBag.CourseAssigns2 = courseAssigns2;
+            var userId = HttpContext.Request.Cookies["UserId"];
+
+            var teacherId = _context.Teachers
+                .Where(t => t.UserId == userId)
+                .Select(t => t.TeacherId)
+                .FirstOrDefault();
             var courseAssigns2 = (from courseAssign in _context.CourseAssigns
-                                 join course in _context.Courses
-                                 on courseAssign.CourseId equals course.CourseId
-                                 select new { course.CourseId, course.CourseCode }).Distinct().ToList();
+                                  join course in _context.Courses
+                                  on courseAssign.CourseId equals course.CourseId
+                                  where courseAssign.TeacherId == teacherId
+                                  select new { course.CourseId, course.CourseCode }).Distinct().ToList();
+
             ViewBag.CourseAssigns2 = courseAssigns2;
+
             var model = new QuestionAnsweViewModel();
             return View(model);
         }
@@ -273,7 +308,9 @@ namespace Online_Exam_System.Controllers
             var courseAssigns2 = (from courseAssign in _context.CourseAssigns
                                   join course in _context.Courses
                                   on courseAssign.CourseId equals course.CourseId
+                                  where courseAssign.TeacherId == teacherId
                                   select new { course.CourseId, course.CourseCode }).Distinct().ToList();
+
             ViewBag.CourseAssigns2 = courseAssigns2;
             _context.Questions.Add(questionEntity1);
             _context.SaveChanges();
