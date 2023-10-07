@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Online_Exam_System.Model
-{ 
+namespace Online_Exam_System.Models
+{
     public partial class SubMenu
     {
         public int SubMenuId { get; set; }

@@ -13,12 +13,16 @@
         @foreach (var question in Model)
         {
             <tr>
-                <td>@question.QuestionDescription</td>
+                <td>@Html.Raw(question.QuestionDescription)</td>
                 <td>
                     <ul>
                         @foreach (var answer in question.Answers)
                         {
-                            <li>@answer.AnswerText</li>
+                            <li>@Html.Raw(answer.AnswerText)</li>
+                            @if (@answer.IsCorrect == true)
+                            {
+                                <p> Correct Answer</p>
+                            }
                         }
                     </ul>
                 </td>
@@ -26,3 +30,5 @@
         }
     </tbody>
 </table>
+
+

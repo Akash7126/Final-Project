@@ -48,7 +48,7 @@ namespace Online_Exam_System.Controllers
         [HttpPost]
         public IActionResult AddQestion(QuestionAnsweViewModel question)
         {
-          //  courseId = question.CourseId;
+            //  courseId = question.CourseId;
 
             var courseAssingCourseid = _context.CourseAssigns.FirstOrDefault(s => s.CourseId == question.CourseId);
             var  teacherId = courseAssingCourseid.TeacherId;
@@ -325,20 +325,5 @@ namespace Online_Exam_System.Controllers
             // You can pass the list of questions to the view
             return View(questions);
         }
-
-        //public IActionResult DisplayQuestionWithAnswers(int questionId)
-        //{
-        //    var question = _context.Questions.FirstOrDefault(q => q.QuestionId == questionId);
-        //    var answers = _context.Answers.Where(a => a.QuestionId == questionId).ToList();
-
-        //    var viewModel = new QuestionAnsweViewModel
-        //    {
-        //        Question = question,
-        //        Answers = answers
-        //    };
-
-
-        //}
-
     }
 }

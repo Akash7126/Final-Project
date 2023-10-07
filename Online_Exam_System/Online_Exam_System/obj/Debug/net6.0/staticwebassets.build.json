@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "n7/Qq7eqfuHiXHASlZqkMIb+PJhkqOPEu+4teIyUnqQ=",
+  "Hash": "Chu+jNX2Z9ylhjhZN9RdCqej8SIjhAy2a9Kq00Q9/KU=",
   "Source": "Online_Exam_System",
   "BasePath": "_content/Online_Exam_System",
   "Mode": "Default",
@@ -32213,23 +32213,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Login\\images\\exam1.jpg"
-    },
-    {
-      "Identity": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\index.html",
-      "SourceId": "Online_Exam_System",
-      "SourceType": "Discovered",
-      "ContentRoot": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\",
-      "BasePath": "_content/Online_Exam_System",
-      "RelativePath": "Login/index.html",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Login\\index.html"
     },
     {
       "Identity": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\js\\bootstrap.min.js",

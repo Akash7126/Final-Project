@@ -1,0 +1,49 @@
+﻿@model Online_Exam_System.ViewModel.CreateExamViewModel
+
+
+<div class="col-md-12">
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Create Exam</h3>
+        </div>
+        <form asp-action="Create" method="post" role="form">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for=" ExamTitle"></label>
+                        <input asp-for="ExamTitle" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for=" Description"></label>
+                        <input asp-for="Description" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for=" StartTime"></label>
+                        <input asp-for="StartTime" type="datetime-local" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for=" EndTime"></label>
+                        <input asp-for="EndTime" type="datetime-local" class="form-control" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-footer">
+                <button asp-action="CreateExam" type="submit" class="btn btn-primary">Create Exam</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+

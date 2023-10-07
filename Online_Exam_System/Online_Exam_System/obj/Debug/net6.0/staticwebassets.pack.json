@@ -7161,10 +7161,6 @@
       "PackagePath": "staticwebassets\\Login\\images\\exam1.jpg"
     },
     {
-      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\index.html",
-      "PackagePath": "staticwebassets\\Login\\index.html"
-    },
-    {
       "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\Login\\js\\bootstrap.min.js"
     },
