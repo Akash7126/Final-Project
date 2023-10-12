@@ -1,4 +1,6 @@
-﻿namespace Online_Exam_System.ViewModel
+﻿using Newtonsoft.Json;
+
+namespace Online_Exam_System.ViewModel
 {
     public class QuestionAnsweViewModel
     {
@@ -14,6 +16,11 @@
         public string? Question2Answer { get; set; }
         public string? Question3Answer { get; set; }
         public string? QuestionDescription1 { get; set; }
+        [JsonProperty("examId")]
+        public int ExamId { get; set; }
+
+        [JsonProperty("examTitle")]
+        public string ExamTitle { get; set; }
 
         public int? QuestionTypeId { get; set; }
         public decimal? Mark { get; set; }

@@ -20,31 +20,65 @@ namespace Online_Exam_System.Controllers
         }
         public IActionResult CreateExam()
         {
-            
+
+            var userId = HttpContext.Request.Cookies["UserId"];
+
+            var teacherId = context.Teachers
+                .Where(t => t.UserId == userId)
+                .Select(t => t.TeacherId)
+                .FirstOrDefault();
+            var courseAssigns = (from courseAssign in context.CourseAssigns
+                                 join course in context.Courses
+                                 on courseAssign.CourseId equals course.CourseId
+                                 where courseAssign.TeacherId == teacherId
+                                 select new { course.CourseId, course.CourseCode }).Distinct().ToList();
+            ViewBag.CourseAssigns = courseAssigns;  
             return View();
         }
 
         [HttpPost]
         public IActionResult CreateExam(CreateExam createExam)
         {
+            var userId = HttpContext.Request.Cookies["UserId"];
+            var teacherId = context.Teachers
+                                  .Where(t => t.UserId == userId)
+                                  .Select(t => t.TeacherId)
+                                  .FirstOrDefault();
             CreateExam newExam = new CreateExam();
             newExam.ExamTitle = createExam.ExamTitle;
             newExam.Description= createExam.Description;
             newExam.StartTime = createExam.StartTime;
             newExam.EndTime = createExam.EndTime;
+            newExam.TeacherId = teacherId;
+            newExam.CourseId =createExam.CourseId;
 
             context.CreateExams.Add(newExam);
             context.SaveChanges();
 
+            var courseAssigns = (from courseAssign in context.CourseAssigns
+                                 join course in context.Courses
+                                 on courseAssign.CourseId equals course.CourseId
+                                 where courseAssign.TeacherId == teacherId
+                                 select new { course.CourseId, course.CourseCode }).Distinct().ToList();
+            ViewBag.CourseAssigns = courseAssigns;
 
-
-            
-            return View();
+            return RedirectToAction("ExamList", "Exam");
         }
 
         public IActionResult ExamList()
         {
-            var exams = context.CreateExams.ToList();
+
+            var userId = HttpContext.Request.Cookies["UserId"];
+            var teacherId = context.Teachers
+                                  .Where(t => t.UserId == userId)
+                                  .Select(t => t.TeacherId)
+                                  .FirstOrDefault();
+
+
+            // Retrieve exams created by the current teacher based on TeacherId
+            var exams = context.CreateExams
+                              .Where(e => e.TeacherId == teacherId)
+                              .ToList();
             return View(exams);
         }
 
@@ -54,8 +88,38 @@ namespace Online_Exam_System.Controllers
         {
             // Retrieve the exam from the database based on the examId
             var exam = context.CreateExams.FirstOrDefault(e => e.ExamId == ExamId);
-            return View();
+            DateTime startTime=exam.StartTime;
+            DateTime endTime=exam.EndTime;  
+            var description = exam.Description;
+            var examTitle = exam.ExamTitle;
+            var courseId = exam.CourseId;   
+            var userId = HttpContext.Request.Cookies["UserId"];
+
+            var teacherId = context.Teachers
+                .Where(t => t.UserId == userId)
+                .Select(t => t.TeacherId)
+                .FirstOrDefault();
+            var courseAssigns = (from courseAssign in context.CourseAssigns
+                                 join course in context.Courses
+                                 on courseAssign.CourseId equals course.CourseId
+                                 where courseAssign.TeacherId == teacherId
+                                 select new { course.CourseId, course.CourseCode }).Distinct().ToList();
+            
+
+            var viewModel = new CreateExamViewModel
+            {
+                StartTime = startTime,
+                EndTime = endTime,
+                Description = description,
+                ExamTitle = examTitle,
+                CourseId = courseId
+                // Set additional properties if needed
+            };
+            ViewBag.CourseAssigns = courseAssigns;
+            // Pass the view model to the view for editing
+            return View(viewModel);
         }
+
 
         [HttpPost]
         public IActionResult UpdateExam(CreateExam updatedExam)
@@ -74,13 +138,36 @@ namespace Online_Exam_System.Controllers
             existingExam.Description = updatedExam.Description;
             existingExam.StartTime = updatedExam.StartTime;
             existingExam.EndTime = updatedExam.EndTime;
+            existingExam.CourseId = updatedExam.CourseId;   
 
             // Save changes to the database
             context.SaveChanges();
 
             // Redirect to the ExamList action to show the updated exam list
-            return RedirectToAction("ExamList");
+            return RedirectToAction("ExamList", "Exam");
         }
+
+        [HttpPost]
+        public IActionResult DeleteExam(int examId)
+        {
+            // Retrieve the exam from the database based on the examId
+            var exam = context.CreateExams.FirstOrDefault(e => e.ExamId == examId);
+
+            if (exam == null)
+            {
+                // Handle the case where the exam is not found, for example, show an error message.
+                return RedirectToAction("ExamList"); // Redirect to the exam list page
+            }
+
+            // Remove the exam from the database
+            context.CreateExams.Remove(exam);
+            context.SaveChanges();
+
+            // Redirect to the exam list page after the deletion
+            return RedirectToAction("ExamList", "Exam");
+        }
+        
+
 
     }
 

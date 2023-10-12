@@ -48,11 +48,14 @@
         margin-top: -17px;
     }
 
+    
     .col-md-4.cutomize-data {
-        margin-left: 84px;
-        margin-right: 372px;
+        margin-left: 93px;
     }
 
+    .col-md-1.customize-data1 {
+        margin-left: 45px;
+    }
     
 
 </style>
@@ -67,13 +70,13 @@
             <div class="container">
                 <div class="row1">
                     <div class="col-md-2">
-                        <a id="SingleAnswerButton" asp-action="AddQestion" asp-route-id="@Model.CourseId">
+                        <a id="SingleAnswerButton" asp-action="AddQestion" asp-route-id="@Model.CourseId" asp-route-examId="@Model.ExamId">
                             <button type="button" class="btn btn-block btn-outline-info btn-flat button1">Single Answer</button>
                         </a>
-                        @*<a asp-action="AddQestion" asp-controller="Question"><button type="button" class="btn btn-block btn-outline-info btn-flat button1">Single Answer</button></a>*@
+                        
                     </div>
                     <div class="col-md-2">
-                        <a id="multipleAnswerButton" asp-action="AddMultipleSelectQuestion" asp-route-id="@Model.CourseId">
+                        <a id="multipleAnswerButton" asp-action="AddMultipleSelectQuestion" asp-route-id="@Model.CourseId" >
                             <button type="button" class="btn btn-block btn-outline-info btn-flat button1 clicked-button">Multiple Answer</button>
                         </a>
                     </div>
@@ -87,9 +90,9 @@
         </form>
         
             <form asp-controller="Question" asp-action="AddQestion" role="form" method="post">
-            
 
-            <div class="card-body">
+                <input type="hidden" name="resetDropdowns" value="true">
+                <div class="card-body">
                 <div class="row">
                     <div class="col-md-4 cutomize-data">
                         <div class="form-group">
@@ -99,6 +102,31 @@
                             </select>
                         </div>
                     </div>
+
+                    <div class="col-md-4 cutomize-data1">
+                        <div class="form-group">
+                            <label asp-for="ExamId">Select Exam</label>
+                            <select id="examDropdown" class="form-control" asp-for="ExamId" asp-items="@(new SelectList(ViewBag.exams, "ExamId", "ExamTitle"))">
+                                <option>Please select one</option>
+                            </select>
+                        </div>
+                    </div>
+                   @* <div class="col-md-4 cutomize-data1">
+                        <div class="form-group">
+                            <label asp-for="ExamId">Exam title</label>
+                            <select id="examDropdown" class="form-control" asp-for="ExamId">
+                                <option>Please select one</option>
+                            </select>
+                        </div>
+                    </div>*@
+                    @*<div class="col-md-4 cutomize-data1">
+                        <div class="form-group">
+                            <label asp-for="ExamId">Select Exam</label>
+                            <select id="examDropdown" class="form-control" asp-for="ExamId" asp-items="@(new SelectList(ViewBag.exams, "ExamId", "ExamTitle"))">
+                                <option>Please select one</option>
+                            </select>
+                        </div>
+                    </div>*@
                     <div class="col-md-1 customize-data1">
                         <div class="form-group">
                             <label asp-for="Mark">Mark</label>
@@ -108,6 +136,7 @@
                     </div>
                 
                 </div>
+
                 <div class="card-body">
                     <div class="row justify-content-center">
                         <div class="col-md-10">
@@ -255,52 +284,7 @@
 
         });
 
-        var summernoteCount = 1; // Initial count for Summernote editors
-
-        // Function to add more Summernote editors
-        //function addMoreSummernote() {
-        //    summernoteCount++; // Increment the count
-        //    if (summernoteCount > 3) {
-        //        Swal.fire({
-        //            icon: 'error',
-        //            title: 'SORRY',
-        //            text: 'You Can not Add more!',
-        //        })
-        //    }
-        //    else {
-        //        console.log("-----------" + summernoteCount);
-        //        var newSummernoteId = "summernote" + summernoteCount; // Generate a unique ID for the new Summernote editor
-
-        //        // Create a new Summernote textarea and append it to the container
-        //        var newSummernoteTextarea = '<div class="col-md-8">' +
-        //            '<div class="form-group">' +
-        //            '<textarea  id="' + newSummernoteId + '" name="editordata' + newSummernoteId + '"></textarea>' +
-        //            '</div>' +
-        //            '</div>';
-
-        //        $('.row.justify-content-center').append(newSummernoteTextarea);
-
-        //        // Initialize the new Summernote editor
-        //        $('#' + newSummernoteId).summernote({
-        //            placeholder: 'Hello stand alone ui',
-        //            tabsize: 2,
-        //            height: 60,
-        //            toolbar: [['font', ['bold', 'underline', 'clear']]],
-        //            callbacks: {
-        //                onInit: function () {
-        //                    // Add your custom footer content here
-        //                    var initialContent = '<p><b><input type="radio" class="correct-answer" name="answer"> Correct Answer</b></p>';
-        //                    var $editor = $('#' + newSummernoteId).next(); // Get the Summernote editor container
-        //                    $editor.append(initialContent);
-        //                }
-        //            }
-        //        });
-        //    }
-
-
-        //}
-
-        // Add an event listener to the "Add More" button
+        var summernoteCount = 1; 
         $(document).on('click', '#addMoreSummernote', function () {
             addMoreSummernote();
 
@@ -310,64 +294,118 @@
             // Unselect all other radio buttons in all editors
             $('.correct-answer').not(this).prop('checked', false);
         });
+
+
     </script>
+
+   
     <script>
-       // var courseId = null; // Initialize courseId variable
-
-        // Add an event listener to capture the selected Course ID
-        //$('#courseDropdown').change(function () {
-        //   var courseId = $(this).val(); // Store the selected Course ID
-        //});
-
-        $('button.btn.btn-block.btn-outline-info.btn-flat.button1').click(function () {
-            // Remove the 'clicked-button' class from all buttons
-           // $('button.btn.btn-block.btn-outline-info.btn-flat.button1').removeClass('clicked-button');
-
-            // Add the 'clicked-button' class to the clicked button
-           // $(this).addClass('clicked-button');
-        });
-
         $('#SingleAnswerButton').click(function (e) {
-            var courseId = $('#courseDropdown').val(); // Get the selected Course ID
-            if (!courseId) {
+            var courseId = $('#courseDropdown').val();
+            var examId = $('#examDropdown').val();
+
+            if (!courseId || !examId) {
                 e.preventDefault();
-                alert('Please select a Course');
+                alert('Please select both a Course and an Exam');
             } else {
-                // Update the href attribute of the button with the selected Course ID
-                $(this).attr('href', $(this).attr('href') + '?courseId=' + courseId);
+                $(this).attr('href', $(this).attr('href') + '?courseId=' + courseId + '&examId=' + examId);
             }
         });
-
-
-        //$('#multipleAnswerButton').click(function (e) {
-        //    $(this).css('background-color', 'blue');
-
+        //// Add click event handlers for the buttons
+        //$('#SingleAnswerButton').click(function (e) {
+        //    var courseId = $('#courseDropdown').val();
+        //    console.log("single ans==========" + courseId)// Get the selected Course ID
+        //    if (!courseId) {
+        //        e.preventDefault();
+        //        alert('Please select a Course');
+        //    } else {
+        //        // Update the href attribute of the button with the selected Course ID
+        //        $(this).attr('href', $(this).attr('href') + '?courseId=' + courseId);
+        //    }
         //});
-        // Add an event listener to update the "Multiple Answer" button's URL
         $('#multipleAnswerButton').click(function (e) {
+            var courseId = $('#courseDropdown').val();
+            var examId = $('#examDropdown').val();
 
-
-            var courseId = $('#courseDropdown').val(); // Get the selected Course ID
-            console.log("multiple ans==========+++++++++++++++++" + courseId)
-            if (!courseId) {
+            if (!courseId || !examId) {
                 e.preventDefault();
-                alert('Please select a Course');
+                alert('Please select both a Course and an Exam');
             } else {
-                // Update the href attribute of the button with the selected Course ID
-                $(this).attr('href', $(this).attr('href') + '?courseId=' + courseId);
+                $(this).attr('href', $(this).attr('href') + '?courseId=' + courseId + '&examId=' + examId);
             }
         });
 
         $('#trueFalseAnswerButton').click(function (e) {
-            var courseId = $('#courseDropdown').val(); // Get the selected Course ID
-            if (!courseId) {
+            var courseId = $('#courseDropdown').val();
+            var examId = $('#examDropdown').val();
+
+            if (!courseId || !examId) {
                 e.preventDefault();
-                alert('Please select a Course');
+                alert('Please select both a Course and an Exam');
             } else {
-                // Update the href attribute of the button with the selected Course ID
-                $(this).attr('href', $(this).attr('href') + '?courseId=' + courseId);
+                $(this).attr('href', $(this).attr('href') + '?courseId=' + courseId + '&examId=' + examId);
             }
         });
-        
+
+        //$('#trueFalseAnswerButton').click(function (e) {
+        //    var courseId = $('#courseDropdown').val(); // Get the selected Course ID
+        //    if (!courseId) {
+        //        e.preventDefault();
+        //        alert('Please select a Course');
+        //    } else {
+        //        // Update the href attribute of the button with the selected Course ID
+        //        $(this).attr('href', $(this).attr('href') + '?courseId=' + courseId);
+        //    }
+        //});
     </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#courseDropdown').change(function () {
+                var courseId = $(this).val();
+                console.log("Selected Course ID: " + courseId);
+
+                $('#examDropdown').empty();
+                $('#examDropdown').append('<option>--Select Exam--</option>');
+
+                $.ajax({
+                    url: '/Question/GetExamsByCourse?courseId=' + courseId,
+                    type: 'GET',
+                    success: function (result) {
+                        console.log("AJAX Response:", result);
+
+                        var optionsHtml = '';
+                        $.each(result, function (i, data) {
+                            console.log("Exam Data:", data);
+                            optionsHtml += '<option value="' + data.examId + '">' + data.examTitle + '</option>';
+                        });
+
+                        // Set the optionsHtml to the Exam dropdown
+                        $('#examDropdown').html(optionsHtml);
+
+                        // Attach change event listener to Exam dropdown
+                        $('#examDropdown').change(function () {
+                            // Get the selected value
+                            var selectedExamId = $(this).val();
+                            console.log("Selected Exam ID: " + selectedExamId);
+
+                            // Perform further actions with the selectedExamId, such as sending it to the server via AJAX
+                            // ...
+                        });
+                        
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("Error occurred:", error);
+                    }
+                });
+            });
+
+            // ... other existing code ...
+        });
+
+   
+
+
+    </script>
+
 }

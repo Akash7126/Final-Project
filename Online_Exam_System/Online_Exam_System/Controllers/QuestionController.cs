@@ -21,30 +21,31 @@ namespace Online_Exam_System.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult AddQestion(int courseId)
+        public IActionResult AddQestion(int courseId,int examId)
          {
-            //var userId = HttpContext.Request.Cookies["UserId"];
-            //var courseAssigns = (from courseAssign in _context.CourseAssigns
-            //                     join course in _context.Courses
-            //                     on courseAssign.CourseId equals course.CourseId
-            //                     select new { course.CourseId, course.CourseCode }).Distinct().ToList();
-            //if(courseAssigns.C)
+            
             var userId = HttpContext.Request.Cookies["UserId"];
 
             var teacherId = _context.Teachers
                 .Where(t => t.UserId == userId)
                 .Select(t => t.TeacherId)
                 .FirstOrDefault();
+
             var courseAssigns = (from courseAssign in _context.CourseAssigns
                                  join course in _context.Courses
                                  on courseAssign.CourseId equals course.CourseId
                                  where courseAssign.TeacherId == teacherId
                                  select new { course.CourseId, course.CourseCode }).Distinct().ToList();
 
+
+            // Load exams based on the selected courseId
+            var exams = (from e in _context.CreateExams
+                         where e.ExamId == examId
+                         select new { e.ExamId, e.ExamTitle }).ToList();
+            ViewBag.Exams = exams;
             ViewBag.CourseAssigns = courseAssigns;
-            
-           
-            
+
+
             var model = new QuestionAnsweViewModel();
             
             return View(model);
@@ -54,9 +55,16 @@ namespace Online_Exam_System.Controllers
         public IActionResult AddQestion(QuestionAnsweViewModel question)
         {
             //  courseId = question.CourseId;
+            var userId = HttpContext.Request.Cookies["UserId"];
+
+            var teacherId = _context.Teachers
+                .Where(t => t.UserId == userId)
+                .Select(t => t.TeacherId)
+                .FirstOrDefault();
+
 
             var courseAssingCourseid = _context.CourseAssigns.FirstOrDefault(s => s.CourseId == question.CourseId);
-            var  teacherId = courseAssingCourseid.TeacherId;
+        //    var  teacherId = courseAssingCourseid.TeacherId;
 
            // answerList.Add(question.editordata1);
             var questionEntity = new Question();
@@ -66,12 +74,14 @@ namespace Online_Exam_System.Controllers
             questionEntity.TeacherId= teacherId;
             questionEntity.Mark=question.Mark;
             questionEntity.QuestionTypeId = 1;
+            questionEntity.ExamId = question.ExamId;
             var courseAssigns = (from courseAssign in _context.CourseAssigns
                                  join course in _context.Courses
                                  on courseAssign.CourseId equals course.CourseId
                                  where courseAssign.TeacherId == teacherId
                                  select new { course.CourseId, course.CourseCode }).Distinct().ToList();
-
+          
+            
             ViewBag.CourseAssigns = courseAssigns;
             _context.Questions.Add(questionEntity);
             _context.SaveChanges();
@@ -143,12 +153,12 @@ namespace Online_Exam_System.Controllers
             masterCourseId = question.CourseId;
 
             return Redirect(currentUrl);
-            
+
         }
 
      
         [HttpGet]
-        public IActionResult AddMultipleSelectQuestion(int courseId)
+        public IActionResult AddMultipleSelectQuestion(int courseId,int examId)
         {
             //var courseAssigns1 = (from courseAssign in _context.CourseAssigns
             //                     join course in _context.Courses
@@ -166,9 +176,15 @@ namespace Online_Exam_System.Controllers
                                  on courseAssign.CourseId equals course.CourseId
                                  where courseAssign.TeacherId == teacherId
                                  select new { course.CourseId, course.CourseCode }).Distinct().ToList();
+            //var exams = _context.CreateExams.
+            var exams = (from e in _context.CreateExams
+                         where e.ExamId == examId
+                         select new { e.ExamId, e.ExamTitle }).ToList();
+            ViewBag.Exams = exams;
 
             ViewBag.CourseAssigns1 = courseAssigns1;
             var model = new QuestionAnsweViewModel();
+            
             return View(model);
             
         }
@@ -176,8 +192,15 @@ namespace Online_Exam_System.Controllers
         [HttpPost]
         public IActionResult AddMultipleSelectQuestion(QuestionAnsweViewModel question)
         {
+            var userId = HttpContext.Request.Cookies["UserId"];
+
+            var teacherId = _context.Teachers
+                .Where(t => t.UserId == userId)
+                .Select(t => t.TeacherId)
+
+                .FirstOrDefault();
             var courseAssingCourseid1 = _context.CourseAssigns.FirstOrDefault(s => s.CourseId == question.CourseId);
-            var teacherId = courseAssingCourseid1.TeacherId;
+           // var teacherId = courseAssingCourseid1.TeacherId;
 
             // answerList.Add(question.editordata1);
             var questionEntity1 = new Question();
@@ -187,13 +210,16 @@ namespace Online_Exam_System.Controllers
             questionEntity1.TeacherId = teacherId;
             questionEntity1.Mark = question.Mark;
             questionEntity1.QuestionTypeId = 2;
-
+            questionEntity1.ExamId = question.ExamId;
             var courseAssigns1 = (from courseAssign in _context.CourseAssigns
                                   join course in _context.Courses
                                   on courseAssign.CourseId equals course.CourseId
                                   where courseAssign.TeacherId == teacherId
                                   select new { course.CourseId, course.CourseCode }).Distinct().ToList();
-
+            var exams = _context.CreateExams
+                              .Where(e => e.TeacherId == teacherId)
+                              .ToList();
+            ViewBag.Exams = exams;
             ViewBag.CourseAssigns1 = courseAssigns1;
             _context.Questions.Add(questionEntity1);
             _context.SaveChanges();
@@ -265,13 +291,8 @@ namespace Online_Exam_System.Controllers
             return Redirect(currentUrl);
         }
 
-        public IActionResult AddTrueFalseQuestion(int courseId)
+        public IActionResult AddTrueFalseQuestion(int courseId, int examId)
         {
-            //var courseAssigns2 = (from courseAssign in _context.CourseAssigns
-            //                     join course in _context.Courses
-            //                     on courseAssign.CourseId equals course.CourseId
-            //                     select new { course.CourseId, course.CourseCode }).Distinct().ToList();
-            //ViewBag.CourseAssigns2 = courseAssigns2;
             var userId = HttpContext.Request.Cookies["UserId"];
 
             var teacherId = _context.Teachers
@@ -283,7 +304,10 @@ namespace Online_Exam_System.Controllers
                                   on courseAssign.CourseId equals course.CourseId
                                   where courseAssign.TeacherId == teacherId
                                   select new { course.CourseId, course.CourseCode }).Distinct().ToList();
-
+            var exams = (from e in _context.CreateExams
+                         where e.ExamId == examId
+                         select new { e.ExamId, e.ExamTitle }).ToList();
+            ViewBag.Exams = exams;
             ViewBag.CourseAssigns2 = courseAssigns2;
 
             var model = new QuestionAnsweViewModel();
@@ -293,8 +317,16 @@ namespace Online_Exam_System.Controllers
         [HttpPost]
         public IActionResult AddTrueFalseQuestion(QuestionAnsweViewModel question)
         {
+
+            var userId = HttpContext.Request.Cookies["UserId"];
+
+            var teacherId = _context.Teachers
+                .Where(t => t.UserId == userId)
+                .Select(t => t.TeacherId)
+                .FirstOrDefault();
+
             var courseAssingCourseid1 = _context.CourseAssigns.FirstOrDefault(s => s.CourseId == question.CourseId);
-            var teacherId = courseAssingCourseid1.TeacherId;
+           // var teacherId = courseAssingCourseid1.TeacherId;
 
             // answerList.Add(question.editordata1);
             var questionEntity1 = new Question();
@@ -304,13 +336,17 @@ namespace Online_Exam_System.Controllers
             questionEntity1.TeacherId = teacherId;
             questionEntity1.Mark = question.Mark;
             questionEntity1.QuestionTypeId = 3;
+            questionEntity1.ExamId = question.ExamId;
 
             var courseAssigns2 = (from courseAssign in _context.CourseAssigns
                                   join course in _context.Courses
                                   on courseAssign.CourseId equals course.CourseId
                                   where courseAssign.TeacherId == teacherId
                                   select new { course.CourseId, course.CourseCode }).Distinct().ToList();
-
+            var exams = _context.CreateExams
+                              .Where(e => e.TeacherId == teacherId)
+                              .ToList();
+            ViewBag.Exams = exams;
             ViewBag.CourseAssigns2 = courseAssigns2;
             _context.Questions.Add(questionEntity1);
             _context.SaveChanges();
@@ -356,11 +392,24 @@ namespace Online_Exam_System.Controllers
 
         public IActionResult DisplayAllQuestions()
         {
-            // Retrieve all questions from the database
-            var questions = _context.Questions.Include(q => q.Answers).ToList();
+            var userId = HttpContext.Request.Cookies["UserId"];
+            var teacherId = _context.Teachers
+                                  .Where(t => t.UserId == userId)
+                                  .Select(t => t.TeacherId)
+                                  .FirstOrDefault();
 
-            // You can pass the list of questions to the view
+            // Retrieve questions created by the current teacher based on TeacherId
+            var questions = _context.Questions
+                                   .Include(q => q.Answers)
+                                   .Where(q => q.TeacherId == teacherId)
+                                   .ToList();
             return View(questions);
+        }
+
+        public JsonResult GetExamsByCourse(int courseId)
+        {
+            var exams = _context.CreateExams.Where(x => x.CourseId == courseId).ToList();
+            return Json(exams);
         }
     }
 }

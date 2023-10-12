@@ -122,6 +122,8 @@ namespace Online_Exam_System.Models
                 entity.Property(e => e.StartTime)
                     .HasColumnType("datetime")
                     .HasColumnName("start_time");
+
+                entity.Property(e => e.TeacherId).HasColumnName("teacherId");
             });
 
             modelBuilder.Entity<Department>(entity =>

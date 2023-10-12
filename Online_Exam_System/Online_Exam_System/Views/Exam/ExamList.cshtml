@@ -28,6 +28,7 @@
                         <th>Description</th>
                         <th>Start Time</th>
                         <th>End Time</th>
+                      
                      
                         <th colspan="3" style="text-align:center">Action</th>
                     </tr>
@@ -41,6 +42,7 @@
                             <td class="tbl-student-col">@item.Description</td>
                             <td class="tbl-student-col">@item.StartTime</td>
                             <td class="tbl-student-col">@item.EndTime</td>
+                            
 
                             <td class="tbl-student-col">
                                 <a href="/Exam/UpdateExam?ExamId=@item.ExamId" class="btn btn-warning btn-info btn-sm">
@@ -54,13 +56,17 @@
                                     </button>
                                 </a>
                             </td>*@
-                           
+
+                            @*<td class="tbl-student-col">
+                                <a href="/Exam/DeleteExam?ExamId=@item.ExamId" class="btn btn-info btn-danger btn-sm btn-delete">
+                                    <i class="fas fa-trash" style="color: #ffffff;"></i>
+                                </a>
+                            </td>*@
+
 
                             <td class="tbl-student-col">
-                                <a asp-action="DeleteStudent" asp-route-id="@item.ExamId">
-                                    <button type="button" class="btn btn-info btn-danger btn-sm btn-delete">
-                                        <i class="fas fa-trash" style="color: #ffffff;"></i>
-                                    </button>
+                                <a href="/Exam/DeleteExam?ExamId=@item.ExamId" data-examid="@item.ExamId" class="btn btn-info btn-danger btn-sm btn-delete">
+                                    <i class="fas fa-trash" style="color: #ffffff;"></i>
                                 </a>
                             </td>
 
@@ -75,7 +81,7 @@
     </div>
 </form>
 
-@*@section Scripts
+@section Scripts
     {
     <script>
         // Wait for the document to be ready
@@ -83,19 +89,12 @@
             // Find all delete buttons with the class "btn-delete"
             const deleteButtons = document.querySelectorAll(".btn-delete");
 
-            // Add click event listeners to all delete buttons
             deleteButtons.forEach((button) => {
                 button.addEventListener("click", function (e) {
-                    // Prevent the default form submission
                     e.preventDefault();
 
-                    //var row = this.closest('tr');
-                    //var idCell = row.cells[0]; // Assuming ID is in the first column
-
-                    //var newId = idCell.textContent.trim();
-
-                    // Get the student ID from the data-student-id attribute
-                    const studentId = button.dataset.studentId;
+                    const examId = button.dataset.examid; // Note the lowercase attribute name
+                    console.log("ExamId: +++++++" + examId);
 
                     // Show SweetAlert2
                     Swal.fire({
@@ -110,17 +109,15 @@
                         if (result.isConfirmed) {
                             // If the user confirms, submit the form with the student ID
 
-                            var row = this.closest('tr');
-                            var idCell = row.cells[0]; // Assuming ID is in the first column
-                            var newId = idCell.textContent.trim();
-                            console.log(newId + "--")
+
+                            console.log(examId + "-------+++++--")
                             const myForm = document.getElementById('myForm');
-                            myForm.action = '/Student/DeleteStudent?' + newId; // Set the appropriate action URL
+                            myForm.action = '/Exam/DeleteExam?' + examId; // Set the appropriate action URL
                             myForm.method = 'post'; // Set the form method
                             const input = document.createElement('input');
                             input.type = 'hidden';
-                            input.name = 'newId';
-                            input.value = newId; 
+                            input.name = 'examId';
+                            input.value = examId;
                             myForm.appendChild(input);
                             myForm.submit();
 
@@ -137,4 +134,3 @@
     </script>
 
 }
-*@
