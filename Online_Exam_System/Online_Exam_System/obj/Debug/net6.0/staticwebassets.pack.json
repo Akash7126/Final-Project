@@ -7133,6 +7133,26 @@
       "PackagePath": "staticwebassets\\Admin\\plugins\\toastr\\toastr.min.js"
     },
     {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\HTML\\UITS logo.png",
+      "PackagePath": "staticwebassets\\HTML\\UITS logo.png"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\HTML\\image4.png",
+      "PackagePath": "staticwebassets\\HTML\\image4.png"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\HTML\\script.js",
+      "PackagePath": "staticwebassets\\HTML\\script.js"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\HTML\\style.css",
+      "PackagePath": "staticwebassets\\HTML\\style.css"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\HTML\\style2.css",
+      "PackagePath": "staticwebassets\\HTML\\style2.css"
+    },
+    {
       "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\Login\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\Login\\css\\bootstrap.min.css"
     },

@@ -1,8 +1,8 @@
 ﻿@model List<Online_Exam_System.Models.Question>
 
-<h1>All Questions</h1>
 
-<table>
+
+@*<table>
     <thead>
         <tr>
             <th>Question Description</th>
@@ -29,6 +29,110 @@
             </tr>
         }
     </tbody>
-</table>
+</table>*@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-spacing: 0px;
+            table-layout: fixed;
+            margin-left: auto;
+            margin-right: auto;
+            width: 310px;
+        }
+
+            #customers td{
+                border: 1px solid #666;
+                word-break: break-all;
+            }
+
+            #customers th {
+                border: 1px solid #000000;
+                padding: 8px;
+            }
+
+        
+
+           
+
+            #customers tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #customers tr:hover {
+                background-color: #ddd;
+            }
+
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #04AA6D;
+                color: white;
+            }
+
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: -4px;
+            }
+
+        form {
+            margin-left: 20px;
+        }
+      
+    </style>
+</head>
+<body>
+
+    <div class="card card-primary1">
+
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Questions and Answers</h3>
+            </div>
+            <form>
+                <table id="customers" style="width:80%">
+                    <tr>
+                        <th>Question Description</th>
+                        <th>Answers</th>
+                    </tr>
+
+                    @foreach (var question in Model)
+                    {
+                        <div class="b">
+                            <tr>
+                                <td rowspan="@(question.Answers.Count + 1)">@Html.Raw(question.QuestionDescription)</td>
+                            </tr>
+                        </div>
+                        
+
+                        @foreach (var answer in question.Answers)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.Raw(answer.AnswerText) <br>
+                                    @if (@answer.IsCorrect == true)
+                                    {
+                                        <p> Correct Answer</p>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    }
+                </table>
+
+            </form>
+
+
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
 
 

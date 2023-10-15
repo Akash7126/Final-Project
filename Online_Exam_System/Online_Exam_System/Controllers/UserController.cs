@@ -30,8 +30,8 @@ namespace Online_Exam_System.Controllers
         {
             if (model.UserId != null && model.Password != null)
             {
-                var user = _context.Users.Where(x=>x.UserId == model.UserId && x.Password == model.Password).ToList();
-                if( user.Count > 0)
+                var user = _context.Users.Where(x => x.UserId == model.UserId && x.Password == model.Password).ToList();
+                if (user.Count > 0)
                 {
                     //get role name from user
                     var userId = model.UserId;
@@ -60,12 +60,13 @@ namespace Online_Exam_System.Controllers
                 }
                 else
                 {
+                    ViewBag.ErrorMessage = "Username or password is incorrect.";
                     return View();
                 }
-              
+
             }
-                //Get Role Name from Use Table
-                return View();
+            //Get Role Name from Use Table
+            return View();
         }
 
         [HttpGet]

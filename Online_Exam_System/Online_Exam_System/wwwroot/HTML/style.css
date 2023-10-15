@@ -1,0 +1,200 @@
+*{
+
+                margin: 0;
+
+                padding: 0;
+
+                box-sizing: border-box;
+
+                font-family: sans-serif;
+
+}
+
+.navbar{
+
+                display: inline-flex;
+
+                width: 100%;
+
+                height: 120px;
+
+                background: #615b5b;
+
+}
+
+.navbar .logo {
+
+                height: 50px;
+
+                width: 50px;
+
+                margin-left: 40px;
+
+}
+
+.navbar .logo img{
+
+                height: 80px;
+
+                width: 80px;
+
+                margin-top: 18px;
+
+                border-radius: 10%;
+
+}
+
+.navbar .title h1{
+
+                color: rgb(255, 255, 255);
+
+                font-size: 28px;
+
+                margin: 20px;
+                
+
+}
+
+.navbar .title p{
+
+                color: white;
+
+                margin: 20px;
+
+                font-size: 22px;
+
+}
+
+.navbar .list{
+
+                margin-top: 80px;
+
+                margin-left: 50px;
+
+}
+
+.navbar .list a{
+
+                color: rgb(250, 250, 250);
+
+                text-decoration: none;
+
+                font-size: 20px;
+
+                margin: 20px;
+
+                color: rgb(255, 255, 255);
+
+                background: #a72173;
+
+                width: 100px;
+
+                height: 60px;
+
+                cursor: pointer;
+
+                border :none;
+               
+
+}
+.container {
+    position: relative;
+  }
+  
+  /* Bottom right text */
+  .text-block {
+    position: absolute;
+    top: 210px;
+    left: 20px;
+    background-color: rgba(122, 117, 117, 0.397);
+    color: rgb(255, 255, 255);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+.button {
+    display: inline-flex;
+    height: 50px;
+    padding: 0;
+    background-color: #a72173;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    position: absolute;
+    top: 75px;
+    right: 346px;
+}
+
+.button:hover{
+    background-color: aqua;
+
+}
+.button:active{
+    background-color: rgb(202, 29, 202);
+    
+}
+
+.button__text,
+.button__icon{
+    display: inline-flex;
+    align-items: center;
+    padding: 0 25px;
+    color: white;
+    height: 100%;
+}
+
+
+  h5 {
+    font-size: 25px;
+  }
+.footer{
+
+                display: inline-flex;
+
+                width: 100%;
+
+                height: 90px;
+
+                background: #00aef3;
+
+                margin-top: 0px;
+
+}
+
+.footer .t2 h2{
+
+                color: rgb(0, 0, 0);
+
+                font-size: 20px;
+
+                margin-left: 30px;
+
+                padding-top: 10px;
+
+}
+
+.footer .t2 p{
+
+                color: rgb(0, 0, 0);
+
+                margin-left: 30px;
+
+}
+
+.footer .contact{
+
+                margin-left: 300px;
+
+                padding-top: 10px;
+
+}
+
+.footer .contact p{
+
+                color: rgb(0, 0, 0);
+
+}

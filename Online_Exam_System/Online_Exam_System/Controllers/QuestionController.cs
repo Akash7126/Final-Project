@@ -80,8 +80,12 @@ namespace Online_Exam_System.Controllers
                                  on courseAssign.CourseId equals course.CourseId
                                  where courseAssign.TeacherId == teacherId
                                  select new { course.CourseId, course.CourseCode }).Distinct().ToList();
-          
-            
+
+            var exams = (from e in _context.CreateExams
+                         where e.ExamId == question.ExamId
+                         select new { e.ExamId, e.ExamTitle }).ToList();
+            ViewBag.Exams = exams;
+            ViewBag.CourseAssigns = courseAssigns;
             ViewBag.CourseAssigns = courseAssigns;
             _context.Questions.Add(questionEntity);
             _context.SaveChanges();
@@ -148,9 +152,11 @@ namespace Online_Exam_System.Controllers
             _context.Answers.AddRange(answerList);
             _context.SaveChanges();
 
-            string currentUrl = HttpContext.Request.Path.ToString() + "?courseId=" + question.CourseId;
+            string currentUrl = HttpContext.Request.Path.ToString() + "?courseId=" + question.CourseId + "&examId=" + question.ExamId;
 
-            masterCourseId = question.CourseId;
+            //string currentUrl = HttpContext.Request.Path.ToString() + "?courseId=" + question.CourseId;
+
+            //masterCourseId = question.CourseId;
 
             return Redirect(currentUrl);
 
@@ -216,10 +222,11 @@ namespace Online_Exam_System.Controllers
                                   on courseAssign.CourseId equals course.CourseId
                                   where courseAssign.TeacherId == teacherId
                                   select new { course.CourseId, course.CourseCode }).Distinct().ToList();
-            var exams = _context.CreateExams
-                              .Where(e => e.TeacherId == teacherId)
-                              .ToList();
+            var exams = (from e in _context.CreateExams
+                         where e.ExamId == question.ExamId
+                         select new { e.ExamId, e.ExamTitle }).ToList();
             ViewBag.Exams = exams;
+           
             ViewBag.CourseAssigns1 = courseAssigns1;
             _context.Questions.Add(questionEntity1);
             _context.SaveChanges();
@@ -285,9 +292,7 @@ namespace Online_Exam_System.Controllers
 
             _context.Answers.AddRange(answerList);
             _context.SaveChanges();
-            string currentUrl = HttpContext.Request.Path.ToString() + "?courseId=" + question.CourseId;
-
-            masterCourseId = question.CourseId;
+            string currentUrl = HttpContext.Request.Path.ToString() + "?courseId=" + question.CourseId + "&examId=" + question.ExamId;
             return Redirect(currentUrl);
         }
 
@@ -343,9 +348,9 @@ namespace Online_Exam_System.Controllers
                                   on courseAssign.CourseId equals course.CourseId
                                   where courseAssign.TeacherId == teacherId
                                   select new { course.CourseId, course.CourseCode }).Distinct().ToList();
-            var exams = _context.CreateExams
-                              .Where(e => e.TeacherId == teacherId)
-                              .ToList();
+            var exams = (from e in _context.CreateExams
+                         where e.ExamId == question.ExamId
+                         select new { e.ExamId, e.ExamTitle }).ToList();
             ViewBag.Exams = exams;
             ViewBag.CourseAssigns2 = courseAssigns2;
             _context.Questions.Add(questionEntity1);
@@ -384,9 +389,7 @@ namespace Online_Exam_System.Controllers
             _context.Answers.AddRange(answerList);
             _context.SaveChanges();
 
-            string currentUrl = HttpContext.Request.Path.ToString() + "?courseId=" + question.CourseId;
-
-            masterCourseId = question.CourseId;
+            string currentUrl = HttpContext.Request.Path.ToString() + "?courseId=" + question.CourseId + "&examId=" + question.ExamId;
             return Redirect(currentUrl);
         }
 

@@ -1,0 +1,110 @@
+.navbar{
+
+    display: inline-flex;
+
+    width: 100%;
+
+    height: 120px;
+
+    background: #615b5b;
+
+}
+
+.navbar .logo {
+
+    height: 50px;
+
+    width: 50px;
+
+    margin-left: 40px;
+
+}
+
+.navbar .logo img{
+
+    height: 80px;
+
+    width: 80px;
+
+    margin-top: 18px;
+
+    border-radius: 10%;
+
+}
+.navbar .title h1{
+
+    color: rgb(255, 255, 255);
+
+    font-size: 28px;
+
+    margin: 20px;
+    
+
+}
+
+.navbar .list a{
+
+    color: rgb(250, 250, 250);
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    margin: 20px;
+
+    color: rgb(255, 255, 255);
+
+    background: #a72173;
+
+    width: 100px;
+
+    height: 60px;
+
+    cursor: pointer;
+
+    border :none;
+   
+
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.swiper{
+    width: 80%;
+    height: fit-content ;
+}
+
+.swiper-slide img{
+    width: 90%;
+    height: 90%;
+
+}
+.footer .t2 p{
+
+    color: rgb(0, 0, 0);
+
+    margin-left: 30px;
+
+}
+
+.footer .contact{
+
+    margin-left: 300px;
+
+    padding-top: 10px;
+
+}
+
+.footer .contact p{
+
+    color: rgb(0, 0, 0);
+
+}
+
