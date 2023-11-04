@@ -18,6 +18,10 @@ namespace Online_Exam_System.Controllers
             _logger = logger;
             this.context = context;
         }
+        private bool IsExamOver(DateTime examEndTime)
+        {
+            return DateTime.Now > examEndTime;
+        }
         public IActionResult CreateExam()
         {
 
@@ -32,7 +36,7 @@ namespace Online_Exam_System.Controllers
                                  on courseAssign.CourseId equals course.CourseId
                                  where courseAssign.TeacherId == teacherId
                                  select new { course.CourseId, course.CourseCode }).Distinct().ToList();
-            ViewBag.CourseAssigns = courseAssigns;  
+            ViewBag.CourseAssigns = courseAssigns;
             return View();
         }
 
@@ -46,11 +50,11 @@ namespace Online_Exam_System.Controllers
                                   .FirstOrDefault();
             CreateExam newExam = new CreateExam();
             newExam.ExamTitle = createExam.ExamTitle;
-            newExam.Description= createExam.Description;
+            newExam.Description = createExam.Description;
             newExam.StartTime = createExam.StartTime;
             newExam.EndTime = createExam.EndTime;
             newExam.TeacherId = teacherId;
-            newExam.CourseId =createExam.CourseId;
+            newExam.CourseId = createExam.CourseId;
 
             context.CreateExams.Add(newExam);
             context.SaveChanges();
@@ -83,16 +87,16 @@ namespace Online_Exam_System.Controllers
         }
 
 
-        
+
         public IActionResult UpdateExam(int ExamId)
         {
             // Retrieve the exam from the database based on the examId
             var exam = context.CreateExams.FirstOrDefault(e => e.ExamId == ExamId);
-            DateTime startTime=exam.StartTime;
-            DateTime endTime=exam.EndTime;  
+            DateTime startTime = exam.StartTime;
+            DateTime endTime = exam.EndTime;
             var description = exam.Description;
             var examTitle = exam.ExamTitle;
-            var courseId = exam.CourseId;   
+            var courseId = exam.CourseId;
             var userId = HttpContext.Request.Cookies["UserId"];
 
             var teacherId = context.Teachers
@@ -104,7 +108,7 @@ namespace Online_Exam_System.Controllers
                                  on courseAssign.CourseId equals course.CourseId
                                  where courseAssign.TeacherId == teacherId
                                  select new { course.CourseId, course.CourseCode }).Distinct().ToList();
-            
+
 
             var viewModel = new CreateExamViewModel
             {
@@ -138,7 +142,7 @@ namespace Online_Exam_System.Controllers
             existingExam.Description = updatedExam.Description;
             existingExam.StartTime = updatedExam.StartTime;
             existingExam.EndTime = updatedExam.EndTime;
-            existingExam.CourseId = updatedExam.CourseId;   
+            existingExam.CourseId = updatedExam.CourseId;
 
             // Save changes to the database
             context.SaveChanges();
@@ -166,7 +170,106 @@ namespace Online_Exam_System.Controllers
             // Redirect to the exam list page after the deletion
             return RedirectToAction("ExamList", "Exam");
         }
-        
+
+
+        public IActionResult GiveExam()
+        {
+            var userId = HttpContext.Request.Cookies["UserId"];
+            var distinctExams = (from ca in context.CourseAssigns
+                                 join q in context.Questions on ca.CourseId equals q.CourseId
+                                 join ce in context.CreateExams on q.ExamId equals ce.ExamId
+                                 join s in context.Students on ca.StudentId equals s.StudentId
+                                 join c in context.Courses on q.CourseId equals c.CourseId
+                                 join d in context.Departments on c.DepartmentId equals d.DepartmentId
+                                 where s.UserId == userId
+                                 select new DisplayExamViewModel
+                                 {
+                                     ExamId = ce.ExamId,
+                                     ExamTitle = ce.ExamTitle,
+                                     StartTime = ce.StartTime,
+                                     EndTime = ce.EndTime,
+                                     CourseTittle = c.CourseTittle,
+                                     CourseCode = c.CourseCode,
+                                     DepartmentName = d.DepartmentName
+                                 }).Distinct().ToList();
+
+            return View(distinctExams);
+        }
+
+
+        public IActionResult QuestionforStudent(int id)
+        {
+
+
+            var questions = context.Questions
+                                   .Include(q => q.Answers)
+                                   .Where(q => q.ExamId == id)
+                                   .ToList();
+
+            var exam = context.CreateExams
+                     .FirstOrDefault(e => e.ExamId == id);
+
+            var userId = HttpContext.Request.Cookies["UserId"];
+            var distinctExams = (from ca in context.CourseAssigns
+                                 join q in context.Questions on ca.CourseId equals q.CourseId
+                                 join ce in context.CreateExams on q.ExamId equals ce.ExamId
+                                 join s in context.Students on ca.StudentId equals s.StudentId
+                                 join c in context.Courses on q.CourseId equals c.CourseId
+                                 join d in context.Departments on c.DepartmentId equals d.DepartmentId
+                                 where s.UserId == userId && ce.ExamId == id
+                                 select new DisplayExamViewModel
+                                 {
+                                     ExamId = ce.ExamId,
+                                     ExamTitle = ce.ExamTitle,
+                                     StartTime = ce.StartTime,
+                                     EndTime = ce.EndTime,
+                                     CourseTittle = c.CourseTittle,
+                                     CourseCode = c.CourseCode,
+                                     DepartmentName = d.DepartmentName
+                                 }).Distinct().ToList();
+
+            
+            var totalMarks = questions
+                .Where(q => q.ExamId == id)
+                .Sum(q => q.Mark);
+
+
+
+
+            foreach (var distinctExam in distinctExams)
+            {
+                var time = distinctExam.EndTime - distinctExam.StartTime;
+
+                int totalMinutes = (int)time.TotalMinutes;
+                int hours = totalMinutes / 60;
+                int minutes = totalMinutes % 60;
+
+                string formattedTime;
+
+                if (hours > 0)
+                {
+                    formattedTime = $"{hours}hr {minutes}min";
+                }
+                else
+                {
+                    formattedTime = $"{minutes}min";
+                }
+
+                ViewBag.Time = formattedTime;
+            }
+
+            ViewBag.ExamEndTime = exam.EndTime;
+            // Check if the exam is over based on the ExamEndTime
+            bool isExamOver = IsExamOver(exam.EndTime);
+            ViewBag.IsExamOver = isExamOver;
+            ViewBag.DistinctExams = distinctExams;
+            ViewBag.TotalMarks = totalMarks;
+            
+
+            // Pass the questions and the exam status to the view
+
+            return View(questions);
+        }
 
 
     }

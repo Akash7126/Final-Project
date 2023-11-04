@@ -1,35 +1,5 @@
-﻿@model List<Online_Exam_System.Models.Question>
+﻿ @model List<Online_Exam_System.Models.Question>
 
-
-
-@*<table>
-    <thead>
-        <tr>
-            <th>Question Description</th>
-            <th>Answers</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var question in Model)
-        {
-            <tr>
-                <td>@Html.Raw(question.QuestionDescription)</td>
-                <td>
-                    <ul>
-                        @foreach (var answer in question.Answers)
-                        {
-                            <li>@Html.Raw(answer.AnswerText)</li>
-                            @if (@answer.IsCorrect == true)
-                            {
-                                <p> Correct Answer</p>
-                            }
-                        }
-                    </ul>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>*@
 <!DOCTYPE html>
 <html>
 <head>

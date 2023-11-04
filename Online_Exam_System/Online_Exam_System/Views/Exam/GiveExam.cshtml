@@ -1,0 +1,181 @@
+﻿@using Online_Exam_System.ViewModel;
+@model List<DisplayExamViewModel>
+
+<style>
+    .todo-list > li {
+        border-radius: 2px;
+        background: #e9eef5;
+        border-left: 2px solid #e9ecef;
+        color: #495057;
+        margin-bottom: 2px;
+        padding: 10px;
+    }
+
+        .todo-list > li .badge {
+            font-size: .9rem;
+            margin-left: 10px;
+        }
+
+    .badge-warning {
+        color: #ffffff;
+        background-color: #ffc107;
+    }
+}
+</style>
+
+@*<table>
+    @*<tr>
+        <th>Exam ID</th>
+        <th>Exam Title</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+    </tr>*@
+
+   
+@*    @foreach (var exam in Model)
+    {
+        <tr>
+            <td>@exam.ExamId</td>
+            <td>@exam.ExamTitle</td>
+            <td>@exam.StartTime</td>
+            <td>@exam.EndTime</td>
+        </tr>
+    }
+</table>*@
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">
+            <i class="ion ion-clipboard mr-1"></i>
+            To Do List
+        </h3>
+
+    </div>
+
+<div class="card-body">
+    <ul class="todo-list" data-widget="todo-list">
+        
+        @foreach (var exam in Model)
+        {
+            
+            <li>
+                <!-- todo text -->
+               @* <span class="text">@exam.ExamTitle</span>*@
+                    @if(DateTime.Now<exam.StartTime)
+                    {
+
+                        <a href=""><span class="text">@exam.ExamTitle</span></a>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("QuestionforStudent", "Exam", new { id = exam.ExamId })">
+                            <span class="text">@exam.ExamTitle</span>
+                        </a>
+                    }
+
+                    
+
+                    <span class="text">@exam.StartTime.ToString("dd MMM hh:mm tt")</span>
+
+
+
+                    @{
+                        TimeSpan timeUntilExamStart = exam.StartTime - DateTime.Now;
+                        TimeSpan timeUntilExamEnd = exam.EndTime - DateTime.Now;
+                    }
+
+                    @if (timeUntilExamStart.TotalSeconds <= 0 && timeUntilExamEnd.TotalSeconds > 0)
+                    {
+                        <!-- Display a blue badge when the exam starts and is not over yet -->
+                        <small class="badge badge-primary">
+                            <i class="far fa-clock"></i> Exam in progress
+                        </small>
+                    }
+                    else if (timeUntilExamEnd < TimeSpan.Zero)
+                    {
+                        <!-- If the end time is over, display a danger badge -->
+                        <small class="badge badge-danger"><i class="far fa-clock"></i> Exam Over</small>
+                    }
+                    else
+                    {
+                        if (timeUntilExamStart.TotalHours > 24)
+                        {
+                            <!-- If more than 24 hours remaining, display in days, hours, minutes, and seconds -->
+                            <small class="badge badge-success">
+                                <i class="far fa-clock"></i>
+                                @(
+                                    timeUntilExamStart.Days + " days, " +
+                                    timeUntilExamStart.Hours + " hours, " +
+                                    timeUntilExamStart.Minutes + " minutes, " +
+                                    timeUntilExamStart.Seconds + " seconds until the exam"
+                                    )
+                            </small>
+                        }
+                        else
+                        {
+                            <!-- If less than 24 hours remaining, display in hours, minutes, and seconds -->
+                            <small class="badge badge-warning">
+                                <i class="far fa-clock"></i>
+                                @(
+                                    timeUntilExamStart.Hours + " hours, " +
+                                    timeUntilExamStart.Minutes + " minutes, " +
+                                    timeUntilExamStart.Seconds + " seconds until the exam"
+                                    )
+                            </small>
+                        }
+                    }
+
+
+
+
+
+                   @* @if ((exam.StartTime - DateTime.Now) == TimeSpan.Zero && exam.EndTime > DateTime.Now)
+                    {
+                        <!-- Display a blue badge when the exam starts and is not over yet -->
+                        <small class="badge badge-primary">
+                            <i class="far fa-clock"></i> Exam in progress
+                        </small>
+                    }
+                    
+                    else if (exam.EndTime < DateTime.Now)
+                    {
+                        <!-- If the start time is over, display a danger badge -->
+                        <small class="badge badge-danger"><i class="far fa-clock"></i> Exam Over</small>
+                    }
+
+                    else
+                    {
+                        
+                        @if ((exam.StartTime-DateTime.Now).TotalHours > 24)
+                        {
+                            <!-- If more than 24 hours remaining, display in days, hours, minutes, and seconds -->
+                            <small class="badge badge-success">
+                                <i class="far fa-clock"></i>
+                                @((exam.StartTime - DateTime.Now).Days + " days, " +
+                                    (exam.StartTime - DateTime.Now).Hours + " hours, " +
+                                    (exam.StartTime - DateTime.Now).Minutes + " minutes, " +
+                                    (exam.StartTime - DateTime.Now).Seconds + " seconds until the exam")
+                            </small>
+                        }
+                        else
+                        {
+                            <!-- If less than 24 hours remaining, display in hours, minutes, and seconds -->
+                            <small class="badge badge-warning">
+                                <i class="far fa-clock"></i>
+                                @((exam.StartTime - DateTime.Now).Hours + " hours, " +
+                                    (exam.StartTime - DateTime.Now).Minutes + " minutes, " +
+                                    (exam.StartTime - DateTime.Now).Seconds + " seconds until the exam")
+                            </small>
+                        }
+                    }*@
+                <!-- Emphasis label -->
+@*                <small class="badge badge-danger"><i class="far fa-clock"></i>exam.StartTime.ToString("dd MMM HH:mm")</small>*@
+@*                <small @*class="badge badge-danger"><i class="far fa-clock"></i> End Time: @exam.EndTime.ToString("HH:mm")</small>*@
+                <!-- General tools such as edit or delete-->
+        
+            </li>
+        }
+    </ul>
+</div>
+</div>
+

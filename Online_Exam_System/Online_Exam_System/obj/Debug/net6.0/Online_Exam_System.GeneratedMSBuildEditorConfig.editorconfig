@@ -60,6 +60,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxFeGFtTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Exam/GiveExam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxHaXZlRXhhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Exam/QuestionforStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxRdWVzdGlvbmZvclN0dWRlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Exam/UpdateExam.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxVcGRhdGVFeGFtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
