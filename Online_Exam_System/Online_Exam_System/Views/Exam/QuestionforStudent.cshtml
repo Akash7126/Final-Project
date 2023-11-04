@@ -70,24 +70,13 @@
         .text-left {
             margin-left: 544px;
         }
-        
     </style>
 
-    @*<script>
-        function refreshPageIfExamOver() {
-            var endTime = new Date('@ViewBag.ExamEndTime'); // Get the exam end time from JavaScript variable
-            var now = new Date(); // Get the current time
 
-            // Check if the current time is greater than or equal to the exam end time
-            if (now >= endTime) {
-                location.reload(); // Reload the page
-            }
-        }
-    </script>*@
 </head>
 <body>
     <div class="quiz-container">
-        
+
         @if (ViewBag.IsExamOver)
         {
             <h1 style="color: red; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);font-style: italic;">Exam is over</h1>
@@ -111,8 +100,8 @@
                         <div class="question">
                             <p>
                         <li>@Html.Raw(question.QuestionDescription)</li></p>
-                        
-                       
+
+
                 </div>
                 <ol type="a">
                             @foreach (var answer in question.Answers)
@@ -157,7 +146,7 @@
                 }
                 else
                 {
-                
+
                 }
             }
         }
@@ -171,7 +160,7 @@
             <h6 style="text-align:center"><b>Department of @exam.DepartmentName</b></h6>
             <h6 style="text-align:center"><b>Course Title: @exam.CourseTittle</b></h6>
             <h6 style="text-align:center"><b>Course Code: @exam.CourseCode</b></h6>
-            
+
             }
 
         <h7 class="text-right"><b>Total Mark: @ViewBag.TotalMarks</b></h7>
@@ -225,9 +214,9 @@
             </ol>
 
 
-                
-                <button class="btn-submit" type="submit">Submit Quiz</button>
-               
+
+            <button class="btn-submit" type="submit">Submit Quiz</button>
+
             }
         <script>
             // Function to refresh the page when the end time is reached
@@ -247,11 +236,11 @@
             refreshPageOnEndTime();
         </script>
 
-            
+
         }
 
-        
+
     </div>
-    
+
 </body>
 </html>

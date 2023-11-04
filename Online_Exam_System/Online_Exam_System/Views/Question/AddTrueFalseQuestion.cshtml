@@ -41,7 +41,7 @@
         background-color: #5e7e75;
     }
 
-    
+
 
     .form-group.group-1 {
         margin-top: 20px;
@@ -63,8 +63,6 @@
         margin-left: 45px;
     }
 
- 
-
 </style>
 
 <div class="card card-primary1">
@@ -72,7 +70,7 @@
         <div class="card-header">
             <h3 class="card-title">Set True or False Answer Question</h3>
         </div>
-       
+
         <form asp-controller="Question" asp-action="AddTrueFalseQuestion" role="form" method="post">
             <div class="container">
                 <div class="row1">
@@ -94,15 +92,15 @@
                 </div>
             </div>
             <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-4 cutomize-data">
-                            <div class="form-group">
-                                <label asp-for="CourseId">Course Code</label>
-                                <select id="courseDropdown" class="form-control" asp-for="CourseId" asp-items="@(new SelectList(ViewBag.CourseAssigns2,"CourseId","CourseCode"))">
-                                    <option>Please select one</option>
-                                </select>
-                            </div>
+                <div class="row">
+                    <div class="col-md-4 cutomize-data">
+                        <div class="form-group">
+                            <label asp-for="CourseId">Course Code</label>
+                            <select id="courseDropdown" class="form-control" asp-for="CourseId" asp-items="@(new SelectList(ViewBag.CourseAssigns2,"CourseId","CourseCode"))">
+                                <option>Please select one</option>
+                            </select>
                         </div>
+                    </div>
 
                     <div class="col-md-4 cutomize-data1">
                         <div class="form-group">
@@ -112,15 +110,15 @@
                             </select>
                         </div>
                     </div>
-                        @*<div class="col-md-4 cutomize-data1">
-                            <div class="form-group">
-                                <label asp-for="ExamId">Select Exam</label>
-                                <select class="form-control" asp-for="ExamId" asp-items="@(new SelectList(ViewBag.Exams, "ExamId", "ExamTitle"))">
-                                    <option>Please select one</option>
-                                </select>
-                            </div>
-                        </div>*@
-                    
+                    @*<div class="col-md-4 cutomize-data1">
+                    <div class="form-group">
+                    <label asp-for="ExamId">Select Exam</label>
+                    <select class="form-control" asp-for="ExamId" asp-items="@(new SelectList(ViewBag.Exams, "ExamId", "ExamTitle"))">
+                    <option>Please select one</option>
+                    </select>
+                    </div>
+                    </div>*@
+
                     <div class="col-md-1 customize-data1">
                         <div class="form-group">
                             <label asp-for="Mark">Mark</label>
@@ -131,7 +129,7 @@
 
                 </div>
 
-                
+
                 <div class="card-body">
                     <div class="row justify-content-center">
                         <div class="col-md-10">
@@ -183,7 +181,7 @@
             });
         });
 
-        
+
         $(document).on('change', '.correct-answer', function () {
             // Unselect all other radio buttons in all editors
             $('.correct-answer').not(this).prop('checked', false);
@@ -254,16 +252,16 @@
             }
         });
 
-        //$('#trueFalseAnswerButton').click(function (e) {
-        //    var courseId = $('#courseDropdown').val(); // Get the selected Course ID
-        //    if (!courseId) {
-        //        e.preventDefault();
-        //        alert('Please select a Course');
-        //    } else {
-        //        // Update the href attribute of the button with the selected Course ID
-        //        $(this).attr('href', $(this).attr('href') + '?courseId=' + courseId);
-        //    }
-        //});
+                //$('#trueFalseAnswerButton').click(function (e) {
+                //    var courseId = $('#courseDropdown').val(); // Get the selected Course ID
+                //    if (!courseId) {
+                //        e.preventDefault();
+                //        alert('Please select a Course');
+                //    } else {
+                //        // Update the href attribute of the button with the selected Course ID
+                //        $(this).attr('href', $(this).attr('href') + '?courseId=' + courseId);
+                //    }
+                //});
     </script>
 
 
@@ -318,7 +316,7 @@
     </script>*@
 
 
-   
-     
+
+
 }
 

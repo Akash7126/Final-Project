@@ -18,7 +18,7 @@ namespace Online_Exam_System.Controllers
         {
             return View();
         }
-         
+
         //[HttpGet]
         //public IActionResult Login()
         //{

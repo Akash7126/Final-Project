@@ -199,8 +199,6 @@ namespace Online_Exam_System.Controllers
 
         public IActionResult QuestionforStudent(int id)
         {
-
-
             var questions = context.Questions
                                    .Include(q => q.Answers)
                                    .Where(q => q.ExamId == id)
@@ -228,7 +226,7 @@ namespace Online_Exam_System.Controllers
                                      DepartmentName = d.DepartmentName
                                  }).Distinct().ToList();
 
-            
+
             var totalMarks = questions
                 .Where(q => q.ExamId == id)
                 .Sum(q => q.Mark);
@@ -264,7 +262,7 @@ namespace Online_Exam_System.Controllers
             ViewBag.IsExamOver = isExamOver;
             ViewBag.DistinctExams = distinctExams;
             ViewBag.TotalMarks = totalMarks;
-            
+
 
             // Pass the questions and the exam status to the view
 

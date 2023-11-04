@@ -37,7 +37,7 @@ namespace Online_Exam_System.Controllers
 
             var departments = context.Departments.ToList(); // Replace this with the method that retrieves the departments from your data source.
             ViewBag.Departments = departments;
-         
+
 
             return RedirectToAction("GetAllCourse", "Course");
         }

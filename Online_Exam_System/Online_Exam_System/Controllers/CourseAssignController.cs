@@ -32,7 +32,7 @@ namespace Online_Exam_System.Controllers
             if (ModelState.IsValid) // Ensure the data is valid
             {
 
-                foreach(var studentId in courseAssign.StudentList)
+                foreach (var studentId in courseAssign.StudentList)
                 {
                     var courseAssignEntity = new CourseAssign
                     {
@@ -45,7 +45,7 @@ namespace Online_Exam_System.Controllers
                     context.CourseAssigns.Add(courseAssignEntity);
 
                 }
-                
+
                 context.SaveChanges();
 
 

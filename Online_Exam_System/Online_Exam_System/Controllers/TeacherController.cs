@@ -42,7 +42,7 @@ namespace Online_Exam_System.Controllers
         {
             //new code for create userId
             Guid guid = Guid.NewGuid();
-            string userId = teacher.TeacherName+guid.ToString("N").Substring(0, 6);
+            string userId = teacher.TeacherName + guid.ToString("N").Substring(0, 6);
             teacher.UserId = userId;
 
             context.Teachers.Add(teacher);
@@ -84,10 +84,10 @@ namespace Online_Exam_System.Controllers
             aTeacher.TeacherName = teacher.TeacherName;
             aTeacher.DepartmentId = teacher.DepartmentId;
             aTeacher.TeacherPassword = teacher.TeacherPassword;
-            aTeacher.Contact= teacher.Contact;
+            aTeacher.Contact = teacher.Contact;
             aTeacher.JobTitle = teacher.JobTitle;
             aTeacher.Sex = teacher.Sex;
-            aTeacher.Email = teacher.Email; 
+            aTeacher.Email = teacher.Email;
             aTeacher.Address = teacher.Address;
             context.Teachers.Update(aTeacher);
             context.SaveChanges();

@@ -1,0 +1,138 @@
+﻿@model List<Online_Exam_System.Models.Question>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Online Exam Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .quiz-container {
+            max-width: 863px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .question {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .answers {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .answer {
+            margin: 5px 0;
+        }
+
+        .btn-submit {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .answer-option {
+            display: inline-block;
+            margin-right: 10px; /* Add spacing between answer options */
+        }
+
+        .answer-option1 {
+            display: inline-block;
+            margin-right: 10px; /* Add spacing between answer options */
+        }
+
+            .answer-option1 input[type="checkbox"] {
+                vertical-align: middle;
+                margin-right: 5px; /* Add spacing between checkboxes and labels */
+            }
+
+        .answer-option input[type="radio"] {
+            vertical-align: middle;
+            margin-right: 5px; /* Add spacing between radio buttons and labels */
+        }
+
+        .text-right {
+            margin-left: 18px;
+        }
+
+        .text-left {
+            margin-left: 544px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="quiz-container">
+
+
+        <h5 style="text-align:center;"><b>University of Information Technology & Sciences(UITS)</b></h5>
+        <h6 style="text-align:center"><b>Faculty of Science And Engineering</b></h6>
+        @foreach (var exam in ViewBag.DistinctExams)
+        {
+            <h6 style="text-align:center"><b>Department of @exam.DepartmentName</b></h6>
+            <h6 style="text-align:center"><b>Course Title: @exam.CourseTittle</b></h6>
+            <h6 style="text-align:center"><b>Course Code: @exam.CourseCode</b></h6>
+        }
+
+        <h7 class="text-right"><b>Total Mark: @ViewBag.TotalMarks</b></h7>
+        <h7 class="text-left"> <b>Time: @ViewBag.Time</b></h7>
+        @using (Html.BeginForm("SubmitQuiz", "QuizController", FormMethod.Post))
+        {
+
+            <ol type="1">
+                @foreach (var question in Model)
+                {
+                    <div class="question">
+                        <p>
+                    <li>@Html.Raw(question.QuestionDescription)</li></p>
+
+
+            </div>
+            <ol type="a">
+                        @foreach (var answer in question.Answers)
+                        {
+                    <li>
+                                @if (question.QuestionTypeId == 1 || question.QuestionTypeId == 3)
+                                {
+                            <div class="answers answer-option">
+                                <input type="radio" name="question@(question.QuestionId)" value="@answer.AnswerId" id="answer@(answer.AnswerId)"
+                                        @(answer.IsCorrect.HasValue && answer.IsCorrect.Value ? "checked" : "")>
+                                <label for="answer@(answer.AnswerId)">
+                                            @Html.Raw(answer.AnswerText)
+                                </label>
+                            </div>
+                                }
+
+                                else if (question.QuestionTypeId == 2)
+                                {
+                            <!-- Display checkboxes for other types of questions -->
+                            <input type="checkbox" name="question@(question.QuestionId)" value="@answer.AnswerId" id="answer@(answer.AnswerId)"
+                                    @(answer.IsCorrect.HasValue && answer.IsCorrect.Value ? "checked" : "")>
+                            <label for="answer@(answer.AnswerId)">
+                                        @Html.Raw(answer.AnswerText)
+                            </label>
+
+                                }
+                    </li>
+                        }
+            </ol>
+                }
+        </ol>
+        }
+    </div>
+
+</body>
+</html>

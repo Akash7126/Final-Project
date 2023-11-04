@@ -20,28 +20,11 @@
         color: #ffffff;
         background-color: #ffc107;
     }
-}
+
+    }
 </style>
 
-@*<table>
-    @*<tr>
-        <th>Exam ID</th>
-        <th>Exam Title</th>
-        <th>Start Time</th>
-        <th>End Time</th>
-    </tr>*@
 
-   
-@*    @foreach (var exam in Model)
-    {
-        <tr>
-            <td>@exam.ExamId</td>
-            <td>@exam.ExamTitle</td>
-            <td>@exam.StartTime</td>
-            <td>@exam.EndTime</td>
-        </tr>
-    }
-</table>*@
 
 <div class="card">
     <div class="card-header">
@@ -52,16 +35,16 @@
 
     </div>
 
-<div class="card-body">
-    <ul class="todo-list" data-widget="todo-list">
-        
-        @foreach (var exam in Model)
-        {
-            
-            <li>
-                <!-- todo text -->
-               @* <span class="text">@exam.ExamTitle</span>*@
-                    @if(DateTime.Now<exam.StartTime)
+    <div class="card-body">
+        <ul class="todo-list" data-widget="todo-list">
+
+            @foreach (var exam in Model)
+            {
+
+                <li>
+                    <!-- todo text -->
+                    @* <span class="text">@exam.ExamTitle</span>*@
+                    @if (DateTime.Now < exam.StartTime)
                     {
 
                         <a href=""><span class="text">@exam.ExamTitle</span></a>
@@ -73,7 +56,7 @@
                         </a>
                     }
 
-                    
+
 
                     <span class="text">@exam.StartTime.ToString("dd MMM hh:mm tt")</span>
 
@@ -124,58 +107,8 @@
                             </small>
                         }
                     }
-
-
-
-
-
-                   @* @if ((exam.StartTime - DateTime.Now) == TimeSpan.Zero && exam.EndTime > DateTime.Now)
-                    {
-                        <!-- Display a blue badge when the exam starts and is not over yet -->
-                        <small class="badge badge-primary">
-                            <i class="far fa-clock"></i> Exam in progress
-                        </small>
-                    }
-                    
-                    else if (exam.EndTime < DateTime.Now)
-                    {
-                        <!-- If the start time is over, display a danger badge -->
-                        <small class="badge badge-danger"><i class="far fa-clock"></i> Exam Over</small>
-                    }
-
-                    else
-                    {
-                        
-                        @if ((exam.StartTime-DateTime.Now).TotalHours > 24)
-                        {
-                            <!-- If more than 24 hours remaining, display in days, hours, minutes, and seconds -->
-                            <small class="badge badge-success">
-                                <i class="far fa-clock"></i>
-                                @((exam.StartTime - DateTime.Now).Days + " days, " +
-                                    (exam.StartTime - DateTime.Now).Hours + " hours, " +
-                                    (exam.StartTime - DateTime.Now).Minutes + " minutes, " +
-                                    (exam.StartTime - DateTime.Now).Seconds + " seconds until the exam")
-                            </small>
-                        }
-                        else
-                        {
-                            <!-- If less than 24 hours remaining, display in hours, minutes, and seconds -->
-                            <small class="badge badge-warning">
-                                <i class="far fa-clock"></i>
-                                @((exam.StartTime - DateTime.Now).Hours + " hours, " +
-                                    (exam.StartTime - DateTime.Now).Minutes + " minutes, " +
-                                    (exam.StartTime - DateTime.Now).Seconds + " seconds until the exam")
-                            </small>
-                        }
-                    }*@
-                <!-- Emphasis label -->
-@*                <small class="badge badge-danger"><i class="far fa-clock"></i>exam.StartTime.ToString("dd MMM HH:mm")</small>*@
-@*                <small @*class="badge badge-danger"><i class="far fa-clock"></i> End Time: @exam.EndTime.ToString("HH:mm")</small>*@
-                <!-- General tools such as edit or delete-->
-        
-            </li>
-        }
-    </ul>
+                </li>
+            }
+        </ul>
+    </div>
 </div>
-</div>
-

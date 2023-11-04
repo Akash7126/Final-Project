@@ -110,7 +110,7 @@
                             var newId = idCell.textContent.trim();
                             console.log(newId + "--")
                             const myForm = document.getElementById('myForm');
-                            myForm.action = '/Teacher/DeleteTeacher?' + newId; // Set the appropriate action URL 
+                            myForm.action = '/Teacher/DeleteTeacher?' + newId; // Set the appropriate action URL
                             myForm.method = 'post'; // Set the form method
                             const input = document.createElement('input');
                             input.type = 'hidden';

@@ -7,7 +7,7 @@
         <div class="card-header">
             <h3 class="card-title">Create Exam</h3>
         </div>
-       
+
         <form asp-action="Create" method="post" role="form">
             <div class="row">
                 <div class="col-md-4">
@@ -25,7 +25,7 @@
                 <div class="col-md-4 cutomize-data">
                     <div class="form-group">
                         <label asp-for="CourseId">Course Code</label>
-                        <select  class="form-control" asp-for="CourseId" asp-items="@(new SelectList(ViewBag.CourseAssigns,"CourseId","CourseCode"))">
+                        <select class="form-control" asp-for="CourseId" asp-items="@(new SelectList(ViewBag.CourseAssigns,"CourseId","CourseCode"))">
                             <option>Please select one</option>
                         </select>
                     </div>

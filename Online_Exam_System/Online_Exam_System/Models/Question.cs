@@ -18,7 +18,7 @@ namespace Online_Exam_System.Models
         public int? CourseId { get; set; }
         public int? TeacherId { get; set; }
         public int? ExamId { get; set; }
-  
+
         public virtual CreateExam? Exam { get; set; }
         public virtual ICollection<Answer> Answers { get; set; }
     }

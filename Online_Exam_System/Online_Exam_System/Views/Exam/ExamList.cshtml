@@ -23,13 +23,13 @@
             <table class="table table-bordered table-striped" id="DataTableData">
                 <thead>
                     <tr>
-                        
+
                         <th>Exam Title</th>
                         <th>Description</th>
                         <th>Start Time</th>
                         <th>End Time</th>
-                      
-                     
+
+
                         <th colspan="3" style="text-align:center">Action</th>
                     </tr>
                 </thead>
@@ -37,31 +37,31 @@
                     @foreach (var item in Model)
                     {
                         <tr class="tbl-student-row">
-                            
+
                             <td class="tbl-student-col">@item.ExamTitle</td>
                             <td class="tbl-student-col">@item.Description</td>
                             <td class="tbl-student-col">@item.StartTime</td>
                             <td class="tbl-student-col">@item.EndTime</td>
-                            
+
 
                             <td class="tbl-student-col">
                                 <a href="/Exam/UpdateExam?ExamId=@item.ExamId" class="btn btn-warning btn-info btn-sm">
                                     <i class="fas fa-edit" style="color: #f5f5f5;"></i>
                                 </a>
                             </td>
-                           @* <td class="tbl-student-col">
-                                <a asp-action="UpdateExam" asp-route-id="@item.ExamId">
-                                    <button type="button" class="btn btn-warning btn-info btn-sm">
-                                        <i class="fas fa-edit" style="color: #f5f5f5;"></i>
-                                    </button>
-                                </a>
-                            </td>*@
+                            @* <td class="tbl-student-col">
+                        <a asp-action="UpdateExam" asp-route-id="@item.ExamId">
+                        <button type="button" class="btn btn-warning btn-info btn-sm">
+                        <i class="fas fa-edit" style="color: #f5f5f5;"></i>
+                        </button>
+                        </a>
+                        </td>*@
 
                             @*<td class="tbl-student-col">
-                                <a href="/Exam/DeleteExam?ExamId=@item.ExamId" class="btn btn-info btn-danger btn-sm btn-delete">
-                                    <i class="fas fa-trash" style="color: #ffffff;"></i>
-                                </a>
-                            </td>*@
+                        <a href="/Exam/DeleteExam?ExamId=@item.ExamId" class="btn btn-info btn-danger btn-sm btn-delete">
+                        <i class="fas fa-trash" style="color: #ffffff;"></i>
+                        </a>
+                        </td>*@
 
 
                             <td class="tbl-student-col">

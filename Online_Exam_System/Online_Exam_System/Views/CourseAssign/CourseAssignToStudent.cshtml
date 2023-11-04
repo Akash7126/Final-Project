@@ -56,7 +56,7 @@
             </div>
 
             <div class="card-footer">
-                <a  asp-route-id="@Model"><button id="submitStudentSelection" class="btn btn-success">Submit Selection</button></a>
+                <a asp-route-id="@Model"><button id="submitStudentSelection" class="btn btn-success">Submit Selection</button></a>
 
             </div>
         </form>
@@ -90,7 +90,7 @@
                             console.log("Course Data:", data);
                             $('#CourseId').append('<option value=' + data.courseId + '>' + data.courseCode + '</option>');
                         });
-                       // selectedCourseId = result[0].courseId;
+                        // selectedCourseId = result[0].courseId;
                         //var selectedValue = $(this).val();
                         //console.log('Selected value: ' + selectedValue);
                     },
@@ -149,7 +149,7 @@
                 });
             });
 
-             $('#CourseId').change(function () {
+            $('#CourseId').change(function () {
                 selectedCourseId = $(this).val();
                 console.log('Selected value: ' + selectedCourseId);
             });
@@ -166,7 +166,7 @@
             //    getStudentsByBatch(courseId);
             //});
 
-            
+
             function getStudentsByBatch(batchId) {
                 console.log("++++++++++++++++++++++++++++++" + selectedCourseId)
                 $.ajax({
@@ -182,35 +182,35 @@
                         console.log(data);
 
                         var cardHtml = `
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    <i class="ion ion-clipboard mr-1"></i>
-                                    Student List
-                                </h3>
-                            </div>
-                            <div class="row">
-                                <div class="card-body">
-                                    <div class="col-md-6">
-                                        <ul class="todo-list" data-widget="todo-list">
-                                            ${data.map(student => `
-                                                <li>
-                                                    <span class="handle">
-                                                        <i class="fas fa-ellipsis-v"></i>
-                                                        <i class="fas fa-ellipsis-v"></i>
-                                                    </span>
-                                                    <div class="icheck-primary d-inline ml-2">
-                                                        <input type="checkbox" value="${student.studentId}" id="${student.studentName.replace(/\s/g, '_')}" checked>
-                                                        <label for="${student.studentName.replace(/\s/g, '_')}">${student.studentName} (ID: ${student.studentId})</label>
-                                                    </div>
-                                                </li>
-                                            `).join('')}
-                                        </ul>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="ion ion-clipboard mr-1"></i>
+                                            Student List
+                                        </h3>
+                                    </div>
+                                    <div class="row">
+                                        <div class="card-body">
+                                            <div class="col-md-6">
+                                                <ul class="todo-list" data-widget="todo-list">
+                                                    ${data.map(student => `
+                                                        <li>
+                                                            <span class="handle">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </span>
+                                                            <div class="icheck-primary d-inline ml-2">
+                                                                <input type="checkbox" value="${student.studentId}" id="${student.studentName.replace(/\s/g, '_')}" checked>
+                                                                <label for="${student.studentName.replace(/\s/g, '_')}">${student.studentName} (ID: ${student.studentId})</label>
+                                                            </div>
+                                                        </li>
+                                                    `).join('')}
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    `;
+                            `;
 
                         studentList.append(cardHtml);
                     },
@@ -220,7 +220,7 @@
                 });
             }
 
-            
+
 
             $('#submitStudentSelection').click(function () {
 
@@ -233,7 +233,7 @@
                 var selectedStudentIds = [];
                 console.log(selectedStudentIds);
 
-               // formData.push({ name: 'DepartmentId', value: $('#DepartmentId').val() });
+                // formData.push({ name: 'DepartmentId', value: $('#DepartmentId').val() });
 
                 $('.icheck-primary input:checked').each(function () {
                     //var departmentId = $('#DepartmentId').val();
@@ -241,27 +241,27 @@
                     formData.push({ name: 'studentList', value: $(this).val() });
                     //selectedStudentIds.push(departmentId);
 
-                    console.log("------------" + formData  )
+                    console.log("------------" + formData)
                 });
 
                 //if (selectedStudentIds.length > 0) {
-                    console.log("Success");
-                    console.log(selectedStudentIds);
-                    $.ajax({
-                        type: 'POST', // You can use POST or GET based on your requirement
-                        url: '/CourseAssign/CourseAssignToStudent', // Update with the correct controller and action
-                        data: formData, // Pass the selected student IDs
-                        success: function (result) {
-                            console.log("Success");
-                            console.log(selectedStudentIds);
-                            // Handle success response if needed
-                        },
-                        error: function () {
-                            console.log("Error occurred");
-                        }
-                    });
-              //  } 
-                
+                console.log("Success");
+                console.log(selectedStudentIds);
+                $.ajax({
+                    type: 'POST', // You can use POST or GET based on your requirement
+                    url: '/CourseAssign/CourseAssignToStudent', // Update with the correct controller and action
+                    data: formData, // Pass the selected student IDs
+                    success: function (result) {
+                        console.log("Success");
+                        console.log(selectedStudentIds);
+                        // Handle success response if needed
+                    },
+                    error: function () {
+                        console.log("Error occurred");
+                    }
+                });
+                //  }
+
                 //else {
                 //    console.log("No students selected.");
                 //}

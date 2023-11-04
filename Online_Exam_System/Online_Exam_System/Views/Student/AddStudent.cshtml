@@ -5,45 +5,45 @@
 }
 @model Online_Exam_System.Models.Student
 <div class="col-md-12">
-            <!-- general form elements -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Student Entry</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Student Entry</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
         <form asp-controller="Student" asp-action="AddStudent" role="form">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label asp-for="StudentName">Name</label>
                             <input asp-for="StudentName" type="text" class="form-control" placeholder="Enter Name">
                         </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label asp-for="DepartmentId">Department</label>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="DepartmentId">Department</label>
                             <select class="form-control" asp-for="DepartmentId" asp-items="@(new SelectList(ViewBag.Departments,"DepartmentId","DepartmentName"))">
                                 <option>Please select one</option>
                             </select>
-                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label asp-for="BatchId">Batch</label>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="BatchId">Batch</label>
                             <select class="form-control" asp-for="BatchId">
                                 <option>Please select one</option>
                             </select>
-                            </div>
                         </div>
                     </div>
+                </div>
                 <div class="row">
                     @*<div class="col-md-4">
-                        <div class="form-group">
-                            <label asp-for="StudentPassword">Password</label>
-                            <input asp-for="StudentPassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
+                    <div class="form-group">
+                    <label asp-for="StudentPassword">Password</label>
+                    <input asp-for="StudentPassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
                     </div>*@
                     <div class="col-md-4">
                         <div class="form-group">
@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    
+
                     <div class="col-md-4">
                         <div class="form-group">
                             <label asp-for="Address">Address</label>
@@ -77,23 +77,23 @@
                         </div>
                     </div>
                 </div>
-                 @* <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <labelclass="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div>*@
-                </div>
-                <!-- /.card-body -->
-
-                <div class="card-footer">
-                <a asp-action="AddStudent" asp-route-id="@Model"><button type="submit" class="btn btn-primary">Submit</button></a>
-                </div>
-              </form>
+                @* <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <labelclass="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>*@
             </div>
-            <!-- /.card -->
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+                <a asp-action="AddStudent" asp-route-id="@Model"><button type="submit" class="btn btn-primary">Submit</button></a>
+            </div>
+        </form>
+    </div>
+    <!-- /.card -->
 </div>
 
 @section Scripts
-{
+    {
     <script>
         $(document).ready(function () {
             $('#DepartmentId').change(function () {

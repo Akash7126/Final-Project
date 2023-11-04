@@ -17,7 +17,7 @@ namespace Online_Exam_System.ViewModel
         public int? CourseId { get; set; }
         public string? CourseCode { get; set; }
         public int TeacherId { get; set; }
-   
+
 
 
         public CreateExam CreateExam { get; set; }

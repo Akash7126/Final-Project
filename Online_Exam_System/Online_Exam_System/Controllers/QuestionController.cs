@@ -15,15 +15,15 @@ namespace Online_Exam_System.Controllers
         {
             _context = context;
         }
-      
+
         public IActionResult QuestionBank()
         {
             return View();
         }
         [HttpGet]
-        public IActionResult AddQestion(int courseId,int examId)
-         {
-            
+        public IActionResult AddQestion(int courseId, int examId)
+        {
+
             var userId = HttpContext.Request.Cookies["UserId"];
 
             var teacherId = _context.Teachers
@@ -47,7 +47,7 @@ namespace Online_Exam_System.Controllers
 
 
             var model = new QuestionAnsweViewModel();
-            
+
             return View(model);
         }
 
@@ -64,15 +64,15 @@ namespace Online_Exam_System.Controllers
 
 
             var courseAssingCourseid = _context.CourseAssigns.FirstOrDefault(s => s.CourseId == question.CourseId);
-        //    var  teacherId = courseAssingCourseid.TeacherId;
+            //    var  teacherId = courseAssingCourseid.TeacherId;
 
-           // answerList.Add(question.editordata1);
+            // answerList.Add(question.editordata1);
             var questionEntity = new Question();
             questionEntity.QuestionDescription = question.QuestionDescription;
 
-            questionEntity.CourseId= question.CourseId;
-            questionEntity.TeacherId= teacherId;
-            questionEntity.Mark=question.Mark;
+            questionEntity.CourseId = question.CourseId;
+            questionEntity.TeacherId = teacherId;
+            questionEntity.Mark = question.Mark;
             questionEntity.QuestionTypeId = 1;
             questionEntity.ExamId = question.ExamId;
             var courseAssigns = (from courseAssign in _context.CourseAssigns
@@ -162,9 +162,9 @@ namespace Online_Exam_System.Controllers
 
         }
 
-     
+
         [HttpGet]
-        public IActionResult AddMultipleSelectQuestion(int courseId,int examId)
+        public IActionResult AddMultipleSelectQuestion(int courseId, int examId)
         {
             //var courseAssigns1 = (from courseAssign in _context.CourseAssigns
             //                     join course in _context.Courses
@@ -178,10 +178,10 @@ namespace Online_Exam_System.Controllers
                 .Select(t => t.TeacherId)
                 .FirstOrDefault();
             var courseAssigns1 = (from courseAssign in _context.CourseAssigns
-                                 join course in _context.Courses
-                                 on courseAssign.CourseId equals course.CourseId
-                                 where courseAssign.TeacherId == teacherId
-                                 select new { course.CourseId, course.CourseCode }).Distinct().ToList();
+                                  join course in _context.Courses
+                                  on courseAssign.CourseId equals course.CourseId
+                                  where courseAssign.TeacherId == teacherId
+                                  select new { course.CourseId, course.CourseCode }).Distinct().ToList();
             //var exams = _context.CreateExams.
             var exams = (from e in _context.CreateExams
                          where e.ExamId == examId
@@ -190,11 +190,11 @@ namespace Online_Exam_System.Controllers
 
             ViewBag.CourseAssigns1 = courseAssigns1;
             var model = new QuestionAnsweViewModel();
-            
+
             return View(model);
-            
+
         }
-       
+
         [HttpPost]
         public IActionResult AddMultipleSelectQuestion(QuestionAnsweViewModel question)
         {
@@ -206,7 +206,7 @@ namespace Online_Exam_System.Controllers
 
                 .FirstOrDefault();
             var courseAssingCourseid1 = _context.CourseAssigns.FirstOrDefault(s => s.CourseId == question.CourseId);
-           // var teacherId = courseAssingCourseid1.TeacherId;
+            // var teacherId = courseAssingCourseid1.TeacherId;
 
             // answerList.Add(question.editordata1);
             var questionEntity1 = new Question();
@@ -226,7 +226,7 @@ namespace Online_Exam_System.Controllers
                          where e.ExamId == question.ExamId
                          select new { e.ExamId, e.ExamTitle }).ToList();
             ViewBag.Exams = exams;
-           
+
             ViewBag.CourseAssigns1 = courseAssigns1;
             _context.Questions.Add(questionEntity1);
             _context.SaveChanges();
@@ -331,7 +331,7 @@ namespace Online_Exam_System.Controllers
                 .FirstOrDefault();
 
             var courseAssingCourseid1 = _context.CourseAssigns.FirstOrDefault(s => s.CourseId == question.CourseId);
-           // var teacherId = courseAssingCourseid1.TeacherId;
+            // var teacherId = courseAssingCourseid1.TeacherId;
 
             // answerList.Add(question.editordata1);
             var questionEntity1 = new Question();
@@ -393,20 +393,94 @@ namespace Online_Exam_System.Controllers
             return Redirect(currentUrl);
         }
 
-        public IActionResult DisplayAllQuestions()
+        public IActionResult DisplayAllExam()
         {
             var userId = HttpContext.Request.Cookies["UserId"];
-            var teacherId = _context.Teachers
-                                  .Where(t => t.UserId == userId)
-                                  .Select(t => t.TeacherId)
-                                  .FirstOrDefault();
+            var distinctExams = (from ca in _context.CourseAssigns
+                                 join q in _context.Questions on ca.CourseId equals q.CourseId
+                                 join ce in _context.CreateExams on q.ExamId equals ce.ExamId
+                                 join t in _context.Teachers on ca.TeacherId equals t.TeacherId
+                                 join c in _context.Courses on q.CourseId equals c.CourseId
+                                 join d in _context.Departments on c.DepartmentId equals d.DepartmentId
+                                 where t.UserId == userId
+                                 select new DisplayExamViewModel
+                                 {
+                                     ExamId = ce.ExamId,
+                                     ExamTitle = ce.ExamTitle,
+                                     StartTime = ce.StartTime,
+                                     EndTime = ce.EndTime,
+                                     CourseTittle = c.CourseTittle,
+                                     CourseCode = c.CourseCode,
+                                     DepartmentName = d.DepartmentName
+                                 }).Distinct().ToList();
 
-            // Retrieve questions created by the current teacher based on TeacherId
+            return View(distinctExams);
+        }
+        public IActionResult DisplayQuestionAnswer(int id)
+        {
             var questions = _context.Questions
                                    .Include(q => q.Answers)
-                                   .Where(q => q.TeacherId == teacherId)
+                                   .Where(q => q.ExamId == id)
                                    .ToList();
+
+            var exam = _context.CreateExams
+                     .FirstOrDefault(e => e.ExamId == id);
+
+            var userId = HttpContext.Request.Cookies["UserId"];
+            var distinctExams = (from ca in _context.CourseAssigns
+                                 join q in _context.Questions on ca.CourseId equals q.CourseId
+                                 join ce in _context.CreateExams on q.ExamId equals ce.ExamId
+                                 join t in _context.Teachers on ca.TeacherId equals t.TeacherId
+                                 join c in _context.Courses on q.CourseId equals c.CourseId
+                                 join d in _context.Departments on c.DepartmentId equals d.DepartmentId
+                                 where t.UserId == userId && ce.ExamId == id
+                                 select new DisplayExamViewModel
+                                 {
+                                     ExamId = ce.ExamId,
+                                     ExamTitle = ce.ExamTitle,
+                                     StartTime = ce.StartTime,
+                                     EndTime = ce.EndTime,
+                                     CourseTittle = c.CourseTittle,
+                                     CourseCode = c.CourseCode,
+                                     DepartmentName = d.DepartmentName
+                                 }).Distinct().ToList();
+
+
+            var totalMarks = questions
+                .Where(q => q.ExamId == id)
+                .Sum(q => q.Mark);
+
+            foreach (var distinctExam in distinctExams)
+            {
+                var time = distinctExam.EndTime - distinctExam.StartTime;
+
+                int totalMinutes = (int)time.TotalMinutes;
+                int hours = totalMinutes / 60;
+                int minutes = totalMinutes % 60;
+
+                string formattedTime;
+
+                if (hours > 0)
+                {
+                    formattedTime = $"{hours}hr {minutes}min";
+                }
+                else
+                {
+                    formattedTime = $"{minutes}min";
+                }
+
+                ViewBag.Time = formattedTime;
+            }
+
+            ViewBag.ExamEndTime = exam.EndTime;
+            ViewBag.DistinctExams = distinctExams;
+            ViewBag.TotalMarks = totalMarks;
+
+
+            // Pass the questions and the exam status to the view
+
             return View(questions);
+
         }
 
         public JsonResult GetExamsByCourse(int courseId)

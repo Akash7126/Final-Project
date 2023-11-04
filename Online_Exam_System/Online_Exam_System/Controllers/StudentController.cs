@@ -19,7 +19,7 @@ namespace Online_Exam_System.Controllers
 
         public IActionResult GetAllStudent()
         {
-            var data = context.Students.Include(x=>x.Department).Include(x =>x.Batch).ToList(); ///lambda expression
+            var data = context.Students.Include(x => x.Department).Include(x => x.Batch).ToList(); ///lambda expression
             return View(data);
         }
 
@@ -36,7 +36,7 @@ namespace Online_Exam_System.Controllers
             var batches = context.Batches.ToList();
 
             ViewBag.Departments = departments;
-            ViewBag.Batches = batches;  
+            ViewBag.Batches = batches;
             return View();
         }
         //Create Student
@@ -63,7 +63,7 @@ namespace Online_Exam_System.Controllers
             ViewBag.Departments = departments;
             ViewBag.Batches = batches;
 
-            
+
 
             return RedirectToAction("GetAllStudent", "Student");
         }
@@ -72,7 +72,7 @@ namespace Online_Exam_System.Controllers
         //Update or Edit Student
         public IActionResult UpdateStudentDetails(int id)
         {
-            Student aStudent=context.Students.FirstOrDefault(x=>x.StudentId == id);
+            Student aStudent = context.Students.FirstOrDefault(x => x.StudentId == id);
             var departments = context.Departments.ToList(); // Replace this with the method that retrieves the departments from your data source.
             var batches = context.Batches.Where(x => x.DepartmentId == aStudent.DepartmentId).ToList();
             ViewBag.Departments = departments;
@@ -81,20 +81,20 @@ namespace Online_Exam_System.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateStudentDetails(int id,Student student)
+        public IActionResult UpdateStudentDetails(int id, Student student)
         {
             var aStudent = context.Students.Find(id);
 
             aStudent.Sex = student.Sex;
             //aStudent.StudentId=student.StudentId;
-            aStudent.StudentName=student.StudentName;
-            aStudent.DepartmentId=student.DepartmentId;
-            aStudent.BatchId=student.BatchId;
+            aStudent.StudentName = student.StudentName;
+            aStudent.DepartmentId = student.DepartmentId;
+            aStudent.BatchId = student.BatchId;
             //aStudent.StudentPassword=student.StudentPassword;
-            aStudent.Contact=student.Contact;
-            aStudent.Sex=student.Sex;
-            aStudent.Email=student.Email;
-            aStudent.Address=student.Address;
+            aStudent.Contact = student.Contact;
+            aStudent.Sex = student.Sex;
+            aStudent.Email = student.Email;
+            aStudent.Address = student.Address;
             context.Students.Update(aStudent);
             context.SaveChanges();
 
@@ -107,7 +107,7 @@ namespace Online_Exam_System.Controllers
 
         //Delete
         public IActionResult DeleteStudent()
-        { 
+        {
             return View();
         }
 

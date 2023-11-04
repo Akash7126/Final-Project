@@ -17,7 +17,7 @@ namespace Online_Exam_System.Controllers
 
         public IActionResult GetAllDepartment()
         {
-            var data = context.Departments.ToList(); 
+            var data = context.Departments.ToList();
             return View(data);
         }
 

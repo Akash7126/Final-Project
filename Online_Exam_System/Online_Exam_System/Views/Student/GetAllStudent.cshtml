@@ -30,8 +30,8 @@
                         <th>Sex</th>*@
                         <th>Email</th>
                         @*<th>Address</th>*@
-                        <th colspan="3"  style="text-align:center">Action</th>
-                   @*     <th>Details</th>
+                        <th colspan="3" style="text-align:center">Action</th>
+                        @*     <th>Details</th>
                         <th>Delete</th>*@
                     </tr>
                 </thead>
@@ -49,8 +49,8 @@
                             <td class="tbl-student-col">@item.Email</td>
                             @*<td class="tbl-student-col">@item.Address</td>*@
                             @*<td class="tbl-student-col">
-                                <a asp-action="UpdateStudentDetails" asp-route-id="@item.StudentId"><button type="button" class="btn btn-block btn-info btn-sm">Update</button></a>
-                            </td>*@
+                        <a asp-action="UpdateStudentDetails" asp-route-id="@item.StudentId"><button type="button" class="btn btn-block btn-info btn-sm">Update</button></a>
+                        </td>*@
                             <td class="tbl-student-col">
                                 <a asp-action="UpdateStudentDetails" asp-route-id="@item.StudentId">
                                     <button type="button" class="btn btn-warning btn-info btn-sm">
@@ -58,9 +58,9 @@
                                     </button>
                                 </a>
                             </td>
-                           @* <td class="tbl-student-col">
-                                <a asp-action="GetStudentDetails" asp-route-id="@item.StudentId"><button type="button" class="btn btn-block btn-success btn-sm">Details</button></a>
-                            </td>*@
+                            @* <td class="tbl-student-col">
+                        <a asp-action="GetStudentDetails" asp-route-id="@item.StudentId"><button type="button" class="btn btn-block btn-success btn-sm">Details</button></a>
+                        </td>*@
                             <td class="tbl-student-col">
                                 <a asp-action="GetStudentDetails" asp-route-id="@item.StudentId">
                                     <button type="button" class="btn btn-success btn-sm">
@@ -70,13 +70,13 @@
                             </td>
 
                             @*<td class="tbl-student-col">
-                                <button type="button" class="btn btn-block btn-danger btn-sm btn-delete" data-student-id="@item.StudentId">Delete</button>
-                            </td>*@
+                        <button type="button" class="btn btn-block btn-danger btn-sm btn-delete" data-student-id="@item.StudentId">Delete</button>
+                        </td>*@
                             @*<td class="tbl-student-col">
-                                <button type="button" class="btn btn-info btn-danger btn-sm btn-delete">
-                                    <i class="fas fa-trash" style="color: #ffffff;"></i>
-                                </button>
-                            </td>*@
+                        <button type="button" class="btn btn-info btn-danger btn-sm btn-delete">
+                        <i class="fas fa-trash" style="color: #ffffff;"></i>
+                        </button>
+                        </td>*@
                             <td class="tbl-student-col">
                                 <a asp-action="DeleteStudent" asp-route-id="@item.StudentId">
                                     <button type="button" class="btn btn-info btn-danger btn-sm btn-delete">
@@ -110,14 +110,14 @@
                     // Prevent the default form submission
                     e.preventDefault();
 
-                      //var row = this.closest('tr');
-                      //var idCell = row.cells[0]; // Assuming ID is in the first column
+                    //var row = this.closest('tr');
+                    //var idCell = row.cells[0]; // Assuming ID is in the first column
 
-                      //var newId = idCell.textContent.trim();
+                    //var newId = idCell.textContent.trim();
 
                     // Get the student ID from the data-student-id attribute
                     const studentId = button.dataset.studentId;
-                 
+
                     // Show SweetAlert2
                     Swal.fire({
                         title: 'Are you sure?',
@@ -131,10 +131,10 @@
                         if (result.isConfirmed) {
                             // If the user confirms, submit the form with the student ID
 
-                              var row = this.closest('tr');
-                              var idCell = row.cells[0]; // Assuming ID is in the first column
-                              var newId = idCell.textContent.trim();
-                              console.log(newId +"--")
+                            var row = this.closest('tr');
+                            var idCell = row.cells[0]; // Assuming ID is in the first column
+                            var newId = idCell.textContent.trim();
+                            console.log(newId + "--")
                             const myForm = document.getElementById('myForm');
                             myForm.action = '/Student/DeleteStudent?' + newId; // Set the appropriate action URL
                             myForm.method = 'post'; // Set the form method
