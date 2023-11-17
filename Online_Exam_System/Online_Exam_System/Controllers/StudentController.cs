@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Humanizer;
+using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MimeKit;
 using NuGet.DependencyResolver;
 
 using Online_Exam_System.Models;
@@ -29,7 +32,28 @@ namespace Online_Exam_System.Controllers
             var studentById = context.Students.Include(x => x.Department).Include(x => x.Batch).FirstOrDefault(s => s.StudentId == id); ;
             return View(studentById);
         }
+        public async Task SendEmailAsync(string to, string subject, string body)
+        {
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("UITS Authority", "akash.ghosh1700@gmail.com"));
+            message.To.Add(new MailboxAddress("", to));
+            message.Subject = subject;
 
+            var bodyBuilder = new BodyBuilder
+            {
+                HtmlBody = body
+            };
+
+            message.Body = bodyBuilder.ToMessageBody();
+
+            using (var client = new SmtpClient())
+            {
+                await client.ConnectAsync("smtp.gmail.com", 587, false);
+                await client.AuthenticateAsync("akash.ghosh1700@gmail.com", "hmhxrzzdebuibery");
+                await client.SendAsync(message);
+                await client.DisconnectAsync(true);
+            }
+        }
         public IActionResult AddStudent()
         {
             var departments = context.Departments.ToList(); // Replace this with the method that retrieves the departments from your data source.
@@ -46,6 +70,7 @@ namespace Online_Exam_System.Controllers
             Guid guid = Guid.NewGuid();
             string userId = student.StudentName + guid.ToString("N").Substring(0, 6);
             student.UserId = userId;
+            
             context.Students.Add(student);
             context.SaveChanges();
 
@@ -63,7 +88,28 @@ namespace Online_Exam_System.Controllers
             ViewBag.Departments = departments;
             ViewBag.Batches = batches;
 
+            var departmentName = context.Departments
+    .Where(department => department.DepartmentId == student.DepartmentId)
+    .Select(department => department.DepartmentName)
+    .FirstOrDefault();
 
+            var batchName = context.Batches
+    .Where(batch => batch.BatchId == student.BatchId)
+    .Select(batch => batch.BatchName)
+    .FirstOrDefault();
+            var studentname=student.StudentName;
+            var message = $"<h1>Dear {studentname},</h1><br /><br />"
+    + $"<p>Thank you for registering as a student.</p>"
+    + $"<p>Your details:</p>"
+    + $"<ul>"
+    + $"<li>User ID: {user.UserId}</li>"
+    + $"<li>Password: {user.Password}</li>"
+    + $"<li>Department: {departmentName}</li>"
+    + $"<li>Batch: {batchName}</li>"
+    + $"</ul>"
+    + "<p>Best regards,<br />Uits</p>";
+
+            SendEmailAsync(user.Email, "Student registration", message);
 
             return RedirectToAction("GetAllStudent", "Student");
         }

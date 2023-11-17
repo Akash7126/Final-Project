@@ -30,7 +30,7 @@
 
                         <th>Id</th>
                         <th>Department</th>
-                        <th colspan="3" style="text-align:center">Action</th>
+                        @*<th colspan="3" style="text-align:center">Action</th>*@
                     </tr>
                 </thead>
                 <tbody>
@@ -39,13 +39,13 @@
                         <tr class="tbl-student-row">
                             <td class="tbl-student-col">@item.DepartmentId</td>
                             <td class="tbl-student-col">@item.DepartmentName</td>
-                            <td class="tbl-student-col">
+                            @*<td class="tbl-student-col">
                                 <a asp-action="DeleteDepartment" asp-route-id="@item.DepartmentId">
                                     <button type="button" class="btn btn-info btn-danger btn-sm btn-delete">
                                         <i class="fas fa-trash" style="color: #ffffff;"></i>
                                     </button>
                                 </a>
-                            </td>
+                            </td>*@
 
                         </tr>
                     }

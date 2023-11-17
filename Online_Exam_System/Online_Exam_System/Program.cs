@@ -13,8 +13,8 @@ builder.Services.AddControllersWithViews();
 //});
 
 
-var provider=builder.Services.BuildServiceProvider();
-var config=provider.GetRequiredService<IConfiguration>();
+var provider = builder.Services.BuildServiceProvider();
+var config = provider.GetRequiredService<IConfiguration>();
 builder.Services.AddDbContext<OnlineExamSystemContext>(item => item.UseSqlServer(config.GetConnectionString("BloggingDatabase")));
 
 
@@ -35,7 +35,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
+
 
 //app.MapControllerRoute(
 //    name: "areas",

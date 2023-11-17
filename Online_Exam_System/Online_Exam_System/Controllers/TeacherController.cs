@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MimeKit;
+using MailKit.Net.Smtp;
 
 using Online_Exam_System.Models;
 
@@ -30,6 +32,30 @@ namespace Online_Exam_System.Controllers
         }
 
         //create Teacher
+
+
+        public async Task SendEmailAsync(string to, string subject, string body)
+        {
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("UITS Authority", "akash.ghosh1700@gmail.com"));
+            message.To.Add(new MailboxAddress("", to));
+            message.Subject = subject;
+
+            var bodyBuilder = new BodyBuilder
+            {
+                HtmlBody = body
+            };
+
+            message.Body = bodyBuilder.ToMessageBody();
+
+            using (var client = new SmtpClient())
+            {
+                await client.ConnectAsync("smtp.gmail.com", 587, false);
+                await client.AuthenticateAsync("akash.ghosh1700@gmail.com", "hmhxrzzdebuibery");
+                await client.SendAsync(message);
+                await client.DisconnectAsync(true);
+            }
+        }
         public IActionResult AddTeacher()
         {
             var departments = context.Departments.ToList(); // Replace this with the method that retrieves the departments from your data source.
@@ -61,6 +87,25 @@ namespace Online_Exam_System.Controllers
 
             var departments = context.Departments.ToList(); // Replace this with the method that retrieves the departments from your data source.
             ViewBag.Departments = departments;
+
+
+            var departmentName = context.Departments
+    .Where(department => department.DepartmentId == teacher.DepartmentId)
+    .Select(department => department.DepartmentName)
+    .FirstOrDefault();
+
+            var studentname = teacher.TeacherName;
+            var message = $"<h1>Dear {studentname},</h1><br /><br />"
+    + $"<p>Thank you for registering as a Faculty.</p>"
+    + $"<p>Your details:</p>"
+    + $"<ul>"
+    + $"<li>User ID: {user.UserId}</li>"
+    + $"<li>Password: {user.Password}</li>"
+    + $"<li>Department: {departmentName}</li>"
+    + $"</ul>"
+    + "<p>Best regards,<br />Uits</p>";
+
+            SendEmailAsync(user.Email, "Teacher registration", message);
             return RedirectToAction("GetAllTeacher", "Teacher");
         }
 

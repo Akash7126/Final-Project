@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Online_Exam_System.ViewModel;
 
@@ -13,17 +15,29 @@ namespace Online_Exam_System.Controllers
             _context = context;
         }
 
+        //[Authorize]
         [HttpGet]
         public IActionResult AppStartView()
         {
             return View();
         }
+        [HttpGet]
+        [AllowAnonymous] // Allow unauthenticated users to access the login page
+        public IActionResult Login()
+        {
+            HttpContext.SignOutAsync();
 
-        //[HttpGet]
-        //public IActionResult Login()
-        //{
-        //    return View();
-        //}
+            // Redirect to the AppStartView
+            return RedirectToAction("AppStartView");
+        }
+
+        public IActionResult Logout()
+        {
+            return RedirectToAction("AppStartView");
+        }
+
+
+        
 
         [HttpPost]
         public IActionResult Login(LoginViewModel model)

@@ -70,7 +70,12 @@
         .text-left {
             margin-left: 544px;
         }
-    </style>
+
+        -webkit-user-select: none; /* Chrome all and Safari all */
+        -moz-user-select: none; /* Firefox all */
+        -ms-user-select: none; /* IE 10+ */
+        user-select: none;
+        </style>
 
 
 </head>
@@ -236,11 +241,64 @@
             refreshPageOnEndTime();
         </script>
 
+        <!-- Your existing HTML code -->
+            @if (!ViewBag.IsExamOver)
+            {
+            <script>
+                document.addEventListener('contextmenu', function (e) {
+                    e.preventDefault();
+                    alert('Do not copy it.');
+                });
 
+                document.addEventListener('keydown', function (e) {
+                    if (e.ctrlKey || e.metaKey) {
+                        alert('Copying using keyboard shortcuts is not allowed.');
+                        e.preventDefault();
+                    }
+                });
+
+                // Function to show an alert when the user switches tabs or the window loses focus
+                document.addEventListener('visibilitychange', handleVisibilityChange);
+                window.addEventListener('blur', handleVisibilityChange);
+
+                // Function to show an error message when clicking outside the quiz-container
+                document.addEventListener('click', function (e) {
+                    var quizContainer = document.querySelector('.quiz-container');
+
+                    if (!quizContainer.contains(e.target)) {
+                        var confirmation = confirm('Clicking outside the quiz area is not allowed. Do you want to go to another view?');
+
+                        if (confirmation) {
+                            // Redirect to another view
+                            window.location.href = '/Exam/ForCheat'; // Replace with the actual URL
+                        }
+                    }
+                });
+
+                function handleVisibilityChange() {
+                    if (document.hidden) {
+                        alert('Switching tabs or losing focus is not allowed.');
+                        // Redirect to another view
+                        window.location.href = '/Exam/ForCheat'; // Replace with the actual URL
+                    }
+                }
+            </script>
+            }
+
+        <!-- Your existing HTML code continues -->
         }
 
 
     </div>
+
+    
+    <script>
+        // Disable the back button
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            history.go(1);
+        };
+    </script>
 
 </body>
 </html>

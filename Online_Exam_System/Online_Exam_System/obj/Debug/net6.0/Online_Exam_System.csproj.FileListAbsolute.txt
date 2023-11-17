@@ -474,3 +474,11 @@ H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\n
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.pdb
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.genruntimeconfig.cache
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\ref\Online_Exam_System.dll
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\MailKit.dll
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\MimeKit.dll
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.Formats.Asn1.dll
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll

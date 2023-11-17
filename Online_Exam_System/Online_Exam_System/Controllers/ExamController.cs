@@ -270,6 +270,12 @@ namespace Online_Exam_System.Controllers
         }
 
 
+        public IActionResult ForCheat()
+        {
+            return View();
+        }
+
+
     }
 
 

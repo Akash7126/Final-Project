@@ -37,18 +37,18 @@ namespace Online_Exam_System.Controllers
         }
 
         //Delete
-        public IActionResult DeleteDepartment()
-        {
-            return View();
-        }
+        //public IActionResult DeleteDepartment()
+        //{
+        //    return View();
+        //}
 
-        [HttpPost]
-        public IActionResult DeleteDepartment(int newId)
-        {
-            var aDepartment = context.Departments.Find(newId);
-            context.Departments.Remove(aDepartment);
-            context.SaveChanges();
-            return RedirectToAction("GetAllDepartment", "Department");
-        }
+        //[HttpPost]
+        //public IActionResult DeleteDepartment(int newId)
+        //{
+        //    var aDepartment = context.Departments.Find(newId);
+        //    context.Departments.Remove(aDepartment);
+        //    context.SaveChanges();
+        //    return RedirectToAction("GetAllDepartment", "Department");
+        //}
     }
 }
