@@ -1,0 +1,111 @@
+﻿@*@model Online_Exam_System.Models.StudentAnswer
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <style>
+        div#quiz-result {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="quiz-result">
+        <h1>Your Result</h1>
+        <div>
+            <p>Your Correct answer number: @ViewBag.NumberOfAnsweredQuestions out of @ViewBag.OverallTotalQuestions</p>
+            <p>Your result is: @ViewBag.OverallTotalMarks out of @ViewBag.Totalmarks</p>
+            <p><strong>Your percentage is: @ViewBag.Percentage %</strong></p>
+            @if (ViewBag.Percentage < 80)
+            {
+                <p>You must study much harder!</p>
+            }
+            else
+            {
+                <p>Congratulations! You are doing well.</p>
+            }
+        </div>
+
+        <form action="@Url.Action("CheckAnswers", "StudentAnswer")" method="post">
+            <input type="submit" class="quiz-btn" value="Check your answers">
+            <input type="hidden" name="examId" value="@ViewBag.Examid">
+            <input type="button" class="quiz-btn" value="Back to Dashboard" onclick="redirectToGiveExam()">
+        </form>
+
+        
+    </div>
+
+    <script>
+        function redirectToGiveExam() {
+       
+
+            window.location.href = '/Exam/GiveExam';
+        }
+    </script>
+
+   
+</body>
+</html>*@
+
+@using Online_Exam_System.ViewModel
+@model Online_Exam_System.ViewModel.QuizResultViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <style>
+        div#quiz-result {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div id="quiz-result">
+        <h1>Your Result</h1>
+        <div>
+            <p>Your Correct answer number: @Model.NumberOfAnsweredQuestions out of @Model.OverallTotalQuestions</p>
+            <p>Your result is: @Model.OverallTotalMarks out of @Model.TotalMarks</p>
+            <p><strong>Your percentage is: @Model.Percentage %</strong></p>
+            @if (ViewBag.Percentage < 80)
+            {
+                <p>You must study much harder!</p>
+            }
+            else
+            {
+                <p>Congratulations! You are doing well.</p>
+            }
+        </div>
+
+        <form action="@Url.Action("CheckAnswers", "StudentAnswer")" method="post">
+            <input type="submit" class="quiz-btn" value="Check your answers">
+            <input type="hidden" name="examId" value="@Model.ExamId">
+            <input type="button" class="quiz-btn" value="Back to Dashboard" onclick="redirectToGiveExam()">
+        </form>
+
+    </div>
+
+    @{
+        
+        TempData.Clear(); // Clear TempData
+    }
+
+   
+    <script>
+        function redirectToGiveExam() {
+
+
+            window.location.href = '/Exam/GiveExam';
+        }
+    </script>
+
+</body>
+</html>

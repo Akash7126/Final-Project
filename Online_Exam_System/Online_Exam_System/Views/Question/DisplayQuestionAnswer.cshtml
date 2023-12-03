@@ -105,7 +105,17 @@
                         @foreach (var answer in question.Answers)
                         {
                     <li>
-                                @if (question.QuestionTypeId == 1 || question.QuestionTypeId == 3)
+                                @if (question.QuestionTypeId == 1)
+                                {
+                                <div class="answers answer-option">
+                                    <input type="radio" name="question@(question.QuestionId)" value="@answer.AnswerId" id="answer@(answer.AnswerId)"
+                                        @(answer.IsCorrect.HasValue && answer.IsCorrect.Value ? "checked" : "")>
+                                    <label for="answer@(answer.AnswerId)">
+                                            @Html.Raw(answer.AnswerText)
+                                </label>
+                                </div>
+                                }
+                                else if (question.QuestionTypeId == 3)
                                 {
                             <div class="answers answer-option">
                                 <input type="radio" name="question@(question.QuestionId)" value="@answer.AnswerId" id="answer@(answer.AnswerId)"
@@ -113,8 +123,22 @@
                                 <label for="answer@(answer.AnswerId)">
                                             @Html.Raw(answer.AnswerText)
                                 </label>
+
+                                        @if (answer.IsCorrect.HasValue)
+                                        {
+                                    <label class="answer-label">
+                                                @(answer.IsCorrect.Value ? "True" : "False")
+                                    </label>
+                                        }
+                                        else
+                                        {
+                                    <label class="answer-label">
+                                        Not specified
+                                    </label>
+                                        }
                             </div>
                                 }
+
 
                                 else if (question.QuestionTypeId == 2)
                                 {

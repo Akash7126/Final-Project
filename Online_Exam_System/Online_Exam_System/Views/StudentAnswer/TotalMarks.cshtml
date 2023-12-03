@@ -1,0 +1,25 @@
+﻿z@model Online_Exam_System.Models.StudentAnswer
+
+@{
+    Layout = null; // If you don't want to use a layout for this view
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Overall Total Marks</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="overallTotalMarks">Overall Total Marks:</label>
+            <input type="text" id="overallTotalMarks" name="overallTotalMarks" value="@ViewBag.OverallTotalMarks" readonly>
+        </div>
+
+        <!-- Add other form elements as needed -->
+
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>

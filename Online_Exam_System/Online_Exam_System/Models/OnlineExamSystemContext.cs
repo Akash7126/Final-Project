@@ -26,9 +26,12 @@ namespace Online_Exam_System.Models
         public virtual DbSet<DepartmentBatch> DepartmentBatches { get; set; } = null!;
         public virtual DbSet<Menu> Menus { get; set; } = null!;
         public virtual DbSet<Question> Questions { get; set; } = null!;
+        public virtual DbSet<Result> Results { get; set; } = null!;
         public virtual DbSet<Role> Roles { get; set; } = null!;
         public virtual DbSet<RoleWiseMenuPermission> RoleWiseMenuPermissions { get; set; } = null!;
         public virtual DbSet<Student> Students { get; set; } = null!;
+        public virtual DbSet<StudentAnswer> StudentAnswers { get; set; } = null!;
+        public virtual DbSet<StudentGivenAnswer> StudentGivenAnswers { get; set; } = null!;
         public virtual DbSet<StudentRegistration> StudentRegistrations { get; set; } = null!;
         public virtual DbSet<SubMenu> SubMenus { get; set; } = null!;
         public virtual DbSet<Teacher> Teachers { get; set; } = null!;
@@ -175,6 +178,13 @@ namespace Online_Exam_System.Models
                     .HasConstraintName("FK_Question_Create_Exam");
             });
 
+            modelBuilder.Entity<Result>(entity =>
+            {
+                entity.ToTable("Result");
+
+                entity.Property(e => e.ExamId).HasColumnName("exam_id");
+            });
+
             modelBuilder.Entity<Role>(entity =>
             {
                 entity.ToTable("Role");
@@ -216,6 +226,16 @@ namespace Online_Exam_System.Models
                     .HasForeignKey(d => d.DepartmentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Student_Student");
+            });
+
+            modelBuilder.Entity<StudentAnswer>(entity =>
+            {
+                entity.ToTable("StudentAnswer");
+            });
+
+            modelBuilder.Entity<StudentGivenAnswer>(entity =>
+            {
+                entity.ToTable("StudentGivenAnswer");
             });
 
             modelBuilder.Entity<StudentRegistration>(entity =>

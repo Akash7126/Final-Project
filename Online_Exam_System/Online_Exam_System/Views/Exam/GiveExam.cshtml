@@ -51,9 +51,10 @@
                     }
                     else
                     {
-                        <a href="@Url.Action("QuestionforStudent", "Exam", new { id = exam.ExamId })">
+                        <a href="@Url.Action("QuestionforStudent", "Exam", new { id = exam.ExamId})">
                             <span class="text">@exam.ExamTitle</span>
                         </a>
+                        
                     }
 
 
@@ -73,6 +74,7 @@
                         <small class="badge badge-primary">
                             <i class="far fa-clock"></i> Exam in progress
                         </small>
+                        
                     }
                     else if (timeUntilExamEnd < TimeSpan.Zero)
                     {
@@ -112,3 +114,5 @@
         </ul>
     </div>
 </div>
+
+

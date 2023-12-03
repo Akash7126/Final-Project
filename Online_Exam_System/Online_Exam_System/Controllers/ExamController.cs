@@ -193,6 +193,9 @@ namespace Online_Exam_System.Controllers
                                      DepartmentName = d.DepartmentName
                                  }).Distinct().ToList();
 
+
+           
+
             return View(distinctExams);
         }
 
@@ -204,8 +207,15 @@ namespace Online_Exam_System.Controllers
                                    .Where(q => q.ExamId == id)
                                    .ToList();
 
+            var teacherId = context.Questions
+                        .Where(q => q.ExamId == id)
+                        .Select(q => q.TeacherId)
+                        .FirstOrDefault();
+
+
             var exam = context.CreateExams
                      .FirstOrDefault(e => e.ExamId == id);
+            
 
             var userId = HttpContext.Request.Cookies["UserId"];
             var distinctExams = (from ca in context.CourseAssigns
@@ -232,7 +242,8 @@ namespace Online_Exam_System.Controllers
                 .Sum(q => q.Mark);
 
 
-
+            var totalQuestions = context.Questions
+                .Count(q => q.ExamId == id);
 
             foreach (var distinctExam in distinctExams)
             {
@@ -257,11 +268,14 @@ namespace Online_Exam_System.Controllers
             }
 
             ViewBag.ExamEndTime = exam.EndTime;
+            ViewBag.NewExamid = id;
+            ViewBag.TeacherId = teacherId;
             // Check if the exam is over based on the ExamEndTime
             bool isExamOver = IsExamOver(exam.EndTime);
             ViewBag.IsExamOver = isExamOver;
             ViewBag.DistinctExams = distinctExams;
             ViewBag.TotalMarks = totalMarks;
+            ViewBag.TotalQuestions = totalQuestions;
 
 
             // Pass the questions and the exam status to the view

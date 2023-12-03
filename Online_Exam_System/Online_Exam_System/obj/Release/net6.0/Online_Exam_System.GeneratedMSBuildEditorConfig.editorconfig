@@ -1,0 +1,193 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Online_Exam_System
+build_property.RootNamespace = Online_Exam_System
+build_property.ProjectDir = H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System
+build_property._RazorSourceGeneratorDebug = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Batch/AddBatch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmF0Y2hcQWRkQmF0Y2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Batch/GetAllBatch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmF0Y2hcR2V0QWxsQmF0Y2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Batch/UpdateBatchDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmF0Y2hcVXBkYXRlQmF0Y2hEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/CourseAssign/CourseAssignToStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlQXNzaWduXENvdXJzZUFzc2lnblRvU3R1ZGVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Course/AddCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEFkZENvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Course/GetAllCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEdldEFsbENvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Course/UpdateCourseDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFVwZGF0ZUNvdXJzZURldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Department/AddDepartment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxBZGREZXBhcnRtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Department/GetAllDepartment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxHZXRBbGxEZXBhcnRtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Exam/CreateExam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxDcmVhdGVFeGFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Exam/ExamList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxFeGFtTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Exam/ForCheat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxGb3JDaGVhdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Exam/GiveExam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxHaXZlRXhhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Exam/QuestionforStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxRdWVzdGlvbmZvclN0dWRlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Exam/UpdateExam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxVcGRhdGVFeGFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Question/AddMultipleSelectQuestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cQWRkTXVsdGlwbGVTZWxlY3RRdWVzdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Question/AddQestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cQWRkUWVzdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Question/AddTrueFalseQuestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cQWRkVHJ1ZUZhbHNlUXVlc3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Question/DisplayAllExam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cRGlzcGxheUFsbEV4YW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Question/DisplayQuestionAnswer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cRGlzcGxheVF1ZXN0aW9uQW5zd2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Question/DisplayQuestionWithAnswers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cRGlzcGxheVF1ZXN0aW9uV2l0aEFuc3dlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Question/QuestionBank.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cUXVlc3Rpb25CYW5rLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Shared/_LayoutLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/StudentAnswer/CheckAnswers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudEFuc3dlclxDaGVja0Fuc3dlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/StudentAnswer/GiveStudentAnswer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudEFuc3dlclxHaXZlU3R1ZGVudEFuc3dlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/StudentAnswer/TotalMarks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudEFuc3dlclxUb3RhbE1hcmtzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Student/AddStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxBZGRTdHVkZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Student/GetAllStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxHZXRBbGxTdHVkZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Student/GetStudentDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxHZXRTdHVkZW50RGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Student/UpdateStudentDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxVcGRhdGVTdHVkZW50RGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Teacher/AddTeacher.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxBZGRUZWFjaGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Teacher/GetAllTeacher.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxHZXRBbGxUZWFjaGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Teacher/GetTeacherDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxHZXRUZWFjaGVyRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Teacher/UpdateTeacherDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxVcGRhdGVUZWFjaGVyRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/User/AppStartView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBcHBTdGFydFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/User/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/User/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-pv9piwgtxk

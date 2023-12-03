@@ -170,59 +170,69 @@
 
         <h7 class="text-right"><b>Total Mark: @ViewBag.TotalMarks</b></h7>
         <h7 class="text-left"> <b>Time: @ViewBag.Time</b></h7>
-            @using (Html.BeginForm("SubmitQuiz", "QuizController", FormMethod.Post))
-            {
 
+            @using (Html.BeginForm("GiveStudentAnswer", "StudentAnswer", FormMethod.Post))
+            {
             <ol type="1">
                     @foreach (var question in Model)
                     {
                     <div class="question">
                         <p>
-                    <li>@Html.Raw(question.QuestionDescription)</li></p>
-
-
+                    <li>@Html.Raw(question.QuestionDescription)</li>
+                    </p>
                     </div>
                     <ol type="a">
                             @foreach (var answer in question.Answers)
                             {
                             <li>
-                                    @if (question.QuestionTypeId == 1 || question.QuestionTypeId == 3)
+                                    @if (question.QuestionTypeId == 1)
                                     {
-
                                     <div class="answers answer-option">
-                                        <input type="radio" name="question@(question.QuestionId)" value="@answer.AnswerId" id="answer@(answer.AnswerId)">
-                                        <label for="answer@(answer.AnswerId)">
-                                                @Html.Raw(answer.AnswerText)
-                                        </label>
-                                    </div>
-
-
-                                    }
-
-                                    else if (question.QuestionTypeId == 2)
-                                    {
-                                    <!-- Display checkboxes for other types of questions -->
-
-                                    <div class="answers answer-option1">
-                                        <input type="checkbox" name="question@(question.QuestionId)" value="@answer.AnswerId" id="answer@(answer.AnswerId)">
-
+                                        <input type="radio" name="selectedAnswerIds[@question.QuestionId]" value="@answer.AnswerId">
+                                        <input type="hidden" name="questionIds[@answer.AnswerId]" value="@question.QuestionId">
                                         <label>
                                                 @Html.Raw(answer.AnswerText)
                                         </label>
                                     </div>
-
+                                    }
+                                    else if (question.QuestionTypeId == 3)
+                                    {
+                                    <!-- Display radio buttons dynamically based on values in the Answer table -->
+                                    <div class="answers answer-option">
+                                        <input type="radio" name="selectedAnswerIds[@question.QuestionId]" value="@answer.AnswerId">
+                                        <input type="hidden" name="questionIds[@answer.AnswerId]" value="@question.QuestionId">
+                                        <input type="hidden" name="isAnswerSelected[@answer.AnswerId]" value="false">
+                                        <label>
+                                                @Html.Raw(answer.IsCorrect.HasValue && answer.IsCorrect.Value ? "True" : "False")
+                                        </label>
+                                    </div>
+                                    }
+                                    else if (question.QuestionTypeId == 2)
+                                    {
+                                    <div class="answers answer-option1">
+                                        <input type="checkbox" name="selectedAnswerIds[@question.QuestionId][]" value="@answer.AnswerId">
+                                        <input type="hidden" name="questionIds[@answer.AnswerId]" value="@question.QuestionId">
+                                        <input type="hidden" name="isAnswerSelected[@answer.AnswerId]" value="false">
+                                        <label>
+                                                @Html.Raw(answer.AnswerText)
+                                        </label>
+                                    </div>
                                     }
                             </li>
                             }
                     </ol>
                     }
             </ol>
-
-
-
+            <input type="hidden" name="totalmark" value="@ViewBag.TotalMarks">
+            <input type="hidden" name="totalquestion" value="@ViewBag.TotalQuestions">
+            <input type="hidden" name="examId" value="@ViewBag.NewExamid">
+            <input type="hidden" name="teacherId" value="@ViewBag.TeacherId">
             <button class="btn-submit" type="submit">Submit Quiz</button>
-
             }
+
+          
+
+            
         <script>
             // Function to refresh the page when the end time is reached
             function refreshPageOnEndTime() {

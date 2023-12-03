@@ -224,16 +224,26 @@ H:\Online Exam System Asp.Net Core\Online_Exam_System\Online_Exam_System\bin\Deb
 H:\Online Exam System Asp.Net Core\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 H:\Online Exam System Asp.Net Core\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.csproj.CopyComplete
 H:\Online Exam System Asp.Net Core\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\scopedcss\Areas\Admin\Views\Shared\_Layout.cshtml.rz.scp.css
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\Online_Exam_System.exe
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.csproj.AssemblyReference.cache
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.GeneratedMSBuildEditorConfig.editorconfig
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.AssemblyInfoInputs.cache
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.AssemblyInfo.cs
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.csproj.CoreCompileInputs.cache
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.MvcApplicationPartsAssemblyInfo.cache
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.RazorAssemblyInfo.cache
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.RazorAssemblyInfo.cs
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\appsettings.Development.json
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\appsettings.json
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\libman.json
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\Online_Exam_System.staticwebassets.runtime.json
-H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\Online_Exam_System.exe
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\Online_Exam_System.deps.json
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\Online_Exam_System.runtimeconfig.json
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\Online_Exam_System.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\Online_Exam_System.pdb
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\Humanizer.dll
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\MailKit.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\MessagePack.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\MessagePack.Annotations.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
@@ -275,6 +285,7 @@ H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\n
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\MimeKit.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\Newtonsoft.Json.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\NuGet.Common.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\NuGet.Configuration.dll
@@ -293,11 +304,14 @@ H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\n
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.Drawing.Common.dll
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.Formats.Asn1.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.Runtime.Caching.dll
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.Security.Permissions.dll
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.Windows.Extensions.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\af\Humanizer.resources.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\ar\Humanizer.resources.dll
@@ -448,16 +462,10 @@ H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\n
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.csproj.AssemblyReference.cache
-H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.GeneratedMSBuildEditorConfig.editorconfig
-H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.AssemblyInfoInputs.cache
-H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.AssemblyInfo.cs
-H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.csproj.CoreCompileInputs.cache
-H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.MvcApplicationPartsAssemblyInfo.cache
-H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.RazorAssemblyInfo.cache
-H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.RazorAssemblyInfo.cs
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\staticwebassets\msbuild.Online_Exam_System.Microsoft.AspNetCore.StaticWebAssets.props
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\staticwebassets\msbuild.build.Online_Exam_System.props
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Online_Exam_System.props
@@ -474,11 +482,3 @@ H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\n
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.pdb
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\Online_Exam_System.genruntimeconfig.cache
 H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\obj\Debug\net6.0\ref\Online_Exam_System.dll
-H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
-H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\MailKit.dll
-H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\MimeKit.dll
-H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.Formats.Asn1.dll
-H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
-H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
-H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
-H:\Final Project\Final-Project\Online_Exam_System\Online_Exam_System\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
