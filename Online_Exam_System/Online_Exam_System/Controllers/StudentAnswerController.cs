@@ -47,7 +47,7 @@ public class StudentAnswerController : Controller
                 {
                     studentAnswer = new StudentAnswer
                     {
-                        StudentId = studentId.Value,
+                        StudentId = studentId.Value, 
                         QuestionId = questionId,
                         AnswerId = answerId,
                         Examid = examId
@@ -93,7 +93,7 @@ public class StudentAnswerController : Controller
 
 
         var Marks = _context.StudentAnswers
-    .Where(sa => sa.Examid == examId) // Replace with the desired ExamId
+    .Where(sa => sa.Examid == examId && sa.StudentId == studentId) // Replace with the desired ExamId
     .Join(
         _context.Questions,
         sa => sa.QuestionId,
@@ -130,7 +130,7 @@ public class StudentAnswerController : Controller
 
 
 var overallTotalMarks = _context.StudentAnswers
-    .Where(sa => sa.Examid == examId) // Replace with the desired ExamId
+    .Where(sa => sa.Examid == examId && sa.StudentId == studentId) // Replace with the desired ExamId
     .Join(
         _context.Questions,
         sa => sa.QuestionId,
@@ -148,7 +148,7 @@ var overallTotalMarks = _context.StudentAnswers
     .Sum(x => x.OverallTotalMarks);
 
         var numberOfAnsweredQuestions = _context.StudentAnswers
-    .Where(sa => sa.Examid == examId) // Replace 31 with the desired ExamId
+    .Where(sa => sa.Examid == examId && sa.StudentId == studentId) // Replace 31 with the desired ExamId
     .Select(sa => sa.QuestionId)
     .Distinct()
     .Count();
