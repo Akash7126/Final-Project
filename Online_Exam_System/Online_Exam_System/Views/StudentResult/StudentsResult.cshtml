@@ -1,0 +1,60 @@
+﻿@using Online_Exam_System.ViewModel;
+@model List<StudentAllResultsViewModel>
+
+<style>
+    .todo-list > li {
+        border-radius: 2px;
+        background: #e9eef5;
+        border-left: 2px solid #e9ecef;
+        color: #495057;
+        margin-bottom: 2px;
+        padding: 10px;
+    }
+
+        .todo-list > li .badge {
+            font-size: .9rem;
+            margin-left: 10px;
+        }
+
+    .badge-warning {
+        color: #ffffff;
+        background-color: #ffc107;
+    }
+
+    }
+</style>
+
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">
+            <i class="ion ion-clipboard mr-1"></i>
+            All Student result Who Give Exam
+        </h3>
+    </div>
+
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Total Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var exam in Model)
+                {
+                    <tr>
+                        <td>@exam.UserId</td>
+                        <td>@exam.StudentName</td>
+                        <td>@exam.TottalMarks</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

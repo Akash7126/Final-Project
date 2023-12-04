@@ -12,6 +12,8 @@
         public int DepartmentId { get; set; }
         public string? DepartmentName { get; set; }
         public int TeacherId { get; set; }
+        public string? Description { get; set; }
+       
 
     }
 }

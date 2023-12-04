@@ -50,6 +50,7 @@ public class StudentAnswerController : Controller
                         StudentId = studentId.Value,
                         QuestionId = questionId,
                         AnswerId = answerId,
+                        Examid = examId
                         // Additional properties can be set here
                     };
 
@@ -92,20 +93,23 @@ public class StudentAnswerController : Controller
 
 
         var Marks = _context.StudentAnswers
- .Join(
-     _context.Questions,
-     studentAnswer => studentAnswer.QuestionId,
-     question => question.QuestionId,
-     (studentAnswer, question) => new { studentAnswer, question }
- )
- .GroupBy(x => x.question.QuestionId)
- .Select(group => new
- {
-     QuestionId = group.Key,
-     TotalMarks = group.Max(x => x.question.Mark)
- })
- .Sum(x => x.TotalMarks);
-        
+    .Where(sa => sa.Examid == examId) // Replace with the desired ExamId
+    .Join(
+        _context.Questions,
+        sa => sa.QuestionId,
+        q => q.QuestionId,
+        (sa, q) => new { sa, q }
+    )
+    .Select(x => new { x.sa.Examid, x.q.QuestionId, x.q.Mark })
+    .Distinct() // Ensure distinct QuestionId values
+    .GroupBy(x => new { x.Examid })
+    .Select(group => new
+    {
+        Examid = group.Key.Examid,
+        OverallTotalMarks = group.Sum(x => x.Mark)
+    })
+    .Sum(x => x.OverallTotalMarks);
+
         using (var context = new OnlineExamSystemContext())
         {
             // Calculate total marks for the student (adjust the logic based on your requirements)
@@ -126,31 +130,35 @@ public class StudentAnswerController : Controller
 
 
 var overallTotalMarks = _context.StudentAnswers
- .Join(
-     _context.Questions,
-     studentAnswer => studentAnswer.QuestionId,
-     question => question.QuestionId,
-     (studentAnswer, question) => new { studentAnswer, question }
- )
- .GroupBy(x => x.question.QuestionId)
- .Select(group => new
- {
-     QuestionId = group.Key,
-     TotalMarks = group.Max(x => x.question.Mark)
- })
- .Sum(x => x.TotalMarks);
+    .Where(sa => sa.Examid == examId) // Replace with the desired ExamId
+    .Join(
+        _context.Questions,
+        sa => sa.QuestionId,
+        q => q.QuestionId,
+        (sa, q) => new { sa, q }
+    )
+    .Select(x => new { x.sa.Examid, x.q.QuestionId, x.q.Mark })
+    .Distinct() // Ensure distinct QuestionId values
+    .GroupBy(x => new { x.Examid })
+    .Select(group => new
+    {
+        Examid = group.Key.Examid,
+        OverallTotalMarks = group.Sum(x => x.Mark)
+    })
+    .Sum(x => x.OverallTotalMarks);
 
-        var numberOfAnsweredQuestions = (from sa in _context.StudentAnswers
-                                         join q in _context.Questions on sa.QuestionId equals q.QuestionId
-                                         where sa.AnswerId != null
-                                         group q by q.QuestionId into g
-                                         select g.Key).Distinct().Count();
+        var numberOfAnsweredQuestions = _context.StudentAnswers
+    .Where(sa => sa.Examid == examId) // Replace 31 with the desired ExamId
+    .Select(sa => sa.QuestionId)
+    .Distinct()
+    .Count();
 
         var QuestionTotalMarks = totalmark;
 
         var OverallTotalMarks = overallTotalMarks;
 
         double percentage = (double)overallTotalMarks / QuestionTotalMarks * 100;
+        
 
         //ViewBag.Examid = examId;
         //ViewBag.Totalmarks = QuestionTotalMarks;
@@ -163,7 +171,7 @@ var overallTotalMarks = _context.StudentAnswers
         {
             ExamId = examId,
             TotalMarks = QuestionTotalMarks,
-            NumberOfAnsweredQuestions = numberOfAnsweredQuestions,
+            NumberOfAnsweredQuestions =Convert.ToInt32( numberOfAnsweredQuestions),
             OverallTotalMarks = Convert.ToInt32( overallTotalMarks),
             OverallTotalQuestions = totalquestion,
             Percentage = percentage

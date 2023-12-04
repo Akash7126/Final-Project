@@ -1,0 +1,83 @@
+﻿@using Online_Exam_System.ViewModel;
+@model List<DisplayExamViewModel>
+
+<style>
+    .todo-list > li {
+        border-radius: 2px;
+        background: #e9eef5;
+        border-left: 2px solid #e9ecef;
+        color: #495057;
+        margin-bottom: 2px;
+        padding: 10px;
+    }
+
+        .todo-list > li .badge {
+            font-size: .9rem;
+            margin-left: 10px;
+        }
+
+    .badge-warning {
+        color: #ffffff;
+        background-color: #ffc107;
+    }
+
+    }
+</style>
+
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">
+            <i class="ion ion-clipboard mr-1"></i>
+            To Do List
+        </h3>
+
+    </div>
+
+    <div class="card-body">
+        <ul class="todo-list" data-widget="todo-list">
+
+            @foreach (var exam in Model)
+            {
+
+                <li>
+
+                    <a href="@Url.Action("ExamTitle", "StudentResult", new { id = exam.CourseId })">
+                        <span class="text">@exam.CourseTittle</span>
+                    </a>
+
+                    
+
+                    @*<span class="text">@exam.StartTime.ToString("dd MMM hh:mm tt")</span>
+
+
+
+                    @{
+                        TimeSpan timeUntilExamStart = exam.StartTime - DateTime.Now;
+                        TimeSpan timeUntilExamEnd = exam.EndTime - DateTime.Now;
+                    }
+
+                    @if (timeUntilExamStart.TotalSeconds <= 0 && timeUntilExamEnd.TotalSeconds > 0)
+                    {
+                        <!-- Display a blue badge when the exam starts and is not over yet -->
+                        <small class="badge badge-success">
+                            <i class="far fa-clock"></i> Exam in progress
+                        </small>
+                    }
+                    else if (timeUntilExamEnd < TimeSpan.Zero)
+                    {
+                        <!-- If the end time is over, display a danger badge -->
+                        <small class="badge badge-danger"><i class="far fa-clock"></i> Exam Over</small>
+                    }
+                    else
+                    {
+                        <small class="badge badge-primary"><i class="far fa-clock"></i> Pending</small>
+                    }*@
+
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
