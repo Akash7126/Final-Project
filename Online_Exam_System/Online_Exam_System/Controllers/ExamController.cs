@@ -284,6 +284,86 @@ namespace Online_Exam_System.Controllers
         }
 
 
+        public IActionResult ExamOver(int id)
+        {
+            var questions = context.Questions
+                                   .Include(q => q.Answers)
+                                   .Where(q => q.ExamId == id)
+                                   .ToList();
+
+            var teacherId = context.Questions
+                        .Where(q => q.ExamId == id)
+                        .Select(q => q.TeacherId)
+                        .FirstOrDefault();
+
+
+            var exam = context.CreateExams
+                     .FirstOrDefault(e => e.ExamId == id);
+
+
+            var userId = HttpContext.Request.Cookies["UserId"];
+            var distinctExams = (from ca in context.CourseAssigns
+                                 join q in context.Questions on ca.CourseId equals q.CourseId
+                                 join ce in context.CreateExams on q.ExamId equals ce.ExamId
+                                 join s in context.Students on ca.StudentId equals s.StudentId
+                                 join c in context.Courses on q.CourseId equals c.CourseId
+                                 join d in context.Departments on c.DepartmentId equals d.DepartmentId
+                                 where s.UserId == userId && ce.ExamId == id
+                                 select new DisplayExamViewModel
+                                 {
+                                     ExamId = ce.ExamId,
+                                     ExamTitle = ce.ExamTitle,
+                                     StartTime = ce.StartTime,
+                                     EndTime = ce.EndTime,
+                                     CourseTittle = c.CourseTittle,
+                                     CourseCode = c.CourseCode,
+                                     DepartmentName = d.DepartmentName
+                                 }).Distinct().ToList();
+
+
+            var totalMarks = questions
+                .Where(q => q.ExamId == id)
+                .Sum(q => q.Mark);
+
+
+            var totalQuestions = context.Questions
+                .Count(q => q.ExamId == id);
+
+            foreach (var distinctExam in distinctExams)
+            {
+                var time = distinctExam.EndTime - distinctExam.StartTime;
+
+                int totalMinutes = (int)time.TotalMinutes;
+                int hours = totalMinutes / 60;
+                int minutes = totalMinutes % 60;
+
+                string formattedTime;
+
+                if (hours > 0)
+                {
+                    formattedTime = $"{hours}hr {minutes}min";
+                }
+                else
+                {
+                    formattedTime = $"{minutes}min";
+                }
+
+                ViewBag.Time = formattedTime;
+            }
+
+            ViewBag.ExamEndTime = exam.EndTime;
+            ViewBag.NewExamid = id;
+            ViewBag.TeacherId = teacherId;
+            // Check if the exam is over based on the ExamEndTime
+            bool isExamOver = IsExamOver(exam.EndTime);
+            ViewBag.IsExamOver = isExamOver;
+            ViewBag.DistinctExams = distinctExams;
+            ViewBag.TotalMarks = totalMarks;
+            ViewBag.TotalQuestions = totalQuestions;
+            return View(questions);
+        }
+
+
         public IActionResult ForCheat()
         {
             return View();

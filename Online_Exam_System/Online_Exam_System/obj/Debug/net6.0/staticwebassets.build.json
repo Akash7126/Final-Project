@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yPuZ6CC08NSgMK6ficBzBlOcD6Jxz7jOdBYiJ2DozXY=",
+  "Hash": "whoi7rgkUDvvfNbe7QNoC8mKbGKBXsy17IKd9lyPnX4=",
   "Source": "Online_Exam_System",
   "BasePath": "_content/Online_Exam_System",
   "Mode": "Default",
@@ -31193,6 +31193,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\HTML\\UITS logo.png"
+    },
+    {
+      "Identity": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\images\\profiles\\3199c2ad-3f66-48ce-87b4-20d72c9e3137.jpg",
+      "SourceId": "Online_Exam_System",
+      "SourceType": "Discovered",
+      "ContentRoot": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\",
+      "BasePath": "_content/Online_Exam_System",
+      "RelativePath": "images/profiles/3199c2ad-3f66-48ce-87b4-20d72c9e3137.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\profiles\\3199c2ad-3f66-48ce-87b4-20d72c9e3137.jpg"
     },
     {
       "Identity": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\images\\profiles\\51d63111-5800-41c5-86eb-06f5ba9909bb.jpg",

@@ -1,4 +1,5 @@
 ﻿@using Online_Exam_System.ViewModel;
+@using System.Globalization;
 @model List<DisplayExamViewModel>
 
 <style>
@@ -41,18 +42,32 @@
             @foreach (var exam in Model)
             {
 
+          
+
                 <li>
                     <!-- todo text -->
                     @* <span class="text">@exam.ExamTitle</span>*@
+
                     @if (DateTime.Now < exam.StartTime)
                     {
+                        <a href="@Url.Action("QuestionforStudent", "Exam", new { id = exam.ExamId })" onclick="return handleExamLinkClick('@exam.StartTime')">
+                            <span class="text">@exam.ExamTitle</span>
+                        </a>
+                        
+                    }
 
-                        <a href=""><span class="text">@exam.ExamTitle</span></a>
+                    else if (DateTime.Now < exam.EndTime)
+                    {
+                        <a href="@Url.Action("QuestionforStudent", "Exam", new { id = exam.ExamId})">
+                            <span class="text">@exam.ExamTitle</span>
+                        </a>
+
+                        
                         
                     }
                     else
                     {
-                        <a href="@Url.Action("QuestionforStudent", "Exam", new { id = exam.ExamId})">
+                        <a href="@Url.Action("ExamOver", "Exam", new { id = exam.ExamId})">
                             <span class="text">@exam.ExamTitle</span>
                         </a>
                         
@@ -117,4 +132,13 @@
     </div>
 </div>
 
-
+<script>
+    function handleExamLinkClick(examStartTime) {
+        var currentTime = new Date();
+        if (currentTime < new Date(examStartTime)) {
+            alert("Exam time has not started yet. You cannot give the exam now.");
+            return false; // Prevent the link from being followed
+        }
+        return true; // Allow the link to be followed
+    }
+</script>
