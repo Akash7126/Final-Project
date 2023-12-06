@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MimeKit;
 using Online_Exam_System.Models;
 using Online_Exam_System.ViewModel;
 using System;
+using MailKit.Net.Smtp;
+using MimeKit;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +26,31 @@ public class StudentAnswerController : Controller
             .Select(a => a.AnswerId)
             .ToList();
     }
+
+
+    public async Task SendEmailAsync(string to, string subject, string body)
+    {
+        var message = new MimeMessage();
+        message.From.Add(new MailboxAddress("UITS Authority", "akash.ghosh1700@gmail.com"));
+        message.To.Add(new MailboxAddress("", to));
+        message.Subject = subject;
+
+        var bodyBuilder = new BodyBuilder
+        {
+            HtmlBody = body
+        };
+
+        message.Body = bodyBuilder.ToMessageBody();
+
+        using (var client = new SmtpClient())
+        {
+            await client.ConnectAsync("smtp.gmail.com", 587, false);
+            await client.AuthenticateAsync("akash.ghosh1700@gmail.com", "hmhxrzzdebuibery");
+            await client.SendAsync(message);
+            await client.DisconnectAsync(true);
+        }
+    }
+
 
     [HttpPost]
     public IActionResult GiveStudentAnswer(Dictionary<int, int[]> selectedAnswerIds, Dictionary<int, int> questionIds, int totalmark, int totalquestion, int examId,int teacherId)
@@ -158,14 +186,25 @@ var overallTotalMarks = _context.StudentAnswers
         var OverallTotalMarks = overallTotalMarks;
 
         double percentage = (double)overallTotalMarks / QuestionTotalMarks * 100;
+
         
 
-        //ViewBag.Examid = examId;
-        //ViewBag.Totalmarks = QuestionTotalMarks;
-        //ViewBag.NumberOfAnsweredQuestions = numberOfAnsweredQuestions;
-        //ViewBag.OverallTotalMarks = overallTotalMarks;
-        //ViewBag.OverallTotalQuestions = totalquestion;
-        //ViewBag.Percentage = percentage;
+        var studentname = student.StudentName;
+        var studentEmail = student.Email;
+        var message = $"<h1>Dear {studentname},</h1><br /><br />"
++ $"<p>Thank you {studentname}.</p>"
++ $"<p>Your Result:</p>"
++ $"<ul>"
++ $"<li>Your given Correct Anser is: {numberOfAnsweredQuestions}</li>"
++ $"<li>your mark is: {OverallTotalMarks}</li>"
++ $"<li>Percentage is: {percentage}</li>"
++ $"</ul>"
++ "<p>Best regards,<br />Uits</p>";
+
+SendEmailAsync(studentEmail, "Student Result", message);
+
+
+
 
         var viewModel = new QuizResultViewModel
         {
@@ -269,6 +308,99 @@ var overallTotalMarks = _context.StudentAnswers
 
         return View(distinctStudentGivenAnswers);
     }
+
+
+
+
+
+    
+    public IActionResult StudentCheckAnswers(int examId,int Studentid)
+    {
+
+
+        var studentId = Studentid;
+
+        var studentGivenAnswersQuery = (from sga in _context.StudentGivenAnswers
+                                        join q in _context.Questions on sga.QuestionId equals q.QuestionId
+                                        join a in _context.Answers on sga.AnswerId equals a.AnswerId
+                                        where sga.StudentId == studentId
+                                        group new { a.AnswerId, a.AnswerText, sga.IsSelect }
+        by new { q.QuestionId, q.QuestionDescription, q.QuestionTypeId, sga.StudentId } into g
+                                        select new StudentGivenAnswersViewModel
+                                        {
+                                            QuestionId = g.Key.QuestionId,
+                                            QuestionDescription = g.Key.QuestionDescription,
+                                            QuestionTypeId = g.Key.QuestionTypeId,
+                                            StudentId = g.Key.StudentId,
+                                            Answers = g.Select(a => new Answer
+                                            {
+                                                AnswerId = a.AnswerId,
+                                                AnswerText = a.AnswerText,
+                                                IsCorrect = a.IsSelect
+                                            }).ToList()
+                                        });
+
+        var distinctStudentGivenAnswers = studentGivenAnswersQuery.ToList();
+
+
+        var exam = _context.CreateExams
+                     .FirstOrDefault(e => e.ExamId == examId);
+
+
+        var distinctExams = (from ca in _context.CourseAssigns
+                             join q in _context.Questions on ca.CourseId equals q.CourseId
+                             join ce in _context.CreateExams on q.ExamId equals ce.ExamId
+                             join t in _context.Students on ca.StudentId equals t.StudentId
+                             join c in _context.Courses on q.CourseId equals c.CourseId
+                             join d in _context.Departments on c.DepartmentId equals d.DepartmentId
+                             where t.StudentId == studentId && ce.ExamId == examId
+                             select new DisplayStudentExamViewModel
+                             {
+                                 ExamId = ce.ExamId,
+                                 ExamTitle = ce.ExamTitle,
+                                 StartTime = ce.StartTime,
+                                 EndTime = ce.EndTime,
+                                 CourseTittle = c.CourseTittle,
+                                 CourseCode = c.CourseCode,
+                                 DepartmentName = d.DepartmentName
+                             }).Distinct().ToList();
+
+
+        var totalMarks = _context.Questions
+                .Where(q => q.ExamId == examId)
+                .Sum(q => q.Mark);
+
+        foreach (var distinctExam in distinctExams)
+        {
+            var time = distinctExam.EndTime - distinctExam.StartTime;
+
+            int totalMinutes = (int)time.TotalMinutes;
+            int hours = totalMinutes / 60;
+            int minutes = totalMinutes % 60;
+
+            string formattedTime;
+
+            if (hours > 0)
+            {
+                formattedTime = $"{hours}hr {minutes}min";
+            }
+            else
+            {
+                formattedTime = $"{minutes}min";
+            }
+
+            ViewBag.Time = formattedTime;
+        }
+
+        ViewBag.ExamEndTime = exam.EndTime;
+        ViewBag.DistinctExams = distinctExams;
+        ViewBag.TotalMarks = totalMarks;
+
+
+        return View(distinctStudentGivenAnswers);
+    }
+
+
 
 
     static bool CompareLists(List<StudentAnswer> studentAnswerList, List<Answer> answerList)

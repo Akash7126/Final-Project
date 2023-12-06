@@ -43,9 +43,9 @@ namespace Online_Exam_System.Controllers
 
             //var userId = "Mrinmoy Biswas Akash1aa125";
             var userId = HttpContext.Request.Cookies["UserId"];
-            var teaxher = _context.Teachers.FirstOrDefault(s => s.UserId == userId);
+            var teacher = _context.Teachers.FirstOrDefault(s => s.UserId == userId);
 
-            var teacherId = teaxher?.TeacherId;
+            var teacherId = teacher?.TeacherId;
             //var teacherId = 1010;
             var query = from exam in _context.CreateExams
                         where exam.CourseId == id && exam.TeacherId == teacherId

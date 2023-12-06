@@ -6,5 +6,8 @@
         public int StudentId { get; set; }
         public string? StudentName { get; set; }
         public string? UserId { get; set; }
+
+        public int ExamId { get; set; }
+        
     }
 }
