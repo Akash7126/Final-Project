@@ -12,7 +12,7 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form asp-controller="Student" asp-action="AddStudent" role="form">
+        <form asp-controller="Student" asp-action="AddStudent" role="form" enctype="multipart/form-data">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4">
@@ -70,6 +70,16 @@
                 </div>
                 <div class="row">
 
+
+                   
+                    <div class="form-group">
+                        <label asp-for="ProfilePic">Profile Picture</label>
+                        <input asp-for="ProfilePic" type="file" class="form-control" />
+                        <span asp-validation-for="ProfilePic" class="text-danger"></span>
+                    </div>
+
+
+
                     <div class="col-md-4">
                         <div class="form-group">
                             <label asp-for="Address">Address</label>
@@ -83,7 +93,7 @@
                 </div>*@
             </div>
             <!-- /.card-body -->
-           
+
 
             <div class="card-footer">
                 <a asp-action="AddStudent" asp-route-id="@Model"><button type="submit" class="btn btn-primary">Submit</button></a>

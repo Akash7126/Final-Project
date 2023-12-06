@@ -207,6 +207,8 @@ namespace Online_Exam_System.Models
 
                 entity.Property(e => e.Email).HasMaxLength(50);
 
+                entity.Property(e => e.ProfilePicPath).HasMaxLength(450);
+
                 entity.Property(e => e.Sex).HasMaxLength(50);
 
                 entity.Property(e => e.StudentName).HasMaxLength(50);
@@ -282,6 +284,8 @@ namespace Online_Exam_System.Models
                 entity.Property(e => e.Email).HasMaxLength(50);
 
                 entity.Property(e => e.JobTitle).HasMaxLength(50);
+
+                entity.Property(e => e.ProfilePicPath).HasMaxLength(450);
 
                 entity.Property(e => e.Sex).HasMaxLength(50);
 

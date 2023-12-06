@@ -8249,6 +8249,14 @@
       "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-v4compatibility.woff2"
     },
     {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\images\\profiles\\51d63111-5800-41c5-86eb-06f5ba9909bb.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\51d63111-5800-41c5-86eb-06f5ba9909bb.jpg"
+    },
+    {
+      "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\images\\profiles\\6ff626df-14eb-43a9-be8b-2c995751a73f.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\6ff626df-14eb-43a9-be8b-2c995751a73f.jpg"
+    },
+    {
       "Id": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

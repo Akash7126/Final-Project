@@ -5,6 +5,7 @@ using Online_Exam_System.ViewModel;
 
 namespace Online_Exam_System.Controllers
 {
+
     public class StudentResultController : Controller
     {
         private readonly OnlineExamSystemContext _context;

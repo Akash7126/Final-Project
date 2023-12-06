@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tpTOhTynMb+VCVDKp5EPYVJTXg8Ed3LkObUvNw028Fc=",
+  "Hash": "yPuZ6CC08NSgMK6ficBzBlOcD6Jxz7jOdBYiJ2DozXY=",
   "Source": "Online_Exam_System",
   "BasePath": "_content/Online_Exam_System",
   "Mode": "Default",
@@ -31193,6 +31193,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\HTML\\UITS logo.png"
+    },
+    {
+      "Identity": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\images\\profiles\\51d63111-5800-41c5-86eb-06f5ba9909bb.jpg",
+      "SourceId": "Online_Exam_System",
+      "SourceType": "Discovered",
+      "ContentRoot": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\",
+      "BasePath": "_content/Online_Exam_System",
+      "RelativePath": "images/profiles/51d63111-5800-41c5-86eb-06f5ba9909bb.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\profiles\\51d63111-5800-41c5-86eb-06f5ba9909bb.jpg"
+    },
+    {
+      "Identity": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\images\\profiles\\6ff626df-14eb-43a9-be8b-2c995751a73f.jpg",
+      "SourceId": "Online_Exam_System",
+      "SourceType": "Discovered",
+      "ContentRoot": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\",
+      "BasePath": "_content/Online_Exam_System",
+      "RelativePath": "images/profiles/6ff626df-14eb-43a9-be8b-2c995751a73f.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\profiles\\6ff626df-14eb-43a9-be8b-2c995751a73f.jpg"
     },
     {
       "Identity": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\js\\site.js",

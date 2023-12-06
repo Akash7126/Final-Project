@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Online_Exam_System.Models
 {
@@ -15,6 +16,9 @@ namespace Online_Exam_System.Models
         public string? Address { get; set; }
         public string? Sex { get; set; }
         public string? UserId { get; set; }
+        [NotMapped]
+        public IFormFile ProfilePic { get; set; }
+        public string? ProfilePicPath { get; set; }
 
         public virtual Department Department { get; set; } = null!;
     }

@@ -67,12 +67,33 @@ namespace Online_Exam_System.Controllers
         [HttpPost]
         public IActionResult AddStudent(Student student)
         {
+         
+
+            if (student.ProfilePic != null && student.ProfilePic.Length > 0)
+            {
+                // Save the file to a folder on the server (you may want to customize the path)
+                string fileName = Guid.NewGuid().ToString() + Path.GetExtension(student.ProfilePic.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/profiles",fileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    student.ProfilePic.CopyTo(fileStream);
+                }
+
+
+
+                // Save the file path to the database
+                student.ProfilePicPath = "/images/profiles/" + fileName;
+            }
+
+
             Guid guid = Guid.NewGuid();
             string userId = student.StudentName + guid.ToString("N").Substring(0, 6);
             student.UserId = userId;
-            
+
             context.Students.Add(student);
             context.SaveChanges();
+
 
             User user = new User();
             user.ContactNo = student.Contact;
@@ -97,6 +118,8 @@ namespace Online_Exam_System.Controllers
     .Where(batch => batch.BatchId == student.BatchId)
     .Select(batch => batch.BatchName)
     .FirstOrDefault();
+
+
             var studentname=student.StudentName;
             var message = $"<h1>Dear {studentname},</h1><br /><br />"
     + $"<p>Thank you for registering as a student.</p>"

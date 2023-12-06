@@ -66,6 +66,24 @@ namespace Online_Exam_System.Controllers
         [HttpPost]
         public IActionResult AddTeacher(Teacher teacher)
         {
+
+
+            if (teacher.ProfilePic != null && teacher.ProfilePic.Length > 0)
+            {
+                // Save the file to a folder on the server (you may want to customize the path)
+                string fileName = Guid.NewGuid().ToString() + Path.GetExtension(teacher.ProfilePic.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/profiles", fileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    teacher.ProfilePic.CopyTo(fileStream);
+                }
+
+
+
+                // Save the file path to the database
+                teacher.ProfilePicPath = "/images/profiles/" + fileName;
+            }
             //new code for create userId
             Guid guid = Guid.NewGuid();
             string userId = teacher.TeacherName + guid.ToString("N").Substring(0, 6);
