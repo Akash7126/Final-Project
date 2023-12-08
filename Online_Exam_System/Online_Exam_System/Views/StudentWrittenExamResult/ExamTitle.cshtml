@@ -1,0 +1,58 @@
+﻿@using Online_Exam_System.ViewModel;
+@model List<DisplayExamViewModel>
+
+<style>
+    .todo-list > li {
+        border-radius: 2px;
+        background: #e9eef5;
+        border-left: 2px solid #e9ecef;
+        color: #495057;
+        margin-bottom: 2px;
+        padding: 10px;
+    }
+
+        .todo-list > li .badge {
+            font-size: .9rem;
+            margin-left: 10px;
+        }
+
+    .badge-warning {
+        color: #ffffff;
+        background-color: #ffc107;
+    }
+
+    }
+</style>
+
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">
+            <i class="ion ion-clipboard mr-1"></i>
+            Exam Title List
+        </h3>
+
+    </div>
+
+    <div class="card-body">
+        <ul class="todo-list" data-widget="todo-list">
+
+            @foreach (var exam in Model)
+            {
+
+                <li>
+
+                    <a href="@Url.Action("StudentsResult", "StudentWrittenExamResult", new { id = exam.ExamId,teacherId = exam.TeacherId })">
+                        <span class="text">@exam.ExamTitle</span>
+                    </a>
+
+                    <b><i><span class="text">@exam.Description</span></i></b>
+
+
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+

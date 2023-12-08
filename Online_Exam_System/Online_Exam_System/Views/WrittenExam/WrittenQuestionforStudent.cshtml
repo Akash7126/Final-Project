@@ -1,0 +1,223 @@
+﻿@model List<Online_Exam_System.Models.StudentWrittenQuestion>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Online Exam Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .quiz-container {
+            max-width: 863px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .question {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .answers {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .answer {
+            margin: 5px 0;
+        }
+
+        .btn-submit {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .answer-option {
+            display: inline-block;
+            margin-right: 10px; /* Add spacing between answer options */
+        }
+
+        .answer-option1 {
+            display: inline-block;
+            margin-right: 10px; /* Add spacing between answer options */
+        }
+
+            .answer-option1 input[type="checkbox"] {
+                vertical-align: middle;
+                margin-right: 5px; /* Add spacing between checkboxes and labels */
+            }
+
+        .answer-option input[type="radio"] {
+            vertical-align: middle;
+            margin-right: 5px; /* Add spacing between radio buttons and labels */
+        }
+
+        .text-right {
+            margin-left: 18px;
+        }
+
+        .text-left {
+            margin-left: 544px;
+        }
+
+        -webkit-user-select: none; /* Chrome all and Safari all */
+        -moz-user-select: none; /* Firefox all */
+        -ms-user-select: none; /* IE 10+ */
+        user-select: none;
+    </style>
+
+
+
+
+
+</head>
+<body>
+    <div class="quiz-container">
+
+        @if (ViewBag.IsExamOver)
+        {
+            <form asp-controller="UploadPdf" asp-action="GiveWrittenAnswer" method="post">
+                <h2 style="color:red">Your Exam is Over</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-block btn-info btn-flat">Back</button>
+                    </div>
+
+                </div>
+
+
+            </form>
+
+        }
+
+        else
+        {
+            <h5 style="text-align:center;"><b>University of Information Technology & Sciences(UITS)</b></h5>
+            <h6 style="text-align:center"><b>Faculty of Science And Engineering</b></h6>
+            @foreach (var exam in ViewBag.DistinctExams)
+            {
+                <h6 style="text-align:center"><b>Department of @exam.DepartmentName</b></h6>
+                <h6 style="text-align:center"><b>Course Title: @exam.CourseTittle</b></h6>
+                <h6 style="text-align:center"><b>Course Code: @exam.CourseCode</b></h6>
+
+            }
+
+           
+            <h7 class="text-left"> <b>Time: @ViewBag.Time</b></h7>
+
+            @using (Html.BeginForm("UploadPdf", "GiveWrittenAnswer", FormMethod.Post, new { id = "quizForm", enctype = "multipart/form-data" }))
+            {
+                <ol type="1">
+                    @foreach (var question in Model)
+                    {
+                        <div class="question">
+                            <p>
+                                 <li>@Html.Raw(question.QuestionDescription)</li>
+                            </p>
+                        </div>
+                    }
+                </ol>
+            
+            <input type="hidden" name="examId" value="@ViewBag.NewExamid">
+            <input type="hidden" name="teacherId" value="@ViewBag.TeacherId">
+            <input type="hidden" name="studentId" value="@ViewBag.StudentId">
+            <div>
+                <label for="ProfilePic">Upload PDF:</label>
+                <input type="file" name="ProfilePic" id="ProfilePic" accept=".pdf">
+            </div>
+
+            <button class="btn-submit" type="submit">Submit Written Exam</button>
+            }
+
+
+        <script>
+            // Function to submit the form when the end time is reached
+            function submitFormOnEndTime() {
+                var examEndTime = new Date('@ViewBag.ExamEndTime'); // Get the exam end time from Razor
+
+                var refreshInterval = examEndTime - new Date(); // Calculate the time remaining
+
+                if (refreshInterval <= 0) {
+                    // Submit the form if the end time has passed
+                    document.getElementById('quizForm').submit(); // Use the correct ID of your form
+                } else {
+                    setTimeout(submitFormOnEndTime, refreshInterval); // Submit the form when the end time is reached
+                }
+            }
+
+            // Call the submitFormOnEndTime function
+            submitFormOnEndTime();
+        </script>
+
+
+
+        <!-- Your existing HTML code -->
+            @if (!ViewBag.IsExamOver)
+            {
+            <script>
+                document.addEventListener('contextmenu', function (e) {
+                    e.preventDefault();
+                    alert('Do not copy it.');
+                });
+
+                document.addEventListener('keydown', function (e) {
+                    if (e.ctrlKey || e.metaKey) {
+                        alert('Copying using keyboard shortcuts is not allowed.');
+                        e.preventDefault();
+                    }
+                });
+
+                // Function to show an alert when the user switches tabs or the window loses focus
+                document.addEventListener('visibilitychange', handleVisibilityChange);
+                window.addEventListener('blur', handleVisibilityChange);
+
+                // Function to show an error message when clicking outside the quiz-container
+                document.addEventListener('click', function (e) {
+                    var quizContainer = document.querySelector('.quiz-container');
+
+                    if (!quizContainer.contains(e.target)) {
+                        var confirmation = confirm('Clicking outside the quiz area is not allowed. Do you want to go to another view?');
+
+                        if (confirmation) {
+                            // Redirect to another view
+                            window.location.href = '/Exam/ForCheat'; // Replace with the actual URL
+                        }
+                    }
+                });
+
+                function handleVisibilityChange() {
+                    if (document.hidden) {
+                        alert('Switching tabs or losing focus is not allowed.');
+                        // Redirect to another view
+                        window.location.href = '/Exam/ForCheat'; // Replace with the actual URL
+                    }
+                }
+            </script>
+            }
+
+        }
+
+
+    </div>
+
+
+    <script>
+        // Disable the back button
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            history.go(1);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+﻿@model Online_Exam_System.ViewModel.WrittenQuestionViewModel
+@{
+    ViewData["Title"] = "without bootstrap";
+    Layout = "_Layout"; // Specify the layout to use
+}
+@*vvvvvvvvvvvvvvvvvvvvvvvvvvvvv*@
+<style>
+    .row.custom-dsn {
+        margin-left: 72px;
+    }
+
+    .custom-dsn2 {
+        margin-left: 155px;
+    }
+
+    input.correct-answer {
+        margin-left: 5px;
+    }
+
+    .custom-dsn3 {
+        margin-left: 565px;
+        padding-bottom: 20px;
+    }
+
+    button.btn.btn-block.btn-outline-info.btn-flat.button1 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+    }
+
+    .row1 {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -7.5px;
+        margin-left: -7.5px;
+        background-color: #cccfcf;
+    }
+
+    .card-primary1:not(.card-outline) > .card-header {
+        background-color: #5e7e75;
+    }
+
+    .form-group1 {
+        margin-bottom: 1rem;
+        background-color: #cbd3db;
+        margin-top: -17px;
+    }
+
+
+    .col-md-4.cutomize-data {
+        margin-left: 93px;
+    }
+
+    .col-md-1.customize-data1 {
+        margin-left: 45px;
+    }
+</style>
+
+<div class="card card-primary1">
+
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Set a Answer of a Question</h3>
+        </div>
+        
+
+        <form asp-controller="WrittenQuestion" asp-action="AddQestion" role="form" method="post">
+
+            <input type="hidden" name="resetDropdowns" value="true">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 cutomize-data">
+                        <div class="form-group">
+                            <label asp-for="CourseId">Course Code</label>
+                            <select id="courseDropdown" class="form-control" asp-for="CourseId" asp-items="@(new SelectList(ViewBag.CourseAssigns,"CourseId","CourseCode"))">
+                                <option>Please select one</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 cutomize-data1">
+                        <div class="form-group">
+                            <label asp-for="ExamId">Select Exam</label>
+                            <select id="examDropdown" class="form-control" asp-for="ExamId" asp-items="@(new SelectList(ViewBag.exams, "ExamId", "ExamTitle"))">
+                                <option>Please select one</option>
+                            </select>
+                        </div>
+                    </div>
+                   
+                    <div class="col-md-1 customize-data1">
+                        <div class="form-group">
+                            <label asp-for="Mark">Mark</label>
+                            <input asp-for="Mark" type="text" class="form-control" placeholder="mark">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <textarea asp-for="QuestionDescription" id="summernote" name="QuestionDescription"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 justify-content-center custom-dsn3">
+                    <a asp-action="AddQestion" asp-route-id="@Model.CourseId"><button id="getDataButton" type="submit" class="btn btn-block bg-gradient-success btn-lg">Save</button></a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            $('#summernote').summernote({
+                placeholder: 'Hello stand alone ui',
+                tabsize: 2,
+                height: 120,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+            });
+        });
+
+        // Initialize the first Summernote editor
+        $(document).ready(function () {
+            $('#summernote1').summernote({
+                placeholder: 'Hello stand alone ui',
+                tabsize: 2,
+                height: 60,
+                toolbar: [['font', ['bold', 'underline', 'clear']]],
+                callbacks: {
+                    onInit: function () {
+                        // Add your custom footer content here
+
+                        var $editor = $('#summernote1').next(); // Get the Summernote editor container
+                        $editor.append(initialContent);
+                    }
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $('#summernote2').summernote({
+                placeholder: 'Hello stand alone ui',
+                tabsize: 2,
+                height: 60,
+                toolbar: [['font', ['bold', 'underline', 'clear']]],
+                callbacks: {
+                    onInit: function () {
+                        // Add your custom footer content here
+                        var $editor = $('#summernote2').next(); // Get the Summernote editor container
+                        $editor.append(initialContent);
+                    }
+                }
+            });
+            console.log('++++++++++++++++++++++')
+        });
+        $(document).ready(function () {
+            $('#summernote3').summernote({
+                placeholder: 'Hello stand alone ui',
+                tabsize: 2,
+                height: 60,
+                toolbar: [['font', ['bold', 'underline', 'clear']]],
+                callbacks: {
+                    onInit: function () {
+                        // Add your custom footer content here
+                        var $editor = $('#summernote3').next(); // Get the Summernote editor container
+                        $editor.append(initialContent);
+                    }
+                }
+            });
+        });
+        $(document).ready(function () {
+            $('#summernote7').summernote({
+                placeholder: 'Hello stand alone ui',
+                tabsize: 2,
+                height: 60,
+                toolbar: [
+                    ['font', ['bold', 'underline', 'clear']]
+
+                ],
+                //HTMLDivElement:'ddd'
+                callbacks: {
+                    onInit: function () {
+                        // Add your custom footer content here
+                        var $editor = $('#summernote7').next(); // Get the Summernote editor container
+                        $editor.append(initialContent1);
+                    }
+                }
+            });
+
+        });
+
+        var summernoteCount = 1;
+        $(document).on('click', '#addMoreSummernote', function () {
+            addMoreSummernote();
+
+        });
+        //Add event delegation to handle radio button selection
+        $(document).on('change', '.correct-answer', function () {
+            // Unselect all other radio buttons in all editors
+            $('.correct-answer').not(this).prop('checked', false);
+        });
+
+
+    </script>
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#courseDropdown').change(function () {
+                var courseId = $(this).val();
+                console.log("Selected Course ID: " + courseId);
+
+                $('#examDropdown').empty();
+                $('#examDropdown').append('<option>--Select Exam--</option>');
+
+                $.ajax({
+                    url: '/WrittenQuestion/GetExamsByCourse?courseId=' + courseId,
+                    type: 'GET',
+                    success: function (result) {
+                        console.log("AJAX Response:", result);
+
+                        var optionsHtml = '';
+                        $.each(result, function (i, data) {
+                            console.log("Exam Data:", data);
+                            optionsHtml += '<option value="' + data.examId + '">' + data.examTitle + '</option>';
+                        });
+
+                        // Set the optionsHtml to the Exam dropdown
+                        $('#examDropdown').html(optionsHtml);
+
+                        // Attach change event listener to Exam dropdown
+                        $('#examDropdown').change(function () {
+                            // Get the selected value
+                            var selectedExamId = $(this).val();
+                            console.log("Selected Exam ID: " + selectedExamId);
+
+                            // Perform further actions with the selectedExamId, such as sending it to the server via AJAX
+                            // ...
+                        });
+
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("Error occurred:", error);
+                    }
+                });
+            });
+
+            // ... other existing code ...
+        });
+
+
+
+
+    </script>
+
+}

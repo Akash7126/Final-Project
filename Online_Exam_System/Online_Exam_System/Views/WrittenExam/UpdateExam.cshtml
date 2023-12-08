@@ -1,0 +1,60 @@
+﻿@model Online_Exam_System.ViewModel.CreateWrittenExamViewModel
+
+<div class="col-md-12">
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Exam Entry</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form asp-controller="WrittenExam" asp-action="UpdateExam" method="post" role="form">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for=" ExamTitle"></label>
+                            <input asp-for="ExamTitle" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for=" Description"></label>
+                            <input asp-for="Description" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 cutomize-data">
+                        <div class="form-group">
+                            <label asp-for="CourseId">Course Code</label>
+                            <select class="form-control" asp-for="CourseId" asp-items="@(new SelectList(ViewBag.CourseAssigns,"CourseId","CourseCode"))">
+                                <option>Please select one</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for=" StartTime"></label>
+                            <input asp-for="StartTime" type="datetime-local" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for=" EndTime"></label>
+                            <input asp-for="EndTime" type="datetime-local" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-body -->
+            <input type="hidden" asp-for="ExamId" />
+            <div class="card-footer">
+                <a asp-action="UpdateExam"><button type="submit" class="btn btn-primary">Update</button></a>
+
+            </div>
+        </form>
+    </div>
+    <!-- /.card -->
+</div>

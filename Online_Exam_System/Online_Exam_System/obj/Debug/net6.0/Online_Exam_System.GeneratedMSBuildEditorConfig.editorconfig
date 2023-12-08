@@ -168,6 +168,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFJlc3VsdFxTdHVkZW50c1Jlc3VsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/StudentWrittenExamResult/ExamTitle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFdyaXR0ZW5FeGFtUmVzdWx0XEV4YW1UaXRsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/StudentWrittenExamResult/GetCreatedExam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFdyaXR0ZW5FeGFtUmVzdWx0XEdldENyZWF0ZWRFeGFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/StudentWrittenExamResult/StudentsResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFdyaXR0ZW5FeGFtUmVzdWx0XFN0dWRlbnRzUmVzdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Student/AddStudent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxBZGRTdHVkZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -210,6 +222,38 @@ build_metadata.AdditionalFiles.CssScope =
 
 [H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/User/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/WrittenExam/CreateExam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV3JpdHRlbkV4YW1cQ3JlYXRlRXhhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/WrittenExam/ExamList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV3JpdHRlbkV4YW1cRXhhbUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/WrittenExam/GiveWrittenExam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV3JpdHRlbkV4YW1cR2l2ZVdyaXR0ZW5FeGFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/WrittenExam/UpdateExam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV3JpdHRlbkV4YW1cVXBkYXRlRXhhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/WrittenExam/WrittenQuestionforStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV3JpdHRlbkV4YW1cV3JpdHRlblF1ZXN0aW9uZm9yU3R1ZGVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/WrittenQuestion/AddQestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV3JpdHRlblF1ZXN0aW9uXEFkZFFlc3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/WrittenQuestion/DisplayAllExam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV3JpdHRlblF1ZXN0aW9uXERpc3BsYXlBbGxFeGFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/WrittenQuestion/DisplayQuestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV3JpdHRlblF1ZXN0aW9uXERpc3BsYXlRdWVzdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/_ViewImports.cshtml]

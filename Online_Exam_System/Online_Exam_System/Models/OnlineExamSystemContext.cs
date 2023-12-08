@@ -22,8 +22,10 @@ namespace Online_Exam_System.Models
         public virtual DbSet<Course> Courses { get; set; } = null!;
         public virtual DbSet<CourseAssign> CourseAssigns { get; set; } = null!;
         public virtual DbSet<CreateExam> CreateExams { get; set; } = null!;
+        public virtual DbSet<CreateWrittenExam> CreateWrittenExams { get; set; } = null!;
         public virtual DbSet<Department> Departments { get; set; } = null!;
         public virtual DbSet<DepartmentBatch> DepartmentBatches { get; set; } = null!;
+        public virtual DbSet<GivenWrittenAnswer> GivenWrittenAnswers { get; set; } = null!;
         public virtual DbSet<Menu> Menus { get; set; } = null!;
         public virtual DbSet<Question> Questions { get; set; } = null!;
         public virtual DbSet<Result> Results { get; set; } = null!;
@@ -33,6 +35,7 @@ namespace Online_Exam_System.Models
         public virtual DbSet<StudentAnswer> StudentAnswers { get; set; } = null!;
         public virtual DbSet<StudentGivenAnswer> StudentGivenAnswers { get; set; } = null!;
         public virtual DbSet<StudentRegistration> StudentRegistrations { get; set; } = null!;
+        public virtual DbSet<StudentWrittenQuestion> StudentWrittenQuestions { get; set; } = null!;
         public virtual DbSet<SubMenu> SubMenus { get; set; } = null!;
         public virtual DbSet<Teacher> Teachers { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
@@ -129,6 +132,27 @@ namespace Online_Exam_System.Models
                 entity.Property(e => e.TeacherId).HasColumnName("teacherId");
             });
 
+            modelBuilder.Entity<CreateWrittenExam>(entity =>
+            {
+                entity.HasKey(e => e.ExamId);
+
+                entity.ToTable("CreateWrittenExam");
+
+                entity.Property(e => e.Description).HasColumnName("description");
+
+                entity.Property(e => e.EndTime)
+                    .HasColumnType("datetime")
+                    .HasColumnName("end_time");
+
+                entity.Property(e => e.ExamTitle).HasColumnName("exam_title");
+
+                entity.Property(e => e.StartTime)
+                    .HasColumnType("datetime")
+                    .HasColumnName("start_time");
+
+                entity.Property(e => e.TeacherId).HasColumnName("teacherId");
+            });
+
             modelBuilder.Entity<Department>(entity =>
             {
                 entity.ToTable("Department");
@@ -153,6 +177,11 @@ namespace Online_Exam_System.Models
                     .HasForeignKey(d => d.DepartmentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_DepartmentBatch_Department");
+            });
+
+            modelBuilder.Entity<GivenWrittenAnswer>(entity =>
+            {
+                entity.ToTable("GivenWrittenAnswer");
             });
 
             modelBuilder.Entity<Menu>(entity =>
@@ -255,6 +284,19 @@ namespace Online_Exam_System.Models
                     .HasForeignKey(d => d.StudentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_StudentRegistration_Student");
+            });
+
+            modelBuilder.Entity<StudentWrittenQuestion>(entity =>
+            {
+                entity.HasKey(e => e.WrittenQuestionId);
+
+                entity.ToTable("StudentWrittenQuestion");
+
+                entity.Property(e => e.ExamId).HasColumnName("exam_id");
+
+                entity.Property(e => e.Mark).HasColumnType("decimal(18, 0)");
+
+                entity.Property(e => e.QuestionDescription).HasMaxLength(450);
             });
 
             modelBuilder.Entity<SubMenu>(entity =>

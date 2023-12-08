@@ -91,7 +91,6 @@
         <h7 class="text-left"> <b>Time: @ViewBag.Time</b></h7>
         @using (Html.BeginForm("SubmitQuiz", "QuizController", FormMethod.Post))
         {
-
             <ol type="1">
                 @foreach (var question in Model)
                 {

@@ -49,32 +49,7 @@
 
                     <b><i><span class="text">@exam.Description</span></i></b>
 
-                    @*<span class="text">@exam.StartTime.ToString("dd MMM hh:mm tt")</span>
-
-
-
-                @{
-                TimeSpan timeUntilExamStart = exam.StartTime - DateTime.Now;
-                TimeSpan timeUntilExamEnd = exam.EndTime - DateTime.Now;
-                }
-
-                @if (timeUntilExamStart.TotalSeconds <= 0 && timeUntilExamEnd.TotalSeconds > 0)
-                {
-                <!-- Display a blue badge when the exam starts and is not over yet -->
-                <small class="badge badge-success">
-                <i class="far fa-clock"></i> Exam in progress
-                </small>
-                }
-                else if (timeUntilExamEnd < TimeSpan.Zero)
-                {
-                <!-- If the end time is over, display a danger badge -->
-                <small class="badge badge-danger"><i class="far fa-clock"></i> Exam Over</small>
-                }
-                else
-                {
-                <small class="badge badge-primary"><i class="far fa-clock"></i> Pending</small>
-                }*@
-
+                    
                 </li>
             }
         </ul>

@@ -86,7 +86,6 @@ namespace Online_Exam_System.Controllers
                 student.ProfilePicPath = "/images/profiles/" + fileName;
             }
 
-
             Guid guid = Guid.NewGuid();
             string userId = student.StudentName + guid.ToString("N").Substring(0, 6);
             student.UserId = userId;
