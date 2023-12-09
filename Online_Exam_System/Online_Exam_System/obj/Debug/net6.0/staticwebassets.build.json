@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mTpfthDRcS785dnywRpfhXfgqBHx2ZAv13xe11p9qtU=",
+  "Hash": "Pa6pBIMGdiHOTPygOF9X3KQqkbeC2woaQ1xEzklotK0=",
   "Source": "Online_Exam_System",
   "BasePath": "_content/Online_Exam_System",
   "Mode": "Default",
@@ -31195,6 +31195,40 @@
       "OriginalItemSpec": "wwwroot\\HTML\\UITS logo.png"
     },
     {
+      "Identity": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\images\\Pdf\\259fbb93-d50f-4272-9816-ccd85632687a.pdf",
+      "SourceId": "Online_Exam_System",
+      "SourceType": "Discovered",
+      "ContentRoot": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\",
+      "BasePath": "_content/Online_Exam_System",
+      "RelativePath": "images/Pdf/259fbb93-d50f-4272-9816-ccd85632687a.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Pdf\\259fbb93-d50f-4272-9816-ccd85632687a.pdf"
+    },
+    {
+      "Identity": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\images\\Pdf\\4cdeb6c5-1483-4861-a942-522c47b38893.pdf",
+      "SourceId": "Online_Exam_System",
+      "SourceType": "Discovered",
+      "ContentRoot": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\",
+      "BasePath": "_content/Online_Exam_System",
+      "RelativePath": "images/Pdf/4cdeb6c5-1483-4861-a942-522c47b38893.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Pdf\\4cdeb6c5-1483-4861-a942-522c47b38893.pdf"
+    },
+    {
       "Identity": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\images\\Pdf\\pdf.png",
       "SourceId": "Online_Exam_System",
       "SourceType": "Discovered",
@@ -31210,6 +31244,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Pdf\\pdf.png"
+    },
+    {
+      "Identity": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\images\\profiles\\2e4a554a-b623-48cf-82ba-91d38ebecdac.jpg",
+      "SourceId": "Online_Exam_System",
+      "SourceType": "Discovered",
+      "ContentRoot": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\",
+      "BasePath": "_content/Online_Exam_System",
+      "RelativePath": "images/profiles/2e4a554a-b623-48cf-82ba-91d38ebecdac.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\profiles\\2e4a554a-b623-48cf-82ba-91d38ebecdac.jpg"
     },
     {
       "Identity": "H:\\Final Project\\Final-Project\\Online_Exam_System\\Online_Exam_System\\wwwroot\\images\\profiles\\3199c2ad-3f66-48ce-87b4-20d72c9e3137.jpg",

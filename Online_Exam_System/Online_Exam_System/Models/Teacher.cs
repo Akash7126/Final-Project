@@ -16,6 +16,7 @@ namespace Online_Exam_System.Models
         public string? Address { get; set; }
         public string? Sex { get; set; }
         public string? UserId { get; set; }
+
         [NotMapped]
         public IFormFile ProfilePic { get; set; }
         public string? ProfilePicPath { get; set; }

@@ -10,5 +10,6 @@ namespace Online_Exam_System.Models
         public int? AnswerId { get; set; }
         public int? StudentId { get; set; }
         public bool? IsSelect { get; set; }
+        public int? Examid { get; set; }
     }
 }

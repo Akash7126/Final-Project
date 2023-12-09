@@ -60,6 +60,69 @@ public class StudentAnswerController : Controller
 
         var studentId = student?.StudentId;
 
+        //if (studentId.HasValue)
+        //{
+
+        //    var studentAnswer = new StudentAnswer();
+        //    // Insert student answers into StudentAnswer table
+        //    foreach (var (questionId, answerIds) in selectedAnswerIds)
+        //    {
+        //        var _context = new OnlineExamSystemContext();
+
+        //        var studentAnswerList = new List<StudentAnswer>();
+
+        //        foreach (var answerId in answerIds)
+        //        {
+        //            studentAnswer = new StudentAnswer
+        //            {
+        //                StudentId = studentId.Value, 
+        //                QuestionId = questionId,
+        //                AnswerId = answerId,
+        //                Examid = examId
+        //                // Additional properties can be set here
+        //            };
+
+        //            studentAnswerList.Add(studentAnswer);
+
+        //            _context.StudentAnswers.Add(studentAnswer);
+        //        }
+        //        var answerList = _context.Answers.ToList().Where(x => x.QuestionId == questionId && x.IsCorrect == true).ToList();
+        //        bool result = CompareLists(studentAnswerList, answerList);
+
+        //        if (result == true)
+        //        {
+        //            _context.SaveChanges();
+
+        //        }
+
+        //    }
+        //}
+
+        using (var _context = new OnlineExamSystemContext())
+        {
+            foreach (var (questionId, answerIds) in selectedAnswerIds)
+            {
+                var allAnswerIds = GetAllAnswerIdsForQuestion(questionId);
+
+                var studentGivenAnswerList = allAnswerIds.Select(answerId => new StudentGivenAnswer
+                {
+                    StudentId = studentId.Value,
+                    QuestionId = questionId,
+                    AnswerId = answerId,
+                    IsSelect = answerIds.Contains(answerId),
+                    Examid = examId
+                    // Additional properties can be set here
+                }).ToList();
+
+                _context.StudentGivenAnswers.AddRange(studentGivenAnswerList);
+            }
+
+            _context.SaveChanges();
+        }
+
+
+
+
         if (studentId.HasValue)
         {
 
@@ -69,13 +132,19 @@ public class StudentAnswerController : Controller
             {
                 var _context = new OnlineExamSystemContext();
 
+                var correctAnswerCount = _context.Answers
+            .Count(a => a.QuestionId == questionId && a.IsCorrect == true);
+
+                var studentGivenAnswerCount = _context.StudentGivenAnswers
+                    .Count(sga => sga.QuestionId == questionId && sga.IsSelect == true);
+
                 var studentAnswerList = new List<StudentAnswer>();
 
                 foreach (var answerId in answerIds)
                 {
                     studentAnswer = new StudentAnswer
                     {
-                        StudentId = studentId.Value, 
+                        StudentId = studentId.Value,
                         QuestionId = questionId,
                         AnswerId = answerId,
                         Examid = examId
@@ -91,32 +160,15 @@ public class StudentAnswerController : Controller
 
                 if (result == true)
                 {
-                    _context.SaveChanges();
+                    if(correctAnswerCount== studentGivenAnswerCount)
+                    {
+                        _context.SaveChanges();
+
+                    }
 
                 }
 
             }
-        }
-
-        using (var _context = new OnlineExamSystemContext())
-        {
-            foreach (var (questionId, answerIds) in selectedAnswerIds)
-            {
-                var allAnswerIds = GetAllAnswerIdsForQuestion(questionId);
-
-                var studentGivenAnswerList = allAnswerIds.Select(answerId => new StudentGivenAnswer
-                {
-                    StudentId = studentId.Value,
-                    QuestionId = questionId,
-                    AnswerId = answerId,
-                    IsSelect = answerIds.Contains(answerId),
-                    // Additional properties can be set here
-                }).ToList();
-
-                _context.StudentGivenAnswers.AddRange(studentGivenAnswerList);
-            }
-
-            _context.SaveChanges();
         }
 
 
@@ -215,7 +267,7 @@ SendEmailAsync(studentEmail, "Student Result", message);
             OverallTotalQuestions = totalquestion,
             Percentage = percentage
         };
-        TempData["QuizResultViewModel"] = viewModel;
+        
 
         return View("GiveStudentAnswer", viewModel);
     }
@@ -232,7 +284,7 @@ SendEmailAsync(studentEmail, "Student Result", message);
         var studentGivenAnswersQuery = (from sga in _context.StudentGivenAnswers
                                         join q in _context.Questions on sga.QuestionId equals q.QuestionId
                                         join a in _context.Answers on sga.AnswerId equals a.AnswerId
-                                        where sga.StudentId == studentId
+                                        where sga.StudentId == studentId && (sga.Examid == null || sga.Examid == examId)
                                         group new { a.AnswerId, a.AnswerText, sga.IsSelect }
         by new { q.QuestionId, q.QuestionDescription, q.QuestionTypeId, sga.StudentId } into g
                                         select new StudentGivenAnswersViewModel
@@ -323,9 +375,9 @@ SendEmailAsync(studentEmail, "Student Result", message);
         var studentGivenAnswersQuery = (from sga in _context.StudentGivenAnswers
                                         join q in _context.Questions on sga.QuestionId equals q.QuestionId
                                         join a in _context.Answers on sga.AnswerId equals a.AnswerId
-                                        where sga.StudentId == studentId
+                                        where sga.StudentId == studentId && (sga.Examid == null || sga.Examid == examId)
                                         group new { a.AnswerId, a.AnswerText, sga.IsSelect }
-        by new { q.QuestionId, q.QuestionDescription, q.QuestionTypeId, sga.StudentId } into g
+                                        by new { q.QuestionId, q.QuestionDescription, q.QuestionTypeId, sga.StudentId } into g
                                         select new StudentGivenAnswersViewModel
                                         {
                                             QuestionId = g.Key.QuestionId,
