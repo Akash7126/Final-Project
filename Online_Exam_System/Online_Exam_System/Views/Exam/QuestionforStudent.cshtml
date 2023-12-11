@@ -18,6 +18,8 @@
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            
+            
         }
 
         .question {
@@ -71,6 +73,83 @@
             margin-left: 544px;
         }
 
+        
+
+/*               * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}*/
+
+/*html, body {
+  height: 100%;
+  width: 100%;
+}*/
+
+/*body {
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}*/
+
+.clock {
+  height: 12vh;
+  color: white;
+  font-size: 11vh;
+  font-family: sans-serif;
+  line-height: 12.4vh;
+  display: flex;
+  position: relative;
+  /*background: green;*/
+  overflow: hidden;
+}
+
+.clock::before, .clock::after {
+  content: '';
+  width: 7ch;
+  height: 3vh;
+  background: linear-gradient(to top, transparent, black);
+  position: absolute;
+  z-index: 2;
+}
+
+.clock::after {
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent, black);
+}
+
+.clock > div {
+  display: flex;
+}
+
+.tick {
+  line-height: 17vh;
+}
+
+.tick-hidden {
+  opacity: 0;
+}
+
+.move {
+  animation: move linear 1s infinite;
+}
+
+        .clock.move {
+            background: black;
+        }
+
+        .fixed {
+            overflow: hidden;
+            background-color: #000;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            
+        }
+
+
+
         -webkit-user-select: none; /* Chrome all and Safari all */
         -moz-user-select: none; /* Firefox all */
         -ms-user-select: none; /* IE 10+ */
@@ -83,6 +162,41 @@
 
 </head>
 <body>
+    
+
+
+    <nav class="fixed">
+            <div class="clock">
+                <div class="hours">
+                    <div class="first">
+                        <div class="number num-0"></div>
+                    </div>
+                    <div class="second">
+                        <div class="number num-1"></div>
+                    </div>
+                </div>
+                <div class="tick">:</div>
+                <div class="minutes">
+                    <div class="first">
+                        <div class="number num-2"></div>
+                    </div>
+                    <div class="second">
+                        <div class="number num-3"></div>
+                    </div>
+                </div>
+                <div class="tick">:</div>
+                <div class="seconds">
+                    <div class="first">
+                        <div class="number num-4"></div>
+                    </div>
+                    <div class="second infinite">
+                        <div class="number num-5"></div>
+                    </div>
+                </div>
+            </div>
+    </nav>
+
+    
     <div class="quiz-container">
 
         @if (ViewBag.IsExamOver)
@@ -105,6 +219,7 @@
         {
         <h5 style="text-align:center;"><b>University of Information Technology & Sciences(UITS)</b></h5>
         <h6 style="text-align:center"><b>Faculty of Science And Engineering</b></h6>
+
             @foreach (var exam in ViewBag.DistinctExams)
             {
             <h6 style="text-align:center"><b>Department of @exam.DepartmentName</b></h6>
@@ -255,5 +370,37 @@
             history.go(1);
         };
     </script>
+
+
+
+
+    <script>
+        // Function to update live remaining time
+        function updateLiveRemainingTime() {
+            var currentTime = new Date();
+            var examEndTime = new Date('@ViewBag.ExamEndTime'); // Get the exam end time from Razor
+
+            var timeDifference = examEndTime - currentTime;
+
+            if (timeDifference > 0) {
+                var hours = Math.floor(timeDifference / (60 * 60 * 1000));
+                var minutes = Math.floor((timeDifference % (60 * 60 * 1000)) / (60 * 1000));
+                var seconds = Math.floor((timeDifference % (60 * 1000)) / 1000);
+
+                // Update the clock numbers
+                document.querySelector('.num-0').innerText = Math.floor(hours / 10);
+                document.querySelector('.num-1').innerText = hours % 10;
+                document.querySelector('.num-2').innerText = Math.floor(minutes / 10);
+                document.querySelector('.num-3').innerText = minutes % 10;
+                document.querySelector('.num-4').innerText = Math.floor(seconds / 10);
+                document.querySelector('.num-5').innerText = seconds % 10;
+            } else {
+                document.getElementById('liveRemainingTime').innerText = "Exam Over";
+            }
+        }
+
+        setInterval(updateLiveRemainingTime, 1000);
+    </script>
+    
 </body>
 </html>

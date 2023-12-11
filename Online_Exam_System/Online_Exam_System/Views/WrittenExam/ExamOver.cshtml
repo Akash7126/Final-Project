@@ -1,0 +1,138 @@
+﻿@model List<Online_Exam_System.Models.StudentWrittenQuestion>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Online Exam Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .quiz-container {
+            max-width: 863px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .question {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .answers {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .answer {
+            margin: 5px 0;
+        }
+
+        .btn-submit {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .answer-option {
+            display: inline-block;
+            margin-right: 10px; /* Add spacing between answer options */
+        }
+
+        .answer-option1 {
+            display: inline-block;
+            margin-right: 10px; /* Add spacing between answer options */
+        }
+
+            .answer-option1 input[type="checkbox"] {
+                vertical-align: middle;
+                margin-right: 5px; /* Add spacing between checkboxes and labels */
+            }
+
+        .answer-option input[type="radio"] {
+            vertical-align: middle;
+            margin-right: 5px; /* Add spacing between radio buttons and labels */
+        }
+
+        .text-right {
+            margin-left: 18px;
+        }
+
+        .text-left {
+            margin-left: 544px;
+        }
+
+        -webkit-user-select: none; /* Chrome all and Safari all */
+        -moz-user-select: none; /* Firefox all */
+        -ms-user-select: none; /* IE 10+ */
+        user-select: none;
+    </style>
+
+
+</head>
+<body>
+    <div class="quiz-container">
+
+        @if (ViewBag.IsExamOver)
+        {
+            <h1 style="color: red; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);font-style: italic;">Exam is over</h1>
+            <h5 style="text-align:center;"><b>University of Information Technology & Sciences(UITS)</b></h5>
+            <h6 style="text-align:center"><b>Faculty of Science And Engineering</b></h6>
+            @foreach (var exam in ViewBag.DistinctExams)
+            {
+                <h6 style="text-align:center"><b>Department of @exam.DepartmentName</b></h6>
+                <h6 style="text-align:center"><b>Course Title: @exam.CourseTittle</b></h6>
+                <h6 style="text-align:center"><b>Course Code: @exam.CourseCode</b></h6>
+            }
+
+            <h7 class="text-right"><b>Total Mark: @ViewBag.TotalMarks</b></h7>
+            <h7 class="text-left"> <b>Time: @ViewBag.Time</b></h7>
+            @using (Html.BeginForm("SubmitQuiz", "QuizController", FormMethod.Post))
+            {
+
+                <ol type="1">
+                    @foreach (var question in Model)
+                    {
+                        <div class="question">
+                            <p>
+                            <li>@Html.Raw(question.QuestionDescription)</li></p>
+
+
+                        </div>
+               
+                    }
+            </ol>
+
+
+                @if (!ViewBag.IsExamOver)
+                {
+                <button class="btn-submit" type="submit">Submit Quiz</button>
+                }
+                else
+                {
+
+                }
+            }
+        }
+    </div>
+
+
+    <script>
+        // Disable the back button
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            history.go(1);
+        };
+    </script>
+
+</body>
+</html>
