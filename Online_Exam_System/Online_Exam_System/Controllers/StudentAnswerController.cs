@@ -60,43 +60,43 @@ public class StudentAnswerController : Controller
 
         var studentId = student?.StudentId;
 
-        //if (studentId.HasValue)
-        //{
+        if (studentId.HasValue)
+        {
 
-        //    var studentAnswer = new StudentAnswer();
-        //    // Insert student answers into StudentAnswer table
-        //    foreach (var (questionId, answerIds) in selectedAnswerIds)
-        //    {
-        //        var _context = new OnlineExamSystemContext();
+            var studentAnswer = new StudentAnswer();
+            // Insert student answers into StudentAnswer table
+            foreach (var (questionId, answerIds) in selectedAnswerIds)
+            {
+                var _context = new OnlineExamSystemContext();
 
-        //        var studentAnswerList = new List<StudentAnswer>();
+                var studentAnswerList = new List<StudentAnswer>();
 
-        //        foreach (var answerId in answerIds)
-        //        {
-        //            studentAnswer = new StudentAnswer
-        //            {
-        //                StudentId = studentId.Value, 
-        //                QuestionId = questionId,
-        //                AnswerId = answerId,
-        //                Examid = examId
-        //                // Additional properties can be set here
-        //            };
+                foreach (var answerId in answerIds)
+                {
+                    studentAnswer = new StudentAnswer
+                    {
+                        StudentId = studentId.Value,
+                        QuestionId = questionId,
+                        AnswerId = answerId,
+                        Examid = examId
+                        // Additional properties can be set here
+                    };
 
-        //            studentAnswerList.Add(studentAnswer);
+                    studentAnswerList.Add(studentAnswer);
 
-        //            _context.StudentAnswers.Add(studentAnswer);
-        //        }
-        //        var answerList = _context.Answers.ToList().Where(x => x.QuestionId == questionId && x.IsCorrect == true).ToList();
-        //        bool result = CompareLists(studentAnswerList, answerList);
+                    _context.StudentAnswers.Add(studentAnswer);
+                }
+                var answerList = _context.Answers.ToList().Where(x => x.QuestionId == questionId && x.IsCorrect == true).ToList();
+                bool result = CompareLists(studentAnswerList, answerList);
 
-        //        if (result == true)
-        //        {
-        //            _context.SaveChanges();
+                if (result == true)
+                {
+                    _context.SaveChanges();
 
-        //        }
+                }
 
-        //    }
-        //}
+            }
+        }
 
         using (var _context = new OnlineExamSystemContext())
         {
@@ -123,53 +123,53 @@ public class StudentAnswerController : Controller
 
 
 
-        if (studentId.HasValue)
-        {
+        //if (studentId.HasValue)
+        //{
 
-            var studentAnswer = new StudentAnswer();
-            // Insert student answers into StudentAnswer table
-            foreach (var (questionId, answerIds) in selectedAnswerIds)
-            {
-                var _context = new OnlineExamSystemContext();
+        //    var studentAnswer = new StudentAnswer();
+        //    // Insert student answers into StudentAnswer table
+        //    foreach (var (questionId, answerIds) in selectedAnswerIds)
+        //    {
+        //        var _context = new OnlineExamSystemContext();
 
-                var correctAnswerCount = _context.Answers
-            .Count(a => a.QuestionId == questionId && a.IsCorrect == true);
+        //        var correctAnswerCount = _context.Answers
+        //    .Count(a => a.QuestionId == questionId && a.IsCorrect == true);
 
-                var studentGivenAnswerCount = _context.StudentGivenAnswers
-                    .Count(sga => sga.QuestionId == questionId && sga.IsSelect == true);
+        //        var studentGivenAnswerCount = _context.StudentGivenAnswers
+        //            .Count(sga => sga.QuestionId == questionId && sga.IsSelect == true);
 
-                var studentAnswerList = new List<StudentAnswer>();
+        //        var studentAnswerList = new List<StudentAnswer>();
 
-                foreach (var answerId in answerIds)
-                {
-                    studentAnswer = new StudentAnswer
-                    {
-                        StudentId = studentId.Value,
-                        QuestionId = questionId,
-                        AnswerId = answerId,
-                        Examid = examId
-                        // Additional properties can be set here
-                    };
+        //        foreach (var answerId in answerIds)
+        //        {
+        //            studentAnswer = new StudentAnswer
+        //            {
+        //                StudentId = studentId.Value,
+        //                QuestionId = questionId,
+        //                AnswerId = answerId,
+        //                Examid = examId
+        //                // Additional properties can be set here
+        //            };
 
-                    studentAnswerList.Add(studentAnswer);
+        //            studentAnswerList.Add(studentAnswer);
 
-                    _context.StudentAnswers.Add(studentAnswer);
-                }
-                var answerList = _context.Answers.ToList().Where(x => x.QuestionId == questionId && x.IsCorrect == true).ToList();
-                bool result = CompareLists(studentAnswerList, answerList);
+        //            _context.StudentAnswers.Add(studentAnswer);
+        //        }
+        //        var answerList = _context.Answers.ToList().Where(x => x.QuestionId == questionId && x.IsCorrect == true).ToList();
+        //        bool result = CompareLists(studentAnswerList, answerList);
 
-                if (result == true)
-                {
-                    if(correctAnswerCount== studentGivenAnswerCount)
-                    {
-                        _context.SaveChanges();
+        //        if (result == true)
+        //        {
+        //            if(correctAnswerCount== studentGivenAnswerCount)
+        //            {
+        //                _context.SaveChanges();
 
-                    }
+        //            }
 
-                }
+        //        }
 
-            }
-        }
+        //    }
+        //}
 
 
         var Marks = _context.StudentAnswers

@@ -262,9 +262,9 @@
                                         <input type="radio" name="selectedAnswerIds[@question.QuestionId]" value="@answer.AnswerId">
                                         <input type="hidden" name="questionIds[@answer.AnswerId]" value="@question.QuestionId">
                                         <input type="hidden" name="isAnswerSelected[@answer.AnswerId]" value="false">
-                                        <label>
-                                                @Html.Raw(answer.IsCorrect.HasValue && answer.IsCorrect.Value ? "True" : "False")
-                                        </label>
+                                    <label>
+                                                @Html.Raw(answer.AnswerText)
+                                    </label>
                                     </div>
                                     }
                                     else if (question.QuestionTypeId == 2)

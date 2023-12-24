@@ -112,6 +112,8 @@
                                 </label>
                             </div>
                                 }
+
+                              
                                 else if (question.QuestionTypeId == 3)
                                 {
                             <div class="answers answer-option">
@@ -121,7 +123,7 @@
                                             @Html.Raw(answer.AnswerText)
                                 </label>
 
-                                        @if (answer.IsCorrect.HasValue)
+                                        @*@if (answer.IsCorrect.HasValue)
                                         {
                                     <label class="answer-label">
                                                 @(answer.IsCorrect.Value ? "True" : "False")
@@ -132,7 +134,7 @@
                                     <label class="answer-label">
                                         Not specified
                                     </label>
-                                        }
+                                        }*@
                             </div>
                                 }
 

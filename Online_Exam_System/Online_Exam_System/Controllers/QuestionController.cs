@@ -357,37 +357,63 @@ namespace Online_Exam_System.Controllers
             _context.SaveChanges();
 
 
+
             var answerList = new List<Answer>();
-            var answer1 = new Answer();
-            answer1.AnswerText = question.Question1;
-            ////////////////////////////////////////////////////////
-            if (question.Question1Answer != null)
-            {
-                answer1.IsCorrect = true;
-            }
-            else
-            {
-                answer1.IsCorrect = false;
-            }
-            answer1.QuestionId = questionEntity1.QuestionId;
 
-            var answer2 = new Answer();
-            answer2.AnswerText = question.Question2;
-
-            if (question.Question2Answer != null)
+            // Add True answer
+            var trueAnswer = new Answer
             {
-                answer2.IsCorrect = true;
-            }
-            else
-            {
-                answer2.IsCorrect = false;
-            }
-            answer2.QuestionId = questionEntity1.QuestionId;
+                AnswerText = "True",
+                IsCorrect = question.Question1Answer?.ToLower() == "true",
+                QuestionId = questionEntity1.QuestionId
+            };
+            answerList.Add(trueAnswer);
 
-            answerList.Add(answer1);
-            answerList.Add(answer2);
+            // Add False answer
+            var falseAnswer = new Answer
+            {
+                AnswerText = "False",
+                IsCorrect = question.Question2Answer?.ToLower() == "true",
+                QuestionId = questionEntity1.QuestionId
+            };
+            answerList.Add(falseAnswer);
+
             _context.Answers.AddRange(answerList);
             _context.SaveChanges();
+
+
+
+            //var answerList = new List<Answer>();
+            //var answer1 = new Answer();
+            //answer1.AnswerText = question.Question1;
+            //////////////////////////////////////////////////////////
+            //if (question.Question1Answer != null)
+            //{
+            //    answer1.IsCorrect = true;
+            //}
+            //else
+            //{
+            //    answer1.IsCorrect = false;
+            //}
+            //answer1.QuestionId = questionEntity1.QuestionId;
+
+            //var answer2 = new Answer();
+            //answer2.AnswerText = question.Question2;
+
+            //if (question.Question2Answer != null)
+            //{
+            //    answer2.IsCorrect = true;
+            //}
+            //else
+            //{
+            //    answer2.IsCorrect = false;
+            //}
+            //answer2.QuestionId = questionEntity1.QuestionId;
+
+            //answerList.Add(answer1);
+            //answerList.Add(answer2);
+            //_context.Answers.AddRange(answerList);
+            //_context.SaveChanges();
 
             string currentUrl = HttpContext.Request.Path.ToString() + "?courseId=" + question.CourseId + "&examId=" + question.ExamId;
             return Redirect(currentUrl);

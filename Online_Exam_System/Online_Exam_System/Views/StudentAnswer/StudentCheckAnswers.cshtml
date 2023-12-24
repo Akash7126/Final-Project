@@ -121,18 +121,7 @@
                                             @Html.Raw(answer.AnswerText)
                                 </label>
 
-                                        @if (answer.IsCorrect.HasValue)
-                                        {
-                                    <label class="answer-label">
-                                                @(answer.IsCorrect.Value ? "True" : "False")
-                                    </label>
-                                        }
-                                        else
-                                        {
-                                    <label class="answer-label">
-                                        Not specified
-                                    </label>
-                                        }
+                                       
                             </div>
                                 }
 
