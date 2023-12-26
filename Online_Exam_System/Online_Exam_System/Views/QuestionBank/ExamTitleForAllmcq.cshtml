@@ -1,0 +1,157 @@
+﻿@{
+    ViewData["Title"] = "AppStartView";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+
+@using Online_Exam_System.ViewModel;
+@model List<DisplayExamViewModel>
+
+@*<style>
+    .todo-list > li {
+        border-radius: 2px;
+        background: #e9eef5;
+        border-left: 2px solid #e9ecef;
+        color: #495057;
+        margin-bottom: 2px;
+        padding: 10px;
+    }
+
+        .todo-list > li .badge {
+            font-size: .9rem;
+            margin-left: 10px;
+        }
+
+    .badge-warning {
+        color: #ffffff;
+        background-color: #ffc107;
+    }
+
+    }
+</style>
+
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">
+            <i class="ion ion-clipboard mr-1"></i>
+            Exam Title List
+        </h3>
+
+    </div>
+
+    <div class="card-body">
+        <ul class="todo-list" data-widget="todo-list">
+
+            @foreach (var exam in Model)
+            {
+
+                <li>
+
+                    <a href="@Url.Action("QUestionBankForWritten","QuestionBank", new { id = exam.ExamId})">
+                        <span class="text">@exam.ExamTitle</span>
+                    </a>
+
+                    <b><i><span class="text">@exam.Description</span></i></b>
+
+
+                </li>
+            }
+        </ul>
+    </div>
+</div>*@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>To-Do List Card</title>
+    <style>
+        .card {
+            margin: 20px;
+        }
+
+        .card-header {
+            cursor: move;
+        }
+
+        .card-tools {
+            margin-top: -1.5rem;
+        }
+
+        .todo-list {
+            list-style: none;
+            padding: 0;
+        }
+
+            .todo-list li {
+                border-bottom: 1px solid #d2d6de;
+                margin: 0;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+            }
+
+        .handle {
+            cursor: move;
+        }
+
+        .text {
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        .badge {
+            margin-left: 10px;
+        }
+
+        .tools {
+            margin-left: auto;
+        }
+
+        .card-footer button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                <i class="ion ion-clipboard mr-1"></i>
+                Exam Title List
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+            <ul class="todo-list" data-widget="todo-list">
+
+                @foreach (var exam in Model)
+                {
+
+                    <li>
+
+                        <a href="@Url.Action("QUestionBankFormcq","QuestionBank", new { id = exam.ExamId})">
+                            <span class="text">@exam.ExamTitle</span>
+                        </a>
+
+                        <b><i><span class="text">@exam.Description</span></i></b>
+
+
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    @*<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>*@
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

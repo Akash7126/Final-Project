@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "AppStartView";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>To-Do List Card</title>
+    <style>
+        .card {
+            margin: 20px;
+        }
+
+        .card-header {
+            cursor: move;
+        }
+
+        .card-tools {
+            margin-top: -1.5rem;
+        }
+
+        .todo-list {
+            list-style: none;
+            padding: 0;
+        }
+
+            .todo-list li {
+                border-bottom: 1px solid #d2d6de;
+                margin: 0;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+            }
+
+        .handle {
+            cursor: move;
+        }
+
+        .text {
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        .badge {
+            margin-left: 10px;
+        }
+
+        .tools {
+            margin-left: auto;
+        }
+
+        .card-footer button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header ui-sortable-handle">
+                <h3 class="card-title">
+                    <i class="ion ion-clipboard mr-1"></i>
+                    Exam Type
+                </h3>
+                <div class="card-tools">
+                    
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <ul class="todo-list ui-sortable" data-widget="todo-list">
+                    <!-- Add your list items here -->
+                    <li>@Html.ActionLink("Written Exam Question", "Departments", "QuestionBank")</li>
+                    <li>@Html.ActionLink("MCQ Exam Question", "Departmentsmcq", "QuestionBank")</li>
+                </ul>
+            </div>
+            <!-- /.card-body -->
+            
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    @*<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>*@
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

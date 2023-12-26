@@ -88,6 +88,42 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/QuestionBank/Courses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25CYW5rXENvdXJzZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/QuestionBank/Coursesmcq.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25CYW5rXENvdXJzZXNtY3EuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/QuestionBank/Departments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25CYW5rXERlcGFydG1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/QuestionBank/Departmentsmcq.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25CYW5rXERlcGFydG1lbnRzbWNxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/QuestionBank/ExamTitleForAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25CYW5rXEV4YW1UaXRsZUZvckFsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/QuestionBank/ExamTitleForAllmcq.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25CYW5rXEV4YW1UaXRsZUZvckFsbG1jcS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/QuestionBank/ExamType.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25CYW5rXEV4YW1UeXBlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/QuestionBank/QUestionBankFormcq.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25CYW5rXFFVZXN0aW9uQmFua0Zvcm1jcS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/QuestionBank/QUestionBankForWritten.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25CYW5rXFFVZXN0aW9uQmFua0ZvcldyaXR0ZW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [H:/Final Project/Final-Project/Online_Exam_System/Online_Exam_System/Views/Question/AddMultipleSelectQuestion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cQWRkTXVsdGlwbGVTZWxlY3RRdWVzdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
