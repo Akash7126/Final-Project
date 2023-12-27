@@ -7,106 +7,326 @@
     ViewData["Title"] = "Index";
 }
 
-<!-- Content Header (Page header) -->
 
 
-<div class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Dashboard</h1>
-            </div><!-- /.col -->
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                </ol>
-            </div>
-        </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-</div>
-
-
-<!-- /.content-header -->
-<!-- Main content -->
+@model Online_Exam_System.ViewModel.IndexViewModel
 
 
 
 
-<section class="content">
-    <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-info">
-                    <div class="inner">
-                        <h3>150</h3>
 
-                        <p>All Question</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-bag"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+@if (Model != null && Model.RoleId == 2)
+{
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">Dashboard</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    </ol>
                 </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-success">
-                    <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
 
-                        <p>All Teacher</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-warning">
-                    <div class="inner">
-                        <h3>44</h3>
 
-                        <p>Student Registrations</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-person-add"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-danger">
-                    <div class="inner">
-                        <h3>65</h3>
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            
+            <!-- /.row -->
+            <!-- Main row -->
+            <head>
+                <style>
+                    table.tbl-cutom {
+                        border: 1px solid black;
+                        width: 100%;
+                        border-collapse: collapse;
+                        background: #b6fbb6;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
 
-                        <p>Unique Visitors</p>
+                    th.td-std-name {
+                        border: 1px solid black;
+                        text-align: center;
+                    }
+
+                    td.td-std-name {
+                        border: 1px solid black;
+                        text-align: center;
+                    }
+
+                    h4 {
+                        text-align: center;
+                    }
+                </style>
+            </head>
+
+
+
+            <h4>Teacher Dashboard</h4>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-3">
+
+                        @if (!string.IsNullOrEmpty(Model.ProfilePicPath))
+                        {
+                            <img src="@Model.ProfilePicPath" alt="Profile Picture" style="width: 180px; height: 200px; margin-left: 54px;" />
+                        }
+                        else
+                        {
+                            <p>No profile picture available.</p>
+                        }
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-pie-graph"></i>
+                    <div class="col-md-8">
+                        <table class="tbl-cutom">
+                            <tr>
+                                <th class="td-std-name">Teacher Name</th>
+                                <td class="td-std-name">@Model.TeacherName</td>
+                            </tr>
+
+                            <tr>
+                                <th class="td-std-name">User ID</th>
+                                <td class="td-std-name">@Model.UserId</td>
+                            </tr>
+                            <tr>
+                                <th class="td-std-name">Job Tittle</th>
+                                <td class="td-std-name">@Model.JobTitle</td>
+                            </tr>
+                            <tr>
+                                <th class="td-std-name">Contact</th>
+                                <td class="td-std-name">@Model.Contact</td>
+                            </tr>
+
+                            <tr>
+                                <th class="td-std-name">Email</th>
+                                <td class="td-std-name">@Model.Email</td>
+                            </tr>
+
+                        </table>
+
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+
                 </div>
+
+
+
+
             </div>
-            <!-- ./col -->
+
+
+
+
         </div>
-        <!-- /.row -->
-        <!-- Main row -->
-        <div class="row">
-           
+    </section>
+
+
+}
+else if (Model != null && Model.RoleId == 3)
+{
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">Dashboard</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    </ol>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+
+
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <!-- /.row -->
+            <!-- Main row -->
+            <head>
+                <style>
+                    table.tbl-cutom {
+                        border: 1px solid black;
+                        width: 100%;
+                        border-collapse: collapse;
+                        background: #b6fbb6;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    th.td-std-name {
+                        border: 1px solid black;
+                        text-align: center;
+                    }
+
+                    td.td-std-name {
+                        border: 1px solid black;
+                        text-align: center;
+                    }
+
+                    h4 {
+                        text-align: center;
+                    }
+
+                </style>
+            </head>
+
+
+
+            <h4>Student Dashboard</h4>
+
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-3">
+
+                        @if (!string.IsNullOrEmpty(Model.ProfilePicPath))
+                        {
+                            <img src="@Model.ProfilePicPath" alt="Profile Picture" style="width: 180px; height: 200px; margin-left: 54px;" />
+                        }
+                        else
+                        {
+                            <p>No profile picture available.</p>
+                        }
+                    </div>
+                    <div class="col-md-8">
+                        <table class="tbl-cutom">
+
+                            <tr>
+                                <th class="td-std-name">Student Name</th>
+                                <td class="td-std-name">@Model.StudentName</td>
+                            </tr>
+                           
+                            <tr>
+                                <th class="td-std-name">User ID</th>
+                                <td class="td-std-name">@Model.UserId</td>
+                            </tr>
+                            <tr>
+                                <th class="td-std-name">Contact</th>
+                                <td class="td-std-name">@Model.Contact</td>
+                            </tr>
+                            
+                            <tr>
+                                <th class="td-std-name">Email</th>
+                                <td class="td-std-name">@Model.Email</td>
+                            </tr>
+                            <tr>
+                                <th class="td-std-name">Address</th>
+                                <td class="td-std-name">@Model.Address</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+
+
+
         </div>
-        <!-- /.row (main row) -->
-    </div><!-- /.container-fluid -->
-</section>
+    </section>
+
+
+}
+
+else
+{
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">Dashboard</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    </ol>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    
+
+     <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>150</h3>
+
+                            <p>All Question</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+                            <p>All Teacher</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>44</h3>
+
+                            <p>Student Registrations</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>65</h3>
+
+                            <p>Unique Visitors</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+
+
+        </div>
+    </section>
+}
+
+        
+    
 
 
 
-
-<!-- /.content -->

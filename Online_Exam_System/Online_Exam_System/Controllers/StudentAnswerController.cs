@@ -27,6 +27,27 @@ public class StudentAnswerController : Controller
             .ToList();
     }
 
+    private bool AreAnswerListsEqual(List<StudentAnswer> studentAnswers, List<Answer> correctAnswers)
+    {
+        // Check if counts are equal
+        if (studentAnswers.Count != correctAnswers.Count)
+        {
+            return false;
+        }
+
+        // Check if each corresponding element is equal
+        for (int i = 0; i < studentAnswers.Count; i++)
+        {
+            if (studentAnswers[i].AnswerId != correctAnswers[i].AnswerId)
+            {
+                return false;
+            }
+            // Add more conditions as needed for other properties
+        }
+
+        return true;
+    }
+
 
     public async Task SendEmailAsync(string to, string subject, string body)
     {
@@ -87,7 +108,8 @@ public class StudentAnswerController : Controller
                     _context.StudentAnswers.Add(studentAnswer);
                 }
                 var answerList = _context.Answers.ToList().Where(x => x.QuestionId == questionId && x.IsCorrect == true).ToList();
-                bool result = CompareLists(studentAnswerList, answerList);
+                //bool result = CompareLists(studentAnswerList, answerList);
+                bool result = AreAnswerListsEqual(studentAnswerList, answerList);
 
                 if (result == true)
                 {
