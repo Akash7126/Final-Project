@@ -66,7 +66,7 @@ namespace Online_Exam_System.Controllers
                             select new IndexViewModel
                             {
                                 UserId = student.UserId,
-                                TeacherName = student.StudentName,
+                                StudentName = student.StudentName,
                                 DepartmentId = student.DepartmentId,
                                 DepartmentName = department.DepartmentName,
                                 

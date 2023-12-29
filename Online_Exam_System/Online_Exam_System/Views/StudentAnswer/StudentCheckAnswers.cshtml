@@ -93,11 +93,24 @@
                 @foreach (var question in Model)
                 {
                     <div class="question">
-                        <p>
-                    <li>@Html.Raw(question.QuestionDescription)</li></p>
+                        <li>
+                        <div style="display: inline-block;">
+                                @Html.Raw(question.QuestionDescription)
+                        </div>
+                            @foreach (var cross in ViewBag.Diferences)
+                            {
+                                @if (question.QuestionId == cross.QuestionId)
+                                {
+                                <div style="display: inline-block; vertical-align: middle; color: red; font-weight: bold; font-size: 31px;">✗</div>
+                                }
+                            }
 
+                        </li>
+                       
+                    </div>
 
-            </div>
+                    
+                   
             <ol type="a">
                         @foreach (var answer in question.Answers)
                         {

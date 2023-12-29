@@ -49,6 +49,40 @@ public class StudentAnswerController : Controller
     }
 
 
+    private List<StudentGivenAnswersViewModel> GetDifferentStudentAnswers(List<StudentGivenAnswersViewModel> givenAnswers, List<StudentAnswer> studentAnswers)
+    {
+        var differentAnswers = new List<StudentGivenAnswersViewModel>();
+
+        foreach (var givenAnswer in givenAnswers)
+        {
+            var matchingStudentAnswer = studentAnswers.FirstOrDefault(sa => sa.QuestionId == givenAnswer.QuestionId);
+
+            if (matchingStudentAnswer == null || !AreAnswersEqual(givenAnswer.Answers, matchingStudentAnswer.AnswerId))
+            {
+                differentAnswers.Add(givenAnswer);
+            }
+        }
+
+        return differentAnswers;
+    }
+
+    private bool AreAnswersEqual(ICollection<Answer> givenAnswers, int? studentAnswerId)
+    {
+        // If the student answer is null, check if any given answer is null
+        if (!studentAnswerId.HasValue)
+        {
+            return givenAnswers.All(answer => answer == null);
+        }
+
+        // If the student answer is not null, compare with AnswerId in givenAnswers
+        return givenAnswers.Any(answer => answer?.AnswerId == studentAnswerId);
+    }
+
+
+
+
+
+
     public async Task SendEmailAsync(string to, string subject, string body)
     {
         var message = new MimeMessage();
@@ -416,6 +450,12 @@ SendEmailAsync(studentEmail, "Student Result", message);
 
         var distinctStudentGivenAnswers = studentGivenAnswersQuery.ToList();
 
+        var studentAnswerList = _context.StudentAnswers
+            .Where(sa => sa.Examid == examId && sa.StudentId == Studentid)
+            .ToList();
+
+        List<StudentGivenAnswersViewModel> differences = GetDifferentStudentAnswers(distinctStudentGivenAnswers, studentAnswerList);
+
 
         var exam = _context.CreateExams
                      .FirstOrDefault(e => e.ExamId == examId);
@@ -469,7 +509,7 @@ SendEmailAsync(studentEmail, "Student Result", message);
         ViewBag.ExamEndTime = exam.EndTime;
         ViewBag.DistinctExams = distinctExams;
         ViewBag.TotalMarks = totalMarks;
-
+        ViewBag.Diferences = differences;
 
         return View(distinctStudentGivenAnswers);
     }
