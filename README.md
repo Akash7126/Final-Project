@@ -29,7 +29,8 @@ Admin generated credentials are sent via email.
 ![Screenshot (353)](https://github.com/Akash7126/Final-Project/assets/106801532/26f9a01d-a133-42df-ba6b-3263d6460b1d)
 
 # Teacher Dashboard
-![Screenshot (325)](https://github.com/Akash7126/Final-Project/assets/106801532/196c2e5b-6de4-4454-b069-a3c838bcac3b)
+![Screenshot (371)](https://github.com/Akash7126/Final-Project/assets/106801532/d42bd60b-3240-4c33-b7bc-9532e120eb1c)
+
 # Teacher Create Exam Date time
 ![Screenshot (357)](https://github.com/Akash7126/Final-Project/assets/106801532/7d57eb68-b0b9-450e-8e9a-2d7a2b85a1a3)
 # Update or Delete Exam
@@ -49,8 +50,7 @@ Admin generated credentials are sent via email.
 ![Screenshot (369)](https://github.com/Akash7126/Final-Project/assets/106801532/c4f0e4e2-c276-4de4-ab77-5d715ce05665)
 
 # Student Dashboard
-![Screenshot (360)](https://github.com/Akash7126/Final-Project/assets/106801532/5dd71fe4-1a06-4ed9-b995-2c3daa1d165f)
-
+![Screenshot (372)](https://github.com/Akash7126/Final-Project/assets/106801532/5f52964f-6473-481f-a160-da6bcd87a208)
 
 # Student see the Exam List Upcoming or over exam
 ![Screenshot (361)](https://github.com/Akash7126/Final-Project/assets/106801532/13ec5605-72fa-41db-97ec-557361ed4794)
