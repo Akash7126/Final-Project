@@ -49,7 +49,8 @@ Admin generated credentials are sent via email.
 ![Screenshot (369)](https://github.com/Akash7126/Final-Project/assets/106801532/c4f0e4e2-c276-4de4-ab77-5d715ce05665)
 
 # Student Dashboard
-![Screenshot (359)](https://github.com/Akash7126/Final-Project/assets/106801532/06a697af-b164-4f01-9951-4ed683609415)
+![Screenshot (360)](https://github.com/Akash7126/Final-Project/assets/106801532/5dd71fe4-1a06-4ed9-b995-2c3daa1d165f)
+
 
 # Student see the Exam List Upcoming or over exam
 ![Screenshot (361)](https://github.com/Akash7126/Final-Project/assets/106801532/13ec5605-72fa-41db-97ec-557361ed4794)
